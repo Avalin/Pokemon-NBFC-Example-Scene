@@ -10,14 +10,15 @@ function init()
         1000
     );
     camera.position.z = 5;
-    renderer = new THREE.WebGL1Renderer({antialies: true});
+    renderer = new THREE.WebGL1Renderer({antialies: true, alpha: true});
     renderer.setSize(window.innerWidth, window.innerHeight);
+    renderer.setClearColor(0xffffff, 0);
     document.body.appendChild(renderer.domElement);
     texLoader = new THREE.TextureLoader();
 
     const geometry = new THREE.BoxGeometry(2, 2, 2);
     const material1 = new THREE.MeshBasicMaterial( { color: 0xFF99FF } );
-    const texture  = texLoader.load("img/about.jpg");
+    const texture  = texLoader.load("img/sky.gif");
     const material = new THREE.MeshBasicMaterial( { map: texture, overdraw: 0.5 } );
     cube = new THREE.Mesh( geometry, material );
     scene.add( cube );
