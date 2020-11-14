@@ -93,11 +93,37 @@
               <!-- A-Frame Asset Manager -->
               <a-assets>
                 <img id="box_texture" src="textures/threejs/crate.png">
-                <img id="snow" src="textures/bounds/snow.jpg">
-                <img id="snow_NRM" src="textures/bounds/snow_NRM.jpg">
+                <img id="grass" src="textures/bounds/Grass.jpg">
+                <img id="grass_NRM" src="textures/bounds/Grass_NRM.jpg">
                 <img id="wood_panel" src="textures/bounds/wood_panel.png">
                 <img id="wood_panel_NRM" src="textures/bounds/wood_panel_NRM.png">
               </a-assets>
+
+              <!-- Floor -->
+              <a-plane 
+                position="0 0 -4" 
+                rotation="-90 0 0" 
+                width="4" 
+                height="4" 
+                src="#wood_panel"
+                repeat="2 2"
+                normal-map="#wood_panel_NRM"
+                normal-texture-repeat="2 2"
+                color="#FFFFFF">
+              </a-plane>
+
+              <!-- Grass -->
+              <a-plane 
+                position="0 -0.1 -4" 
+                rotation="-90 0 0" 
+                width="100" 
+                height="100" 
+                src="#grass"
+                repeat="100 100"
+                normal-map="#grass_NRM"
+                normal-texture-repeat="100 100"
+                color="#FFFFFF">
+              </a-plane>
 
                 <a-box 
                        position="-1 0.5 -3" 
@@ -127,18 +153,7 @@
                            open-ended="true"
                            color="#FFC65D">
                </a-cylinder>
-               
-               <a-plane 
-                        position="0 0 -4" 
-                        rotation="-90 0 0" 
-                        width="4" 
-                        height="4" 
-                        src="#wood_panel"
-                        repeat="2 2"
-                        normal-map="#wood_panel_NRM"
-                        normal-texture-repeat="2 2"
-                        color="#FFFFFF">
-               </a-plane>
+            
                  
                <a-sky 
                       color="#ECECEC">
