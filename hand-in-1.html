@@ -20,6 +20,9 @@
   <!-- Custom styles for this template -->
   <link href="css/business-casual.min.css" rel="stylesheet">
 
+  <!-- A-Frame -->
+	<script src="https://aframe.io/releases/1.0.4/aframe.min.js"></script>
+
 </head>
 
 <body>
@@ -54,24 +57,34 @@
   </div>
 </nav>
 
-  <section class="page-section about-heading">
-    <div class="container">
-      <img class="img-fluid rounded about-heading-img mb-3 mb-lg-0" src="img/about.jpg" alt="">
-      <div class="about-heading-content">
-        <div class="row">
-          <div class="col-xl-9 col-lg-10 mx-auto">
-            <div class="bg-faded rounded p-5">
-              <h2 class="section-heading mb-4">
-                <span class="section-heading-upper">Strong Coffee, Strong Roots</span>
-                <span class="section-heading-lower">About Our Cafe</span>
-              </h2>
-              <p>Founded in 1987 by the Hernandez brothers, our establishment has been serving up rich coffee sourced from artisan farmers in various regions of South and Central America. We are dedicated to travelling the world, finding the best coffee, and bringing back to you here in our cafe.</p>
-              <p class="mb-0">We guarantee that you will fall in <em>lust</em> with our decadent blends the moment you walk inside until you finish your last sip. Join us for your daily routine, an outing with friends, or simply just to enjoy some alone time.</p>
-            </div>
-          </div>
-        </div>
-      </div>
-    </div>
+  <section class="row">
+    <nav class="col-3">
+      <br></br>
+      <br></br>
+      <br></br>
+      <br></br>
+      <br></br>
+      <br></br>
+      <br></br>
+      <br></br>
+      <br></br>
+      <br></br>
+      <br></br>
+    </nav>
+  
+  <article class="col-6">
+    <!-- A-Frame start -->
+	  <a-scene embedded>
+      <a-box position="-1 0.5 -3" rotation="0 45 0" color="#4CC3D9"></a-box>
+      
+	<a-entity id="mysphere1" geometry="primitive: sphere; radius: 1.25" rotation="0 45 0" position="0 1.25 -5" color="#EF2D5E"></a-entity>
+      <a-cylinder position="1 0.75 -3" radius="0.5" height="1.5" color="#FFC65D"></a-cylinder>
+      <a-plane position="0 0 -4" rotation="-90 0 0" width="4" height="4" color="#7BC8A4"></a-plane>
+      <a-sky color="#ECECEC"></a-sky>
+    </a-scene>
+	  
+	  <!-- A-Frame end -->
+  </article>
   </section>
 
   <footer class="footer text-faded text-center py-5">
