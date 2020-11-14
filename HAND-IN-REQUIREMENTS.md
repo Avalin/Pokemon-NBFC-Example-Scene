@@ -43,6 +43,7 @@ Setup handlers for animation and show basic coded animations on your models, lig
 
 Hand-in 2
 Expectations for hand-in:
+
 In this hand-in you are expected to work only with the code. You can use the basic setup from hand-in 1. 
 In the javascript files make sure to use comments to show us, where hand-in 2 is starting and ending 
 and also comment on methods, handlers etc.  
