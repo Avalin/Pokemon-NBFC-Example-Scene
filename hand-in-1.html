@@ -101,15 +101,15 @@
 
                 <!-- Textures -->
                 <img id="box_texture" src="textures/threejs/crate.png">
-                <img id="grass" src="textures/bounds/Grass.jpg">
-                <img id="grass_NRM" src="textures/bounds/Grass_NRM.jpg">
+                <img id="oWater" src="textures/liquid/OceanWater.jpg">
+                <img id="oWater_NRM" src="textures/liquid/OceanWater_NRM.jpg">
                 <img id="sky" src="textures/bounds/evening_sky.jpg">
                 <img id="wood_panel" src="textures/bounds/wood_panel.png">
                 <img id="wood_panel_NRM" src="textures/bounds/wood_panel_NRM.png">
               </a-assets>
 
               <!-- Sound: SFX & Music -->
-              <a-sound src="sounds/rain_loop.wav" volume="0.25" autoplay="true" loop="true" position="0 2 5"></a-sound>
+              <a-sound src="sounds/rain_loop.wav" volume="0.25" autoplay="true" loop="true" positional="0 "></a-sound>
 
               <!-- Weather: Rainy -->
               <a-entity position="0 2.25 -15" particle-system="preset: rain; color: #0000FF, #9999FF, #9999FF"></a-entity>
@@ -121,6 +121,19 @@
                 scale="0.1 0.1 0.1"
                 obj-model="obj: #CGrass-o; mtl: #CGrass-m">
               </a-entity>  
+
+              <!-- Water -->
+              <a-circle 
+                position="0 -1.5 0"
+                scale="10 10 1"  
+                radius="5"
+                rotation="-90 0 0" 
+                src="#oWater"
+                repeat="25 25"
+                normal-map="#oWater_NRM"
+                normal-texture-repeat="25 25"
+                color="#FFFFFF">
+              </a-circle>
 
 
               <!-- Camera -->  
