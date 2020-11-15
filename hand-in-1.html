@@ -100,82 +100,39 @@
                 <img id="wood_panel" src="textures/bounds/wood_panel.png">
                 <img id="wood_panel_NRM" src="textures/bounds/wood_panel_NRM.png">
               </a-assets>
-                          
+
+              <!-- Camera -->  
+              <!-- Origin at 0 0 0 in VR -->  
+              <!-- Origin at 0 1.6 0 in Desktop -->  
+              <!-- Camera -->  
+              <a-entity position="0 0 4">
+                <a-camera
+                  user-height="1.6"
+                  active="true">                
+                </a-camera>
+              </a-entity>                
+
+              <!-- Grass -->
+              <a-plane 
+                scale="5 5 1" 
+                rotation="-90 0 0" 
+                src="#grass"
+                repeat="1 1"
+                normal-map="#grass_NRM"
+                normal-texture-repeat="1 1"
+                color="#FFFFFF">
+              </a-plane>
+              
+              <!-- Sky -->  
               <a-sky 
                 src="#sky"
                 repeat="20 10"
                 normal-map="#sky_NRM"
                 normal-texture-repeat="20 10"
                 color="#FFFFFF">
+                
               </a-sky>
-
-              <!-- Floor -->
-              <a-plane 
-                position="0 0 -4" 
-                rotation="-90 0 0" 
-                width="4" 
-                height="4" 
-                src="#wood_panel"
-                repeat="2 2"
-                normal-map="#wood_panel_NRM"
-                normal-texture-repeat="2 2"
-                color="#FFFFFF">
-              </a-plane>
-
-              <!-- Grass -->
-              <a-plane 
-                position="0 -0.1 -4" 
-                rotation="-90 0 0" 
-                width="100" 
-                height="100" 
-                src="#grass"
-                repeat="100 100"
-                normal-map="#grass_NRM"
-                normal-texture-repeat="100 100"
-                color="#FFFFFF">
-              </a-plane>
-
-                <a-box 
-                       position="-1 0.5 -3" 
-                       rotation="0 45 0" 
-                       color="#4CC3D9">
-                       <a-circle 
-                         position="0 0 0.51"
-                         rotation="0 0 0" 
-                         scale="0.25 0.25 1" 
-                         side="double"
-                         color="#FFFF00">
-                       </a-circle>
-               </a-box>
-                
-               <a-sphere 
-                         position="0 1.25 -5" 
-                         radius="1.25" 
-                         color="#EF2D5E">
-               </a-sphere>
-               
-               <a-cylinder 
-                           position="1 0.75 -3" 
-                           height="1.0" 
-                           radius="0.5" 
-                           segments-radial="6"
-                           side="double"
-                           open-ended="true"
-                           color="#FFC65D">
-               </a-cylinder>
-                
-              <a-box 
-                      position="0.1 0.5 -2"
-                      rotation="0 0 0" 
-                      src="#box_texture"
-                      repeat="1 1"
-                      scale="0.5 0.5 0.1" 
-                      side="double"
-                      color="#FFFFFF">
-               </a-box>
-
-            </a-scene>
-            
+            </a-scene> 
             <!-- A-Frame end -->
           </article>
         </section>
