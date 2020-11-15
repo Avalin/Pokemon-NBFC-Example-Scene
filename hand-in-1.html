@@ -95,8 +95,7 @@
                 <img id="box_texture" src="textures/threejs/crate.png">
                 <img id="grass" src="textures/bounds/Grass.jpg">
                 <img id="grass_NRM" src="textures/bounds/Grass_NRM.jpg">
-                <img id="sky" src="textures/bounds/sky.png">
-                <img id="sky_NRM" src="textures/bounds/sky_NRM.png">
+                <img id="sky" src="textures/bounds/evening_sky.jpg">
                 <img id="wood_panel" src="textures/bounds/wood_panel.png">
                 <img id="wood_panel_NRM" src="textures/bounds/wood_panel_NRM.png">
               </a-assets>
@@ -113,22 +112,21 @@
               </a-entity>                
 
               <!-- Grass -->
-              <a-plane 
-                scale="5 5 1" 
+              <a-circle 
+                scale="10 10 1"  
+                radius="5"
                 rotation="-90 0 0" 
                 src="#grass"
-                repeat="1 1"
+                repeat="50 50"
                 normal-map="#grass_NRM"
                 normal-texture-repeat="1 1"
                 color="#FFFFFF">
-              </a-plane>
+              </a-circle>
               
               <!-- Sky -->  
               <a-sky 
                 src="#sky"
-                repeat="20 10"
-                normal-map="#sky_NRM"
-                normal-texture-repeat="20 10"
+                rotation="0 60 0" 
                 color="#FFFFFF">
                 
               </a-sky>
