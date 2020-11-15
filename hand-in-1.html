@@ -26,6 +26,9 @@
   <!-- A-Frame -->
 	<script src="https://aframe.io/releases/1.0.4/aframe.min.js"></script>
 
+  <!-- A-Frame Particle System -->
+  <script src="https://unpkg.com/aframe-particle-system-component@1.0.9/dist/aframe-particle-system-component.min.js"></script>
+  <script src="https://unpkg.com/aframe-environment-component/dist/aframe-environment-component.min.js"></script>
 </head>
 
 <body>
@@ -100,6 +103,8 @@
                 <img id="wood_panel_NRM" src="textures/bounds/wood_panel_NRM.png">
               </a-assets>
 
+              <a-entity position="0 2.25 -15" particle-system="preset: rain"></a-entity>
+ 
               <!-- Camera -->  
               <!-- Origin at 0 0 0 in VR -->  
               <!-- Origin at 0 1.6 0 in Desktop -->  
