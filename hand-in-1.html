@@ -95,6 +95,11 @@
             <a-scene embedded antialias="false">
               <!-- A-Frame Asset Manager -->
               <a-assets>
+                <!-- 3D Models -->
+                <a-asset-item id="CGrass-o" src="3dmodels/c-grass-patch/10438_Circular_Grass_Patch_v1_iterations-2.obj"></a-asset-item>
+                <a-asset-item id="CGrass-m" src="3dmodels/c-grass-patch/10438_Circular_Grass_Patch_v1_iterations-2.mtl"></a-asset-item>
+
+                <!-- Textures -->
                 <img id="box_texture" src="textures/threejs/crate.png">
                 <img id="grass" src="textures/bounds/Grass.jpg">
                 <img id="grass_NRM" src="textures/bounds/Grass_NRM.jpg">
@@ -103,8 +108,21 @@
                 <img id="wood_panel_NRM" src="textures/bounds/wood_panel_NRM.png">
               </a-assets>
 
-              <a-entity position="0 2.25 -15" particle-system="preset: rain"></a-entity>
- 
+              <!-- Sound: SFX & Music -->
+              <a-sound src="sounds/rain_loop.wav" volume="0.25" autoplay="true" loop="true" position="0 2 5"></a-sound>
+
+              <!-- Weather: Rainy -->
+              <a-entity position="0 2.25 -15" particle-system="preset: rain; color: #0000FF, #9999FF, #9999FF"></a-entity>
+              
+              <!-- Grass Patch -->
+              <a-entity 
+                position="0 -2 0"
+                rotation="-90 0 0"
+                scale="0.1 0.1 0.1"
+                obj-model="obj: #CGrass-o; mtl: #CGrass-m">
+              </a-entity>  
+
+
               <!-- Camera -->  
               <!-- Origin at 0 0 0 in VR -->  
               <!-- Origin at 0 1.6 0 in Desktop -->  
@@ -115,23 +133,11 @@
                   active="true">                
                 </a-camera>
               </a-entity>                
-
-              <!-- Grass -->
-              <a-circle 
-                scale="10 10 1"  
-                radius="5"
-                rotation="-90 0 0" 
-                src="#grass"
-                repeat="50 50"
-                normal-map="#grass_NRM"
-                normal-texture-repeat="1 1"
-                color="#FFFFFF">
-              </a-circle>
               
               <!-- Sky -->  
               <a-sky 
                 src="#sky"
-                rotation="0 60 0" 
+                rotation="0 -90 0" 
                 color="#FFFFFF">
                 
               </a-sky>
