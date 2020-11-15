@@ -89,15 +89,25 @@
         
           <article class="col-6">
             <!-- A-Frame start -->            
-            <a-scene embedded>
+            <a-scene embedded antialias="false">
               <!-- A-Frame Asset Manager -->
               <a-assets>
                 <img id="box_texture" src="textures/threejs/crate.png">
                 <img id="grass" src="textures/bounds/Grass.jpg">
                 <img id="grass_NRM" src="textures/bounds/Grass_NRM.jpg">
+                <img id="sky" src="textures/bounds/sky.png">
+                <img id="sky_NRM" src="textures/bounds/sky_NRM.png">
                 <img id="wood_panel" src="textures/bounds/wood_panel.png">
                 <img id="wood_panel_NRM" src="textures/bounds/wood_panel_NRM.png">
               </a-assets>
+                          
+              <a-sky 
+                src="#sky"
+                repeat="20 10"
+                normal-map="#sky_NRM"
+                normal-texture-repeat="20 10"
+                color="#FFFFFF">
+              </a-sky>
 
               <!-- Floor -->
               <a-plane 
@@ -153,11 +163,6 @@
                            open-ended="true"
                            color="#FFC65D">
                </a-cylinder>
-            
-                 
-               <a-sky 
-                      color="#ECECEC">
-               </a-sky>
                 
               <a-box 
                       position="0.1 0.5 -2"
