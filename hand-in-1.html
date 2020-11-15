@@ -99,6 +99,10 @@
                 <a-asset-item id="CGrass-o" src="3dmodels/c-grass-patch/10438_Circular_Grass_Patch_v1_iterations-2.obj"></a-asset-item>
                 <a-asset-item id="CGrass-m" src="3dmodels/c-grass-patch/10438_Circular_Grass_Patch_v1_iterations-2.mtl"></a-asset-item>
 
+                
+                <a-asset-item id="Spyro-o" src="3dmodels/Spyro/Spyro.obj"></a-asset-item>
+                <a-asset-item id="Spyro-m" src="3dmodels/Spyro/Spyro.mtl"></a-asset-item>
+
                 <!-- Textures -->
                 <img id="box_texture" src="textures/threejs/crate.png">
                 <img id="oWater" src="textures/liquid/OceanWater.jpg">
@@ -114,6 +118,7 @@
               <!-- Weather: Rainy -->
               <a-entity position="0 2.25 -15" particle-system="preset: rain; color: #0000FF, #9999FF, #9999FF"></a-entity>
               
+              <!-- Environment -->
               <!-- Grass Patch -->
               <a-entity 
                 position="0 -2 0"
@@ -134,6 +139,16 @@
                 normal-texture-repeat="25 25"
                 color="#FFFFFF">
               </a-circle>
+
+              <!-- 3D Objects -->
+              <!-- Spyro -->
+              <a-entity 
+                position="-1 -0.95 10"
+                rotation="0 180 0"
+                scale="0.2 0.2 0.2"
+                obj-model="obj: #Spyro-o; mtl: #Spyro-m"
+                color="#FFFFFF">
+              </a-entity>  
 
 
               <!-- Camera -->  
