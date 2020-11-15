@@ -14,3 +14,4 @@ newmtl 10438_Circular_Grass_Patch_v1
 	Ke 0.0000 0.0000 0.0000
 	map_Ka 10438_Circular_Grass_Patch_v1_Diffuse.jpg
 	map_Kd 10438_Circular_Grass_Patch_v1_Diffuse.jpg
+	norm 10438_Circular_Grass_Patch_v1_Normal.jpg

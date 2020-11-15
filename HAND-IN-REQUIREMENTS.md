@@ -31,7 +31,7 @@ Create a 3D world by loading 3D models, the 3D models can be downloaded from the
 They must have textures. They can have animations. Be sure to choose the right format for the web.
 
 6.
-Setup camera to user-height and control position from camera in entity
+Setup camera to user-height and control position on camera in entity
 
 7.
 Setup lights (at least one of each) and shadows. Use the frame inspector ctrl-alt-i to help 
@@ -39,7 +39,7 @@ position and control the lights in an easy way. Then copy the html code to your 
 
 8.
 Setup handlers for animation and show basic coded animations on your models, lights etc.
-------------------------------------------------------------------------------------------------------------------------------
+-----------------------------------------------------------------------------
 
 Hand-in 2
 Expectations for hand-in:
@@ -60,8 +60,7 @@ In this hand-in you must show that you can:
 9. Add tracked controls
 10. Write and use a custom component with standard methods like init etc.
 
-Your documentation here is the HTML website with javascript files and also one (1) video showing 
-VR headset and controllers in use. 
+Your documentation here is the HTML website with javascript files and also one (1) video showing VR headset and controllers in use. 
 
 You must integrate the video in the webpage and hand-in the 
 complete solution. 
