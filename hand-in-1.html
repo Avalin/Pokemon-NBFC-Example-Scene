@@ -117,6 +117,8 @@
  
                 <a-asset-item id="Mew-o" src="3dmodels/Characters/Mew/Mew.obj"></a-asset-item>
                 <a-asset-item id="Mew-m" src="3dmodels/Characters/Mew/Mew.mtl"></a-asset-item>
+
+                <a-asset-item id="Ditto-gltf" src="3dmodels/Characters/Ditto/ditto.gltf"></a-asset-item>
  
                 <!-- Textures -->
                 <img id="box_texture" src="textures/threejs/crate.png">
@@ -375,6 +377,15 @@
               scale="0.075 0.075 0.075"  
               shadow="cast: true"
               obj-model="obj: #Mew-o; mtl: #Mew-m"
+              color="#FFFFFF">
+              </a-entity> 
+
+              <a-entity              
+              position="0 0 0"
+              rotation="0 0 0"
+              scale="1 1 1"  
+              shadow="cast: true"
+              gltf-model="#Ditto-gltf"
               color="#FFFFFF">
               </a-entity> 
 
