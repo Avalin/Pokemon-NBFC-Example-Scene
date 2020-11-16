@@ -126,6 +126,8 @@
                 <img id="sky" src="textures/bounds/evening_sky.jpg">
                 <img id="wood_panel" src="textures/bounds/wood_panel.png">
                 <img id="wood_panel_NRM" src="textures/bounds/wood_panel_NRM.png">
+                <img id="teak" src="textures/bounds/teak.png">
+                <img id="teal_NRM" src="textures/bounds/teak_NRM.png">
               </a-assets>
 
               <!-- Sound: SFX & Music -->
@@ -210,8 +212,33 @@
 
               <!-- Buildings -->
               <!-- House -->
-              <!-- Floor -->
-            
+              <a-entity id="house">
+                <!-- Floor -->
+                <a-box 
+                  position="-1 -1.25 -8"
+                  rotation="0 0 0"
+                  scale="6 0.2 6"
+                  shadow="cast: true"
+                  src="#teak"
+                  repeat="2 2"
+                  normal-map="#teak_NRM"
+                  normal-texture-repeat="2 2"
+                  color="#FFFFFF">
+                </a-box>  
+
+                <a-box 
+                  position="-1 -1.25 -8"
+                  rotation="0 0 0"
+                  scale="0.2 6 6"
+                  shadow="cast: true"
+                  src="#wood_panel"
+                  repeat="2 2"
+                  normal-map="#wood_panel_NRM"
+                  normal-texture-repeat="2 2"
+                  color="#FFFFFF">
+              </a-box>  
+              </a-entity>
+
               <!-- Characters -->
               <!-- Spyro -->
               <a-entity 
