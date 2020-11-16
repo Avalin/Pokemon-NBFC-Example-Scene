@@ -33,7 +33,7 @@ They must have textures. They can have animations. Be sure to choose the right f
 6. [✔]
 Setup camera to user-height and control position on camera in entity
 
-7. [x]
+7. [-]
 Setup lights (at least one of each) and shadows. Use the frame inspector ctrl-alt-i to help 
 position and control the lights in an easy way. Then copy the html code to your file. 
 

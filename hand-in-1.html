@@ -141,14 +141,22 @@
                 type="ambient"
                 color="#FFFFFF">
               </a-light>  
-              
-              <!-- Point Light --> 
-              <a-light 
-                type="point"
-                color="#FFFFFF"
-                castShadow="true"
-                position="0 0 0">
-              </a-light>  
+                       
+              <!-- Point Light Sphere --> 
+              <a-sphere 
+              position="0 2 0"
+              rotation="0 0 0"
+              scale="0.25 0.25 0.25"  
+              shadow="cast: true"
+              color="#FFFFFF">
+                <!-- Point Light --> 
+                <a-light 
+                  type="point"
+                  color="#FFFFFF"
+                  castShadow="true"
+                  position="0 0 0">
+                </a-light>                
+              </a-sphere> 
 
               <!-- Sky -->  
               <a-sky 
@@ -156,7 +164,7 @@
                 src="#sky"
                 rotation="0 60 0" 
                 color="#FFFFFF">
-                <!-- Point Light --> 
+                <!-- Directional Light --> 
                 <a-light 
                   animation="property: light.color;  from: #FF4444; to: #4444FF; dur: 60000; dir: alternate; easing: linear; loop: true"                  
                   animation__intensity="property: light.intensity;  from: 1; to: 0.5; dur: 60000; dir: alternate; easing: linear; loop: true" 
@@ -169,6 +177,7 @@
 
               <!-- Grass Island -->
               <a-entity 
+                shadow="receive: true"
                 position="0 -2 0"
                 rotation="-90 0 0"
                 scale="0.075 0.075 0.075"
@@ -177,6 +186,7 @@
 
               <!-- Water -->
               <a-circle 
+                shadow="receive: true"
                 position="0 -1.5 0"
                 scale="10 10 1"  
                 radius="5"
@@ -193,16 +203,22 @@
               position="-7 -1.5 25"
               rotation="0 180 0"
               scale="2 2 2"
+              shadow="cast: true"
               obj-model="obj: #SouthernIsland-o; mtl: #SouthernIsland-m"
               color="#FFFFFF">
             </a-entity>  
 
+              <!-- Buildings -->
+              <!-- House -->
+              <!-- Floor -->
+            
               <!-- Characters -->
               <!-- Spyro -->
               <a-entity 
                 position="-1 -1.10 8"
                 rotation="0 180 0"
                 scale="0.1 0.1 0.1"
+                shadow="cast: true"
                 obj-model="obj: #Spyro-o; mtl: #Spyro-m"
                 color="#FFFFFF">
               </a-entity>  
@@ -211,6 +227,7 @@
                 position="-1 -1.15 -1"
                 rotation="0 0 0"
                 scale="0.15 0.15 0.15"
+                shadow="cast: true"
                 obj-model="obj: #Bulbasaur-o; mtl: #Bulbasaur-m"
                 color="#FFFFFF">
               </a-entity>  
@@ -219,6 +236,7 @@
               position="-2.5 -1.15 -0.25"
               rotation="-90 -60 0"
               scale="0.25 0.25 0.25"
+              shadow="cast: true"
               obj-model="obj: #Charmander-o; mtl: #Charmander-m"
               color="#FFFFFF">
               </a-entity>  
@@ -227,16 +245,18 @@
               position="1.0 -1.15 -0.25"
               rotation="-90 230 0"
               scale="0.25 0.25 0.25"  
+              shadow="cast: true"
               obj-model="obj: #Squirtle-o; mtl: #Squirtle-m"
               color="#FFFFFF">
               </a-entity> 
-           
+
               <a-entity              
               animation="property: rotation;  from: -25 60 0; to: 335 60 0; dur: 2000; delay: 2000; easing: easeInSine; loop: true" 
               animation__position="property: position;  from: -4 1.25 2; to: -4 0 2; dur: 2000;  dir: alternate; easing: easeInSine; loop: true"
               position="-4 1.25 2"
               rotation="-25 60 0"
               scale="0.075 0.075 0.075"  
+              shadow="cast: true"
               obj-model="obj: #Mew-o; mtl: #Mew-m"
               color="#FFFFFF">
               </a-entity> 
