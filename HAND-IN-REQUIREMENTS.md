@@ -14,23 +14,23 @@ This is up to you to decide.
 It must be very clear to the user what is expected of hardware like headset and controllers.
 
 In this hand-in you must: 
-1.
+1. [✔]
 Build a website with at least one HTML page with CSS and Javascript. (You are allowed to use Bootstrap and Jquery or the like and find templates online.)  
 
-2.
+2. [✔]
 Setup a standard file structure for the web in your system and also create a folder structure for components.
 
-3.
+3. [✔]
 Integrate A-Frame in your HTML page to make it look natural for the web.
 
-4.
+4. [✔]
 Develop/build a scene, 
 
-5.
+5. [✔]
 Create a 3D world by loading 3D models, the 3D models can be downloaded from the web, asset store etc. 
 They must have textures. They can have animations. Be sure to choose the right format for the web.
 
-6.
+6. [✔]
 Setup camera to user-height and control position on camera in entity
 
 7.
