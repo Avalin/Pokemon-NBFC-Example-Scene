@@ -1,0 +1,189 @@
+newmtl Southern_Island:Material
+	Ns 10.0000
+	Ni 1.5000
+	d 1.0000
+	Tr 0.0000
+	Tf 1.0000 1.0000 1.0000 
+	illum 4
+	Ka 0.5882 0.5882 0.5882
+	Kd 0.5882 0.5882 0.5882
+	Ks 0.0450 0.0450 0.0450
+	Ke 0.0000 0.0000 0.0000
+map_Kd Material.png
+map_Ka Material.png
+
+newmtl Southern_Island:Material7
+	Ns 10.0000
+	Ni 1.5000
+	d 1.0000
+	Tr 0.0000
+	Tf 1.0000 1.0000 1.0000 
+	illum 4
+	Ka 0.5882 0.5882 0.5882
+	Kd 0.5882 0.5882 0.5882
+	Ks 0.0450 0.0450 0.0450
+	Ke 0.0000 0.0000 0.0000
+map_Kd Material7.png
+map_Ka Material7.png
+
+newmtl Southern_Island:Material8
+	Ns 10.0000
+	Ni 1.5000
+	d 1.0000
+	Tr 0.0000
+	Tf 1.0000 1.0000 1.0000 
+	illum 4
+	Ka 0.5882 0.5882 0.5882
+	Kd 0.5882 0.5882 0.5882
+	Ks 0.0450 0.0450 0.0450
+	Ke 0.0000 0.0000 0.0000
+map_Kd Material8.png
+map_Ka Material8.png
+
+newmtl Southern_Island:cliff
+illum 4
+	Ns 10.0000
+	Ni 1.5000
+	d 1.0000
+	Tr 0.0000
+	Tf 1.0000 1.0000 1.0000 
+	illum 4
+	Ka 0.5882 0.5882 0.5882
+	Kd 0.5882 0.5882 0.5882
+	Ks 0.0450 0.0450 0.0450
+	Ke 0.0000 0.0000 0.0000
+map_Kd cliff.png
+map_Ka cliff.png
+
+newmtl Southern_Island:grass02
+illum 4
+	Ns 10.0000
+	Ni 1.5000
+	d 1.0000
+	Tr 0.0000
+	Tf 1.0000 1.0000 1.0000 
+	illum 4
+	Ka 0.5882 0.5882 0.5882
+	Kd 0.5882 0.5882 0.5882
+	Ks 0.0450 0.0450 0.0450
+	Ke 0.0000 0.0000 0.0000
+map_Kd grass02.png
+map_Ka grass02.png
+
+newmtl Southern_Island:mount_02
+illum 4
+	Ns 10.0000
+	Ni 1.5000
+	d 1.0000
+	Tr 0.0000
+	Tf 1.0000 1.0000 1.0000 
+	illum 4
+	Ka 0.5882 0.5882 0.5882
+	Kd 0.5882 0.5882 0.5882
+	Ks 0.0450 0.0450 0.0450
+	Ke 0.0000 0.0000 0.0000
+map_Kd mount_02.png
+map_Ka mount_02.png
+
+newmtl Southern_Island:mount_3
+illum 4
+	Ns 10.0000
+	Ni 1.5000
+	d 1.0000
+	Tr 0.0000
+	Tf 1.0000 1.0000 1.0000 
+	illum 4
+	Ka 0.5882 0.5882 0.5882
+	Kd 0.5882 0.5882 0.5882
+	Ks 0.0450 0.0450 0.0450
+	Ke 0.0000 0.0000 0.0000
+map_Kd mount_3.png
+map_Ka mount_3.png
+
+newmtl Southern_Island:mount_4
+illum 4
+	Ns 10.0000
+	Ni 1.5000
+	d 1.0000
+	Tr 0.0000
+	Tf 1.0000 1.0000 1.0000 
+	illum 4
+	Ka 0.5882 0.5882 0.5882
+	Kd 0.5882 0.5882 0.5882
+	Ks 0.0450 0.0450 0.0450
+	Ke 0.0000 0.0000 0.0000
+map_Kd wood_3.png
+map_Ka wood_3.png
+
+newmtl Southern_Island:nami_kage
+illum 4
+	Ns 10.0000
+	Ni 1.5000
+	d 1.0000
+	Tr 0.0000
+	Tf 1.0000 1.0000 1.0000 
+	illum 4
+	Ka 0.5882 0.5882 0.5882
+	Kd 0.5882 0.5882 0.5882
+	Ks 0.0450 0.0450 0.0450
+	Ke 0.0000 0.0000 0.0000
+map_Kd nami_kage.png
+map_Ka nami_kage.png
+
+newmtl Southern_Island:sands
+illum 4
+	Ns 10.0000
+	Ni 1.5000
+	d 1.0000
+	Tr 0.0000
+	Tf 1.0000 1.0000 1.0000 
+	illum 4
+	Ka 0.5882 0.5882 0.5882
+	Kd 0.5882 0.5882 0.5882
+	Ks 0.0450 0.0450 0.0450
+	Ke 0.0000 0.0000 0.0000
+map_Kd sands.png
+map_Ka sands.png
+
+newmtl Southern_Island:wood_00
+illum 4
+	Ns 10.0000
+	Ni 1.5000
+	d 1.0000
+	Tr 0.0000
+	Tf 1.0000 1.0000 1.0000 
+	illum 4
+	Ka 0.5882 0.5882 0.5882
+	Kd 0.5882 0.5882 0.5882
+	Ks 0.0450 0.0450 0.0450
+	Ke 0.0000 0.0000 0.0000
+map_Kd wood_00.png
+map_Ka wood_00.png
+
+newmtl Southern_Island:wood_2
+	Ns 10.0000
+	Ni 1.5000
+	d 1.0000
+	Tr 0.0000
+	Tf 1.0000 1.0000 1.0000 
+	illum 4
+	Ka 0.5882 0.5882 0.5882
+	Kd 0.5882 0.5882 0.5882
+	Ks 0.0450 0.0450 0.0450
+	Ke 0.0000 0.0000 0.0000
+map_Kd wood_2.png
+map_Ka wood_2.png
+
+newmtl Southern_Island:wood_5
+	Ns 10.0000
+	Ni 1.5000
+	d 1.0000
+	Tr 0.0000
+	Tf 1.0000 1.0000 1.0000 
+	illum 4
+	Ka 0.5882 0.5882 0.5882
+	Kd 0.5882 0.5882 0.5882
+	Ks 0.0450 0.0450 0.0450
+	Ke 0.0000 0.0000 0.0000
+map_Kd wood_3.png
+map_Ka wood_3.png

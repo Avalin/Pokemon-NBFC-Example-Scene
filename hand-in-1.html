@@ -95,13 +95,16 @@
             <a-scene embedded antialias="false">
               <!-- A-Frame Asset Manager -->
               <a-assets>
+
                 <!-- 3D Models -->
                 <a-asset-item id="CGrass-o" src="3dmodels/c-grass-patch/10438_Circular_Grass_Patch_v1_iterations-2.obj"></a-asset-item>
                 <a-asset-item id="CGrass-m" src="3dmodels/c-grass-patch/10438_Circular_Grass_Patch_v1_iterations-2.mtl"></a-asset-item>
-
                 
                 <a-asset-item id="Spyro-o" src="3dmodels/Spyro/Spyro.obj"></a-asset-item>
                 <a-asset-item id="Spyro-m" src="3dmodels/Spyro/Spyro.mtl"></a-asset-item>
+
+                <a-asset-item id="SouthernIsland-o" src="3dmodels/sonic-island/Southern_Island.obj"></a-asset-item>
+                <a-asset-item id="SouthernIsland-m" src="3dmodels/sonic-island/Southern_Island.mtl"></a-asset-item>
 
                 <!-- Textures -->
                 <img id="box_texture" src="textures/threejs/crate.png">
@@ -113,7 +116,7 @@
               </a-assets>
 
               <!-- Sound: SFX & Music -->
-              <a-sound src="sounds/rain_loop.wav" volume="0.25" autoplay="true" loop="true" positional="0 "></a-sound>
+              <a-sound src="sounds/rain_loop.wav" volume="1" autoplay="true" loop="true" position="0 0 0"></a-sound>
 
               <!-- Weather: Rainy -->
               <a-entity position="0 2.25 -15" particle-system="preset: rain; color: #0000FF, #9999FF, #9999FF"></a-entity>
@@ -139,6 +142,14 @@
                 normal-texture-repeat="25 25"
                 color="#FFFFFF">
               </a-circle>
+
+              <a-entity 
+              position="-7 -1.5 25"
+              rotation="0 180 0"
+              scale="2 2 2"
+              obj-model="obj: #SouthernIsland-o; mtl: #SouthernIsland-m"
+              color="#FFFFFF">
+            </a-entity>  
 
               <!-- 3D Objects -->
               <!-- Spyro -->
