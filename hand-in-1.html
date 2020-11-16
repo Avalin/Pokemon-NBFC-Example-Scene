@@ -97,14 +97,23 @@
               <a-assets>
 
                 <!-- 3D Models -->
-                <a-asset-item id="CGrass-o" src="3dmodels/c-grass-patch/10438_Circular_Grass_Patch_v1_iterations-2.obj"></a-asset-item>
-                <a-asset-item id="CGrass-m" src="3dmodels/c-grass-patch/10438_Circular_Grass_Patch_v1_iterations-2.mtl"></a-asset-item>
-                
-                <a-asset-item id="Spyro-o" src="3dmodels/Spyro/Spyro.obj"></a-asset-item>
-                <a-asset-item id="Spyro-m" src="3dmodels/Spyro/Spyro.mtl"></a-asset-item>
+                <a-asset-item id="CGrass-o" src="3dmodels/Environment/c-grass-patch/10438_Circular_Grass_Patch_v1_iterations-2.obj"></a-asset-item>
+                <a-asset-item id="CGrass-m" src="3dmodels/Environment/c-grass-patch/10438_Circular_Grass_Patch_v1_iterations-2.mtl"></a-asset-item>
 
-                <a-asset-item id="SouthernIsland-o" src="3dmodels/sonic-island/Southern_Island.obj"></a-asset-item>
-                <a-asset-item id="SouthernIsland-m" src="3dmodels/sonic-island/Southern_Island.mtl"></a-asset-item>
+                <a-asset-item id="SouthernIsland-o" src="3dmodels/Environment/sonic-island/Southern_Island.obj"></a-asset-item>
+                <a-asset-item id="SouthernIsland-m" src="3dmodels/Environment/sonic-island/Southern_Island.mtl"></a-asset-item>
+                
+                <a-asset-item id="Spyro-o" src="3dmodels/Characters/Spyro/Spyro.obj"></a-asset-item>
+                <a-asset-item id="Spyro-m" src="3dmodels/Characters/Spyro/Spyro.mtl"></a-asset-item>
+                
+                <a-asset-item id="Bulbasaur-o" src="3dmodels/Characters/Bulbasaur/Bulbasaur.obj"></a-asset-item>
+                <a-asset-item id="Bulbasaur-m" src="3dmodels/Characters/Bulbasaur/Bulbasaur.mtl"></a-asset-item>
+ 
+                <a-asset-item id="Charmander-o" src="3dmodels/Characters/Charmander/Hitokage.obj"></a-asset-item>
+                <a-asset-item id="Charmander-m" src="3dmodels/Characters/Charmander/Hitokage.mtl"></a-asset-item>
+
+                <a-asset-item id="Squirtle-o" src="3dmodels/Characters/Squirtle/Zenigame.obj"></a-asset-item>
+                <a-asset-item id="Squirtle-m" src="3dmodels/Characters/Squirtle/Zenigame.mtl"></a-asset-item>
 
                 <!-- Textures -->
                 <img id="box_texture" src="textures/threejs/crate.png">
@@ -151,7 +160,7 @@
               color="#FFFFFF">
             </a-entity>  
 
-              <!-- 3D Objects -->
+              <!-- Characters -->
               <!-- Spyro -->
               <a-entity 
                 position="-1 -1.10 8"
@@ -161,6 +170,31 @@
                 color="#FFFFFF">
               </a-entity>  
 
+              <a-entity 
+                position="-1 -1.15 -1"
+                rotation="0 0 0"
+                scale="0.15 0.15 0.15"
+                obj-model="obj: #Bulbasaur-o; mtl: #Bulbasaur-m"
+                color="#FFFFFF">
+              </a-entity>  
+
+              <a-entity 
+              position="-2.5 -1.15 -0.25"
+              rotation="-90 -60 0"
+              scale="0.25 0.25 0.25"
+              obj-model="obj: #Charmander-o; mtl: #Charmander-m"
+              color="#FFFFFF">
+            </a-entity>  
+
+            <a-entity 
+            position="1.0 -1.15 -0.25"
+            rotation="-90 230 0"
+            scale="0.25 0.25 0.25"  
+            obj-model="obj: #Squirtle-o; mtl: #Squirtle-m"
+            color="#FFFFFF">
+          </a-entity>  
+
+            
 
               <!-- Camera -->  
               <!-- Origin at 0 0 0 in VR -->  
