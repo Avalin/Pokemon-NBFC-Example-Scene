@@ -136,10 +136,15 @@
               <!-- Weather: Rainy -->
               <a-entity position="0 2.25 -15" particle-system="preset: rain; color: #0000FF, #9999FF, #9999FF"></a-entity>
               
-              <!-- Environment -->             
+              <!-- Environment -->
+
+              <!-- Spot Light --> 
+              <a-entity light="type: spot; color: #c39292; castShadow: true; intensity: 2.2; penumbra: 1; angle: 45" position="-1.06044 1.62229 8.66293" rotation="-90 0 0">
+              </a-entity>
+
               <!-- Ambient Light --> 
               <a-light 
-                animation="property: light.intensity;  from: 1; to: 0.2; dur: 60000; dir: alternate; easing: linear; loop: true" 
+                animation="property: light.intensity;  from: 1; to: 0.2; dur: 45000; dir: alternate; easing: linear; loop: true" 
                 type="ambient"
                 color="#FFFFFF">
               </a-light>  
@@ -153,7 +158,7 @@
               color="#FFFFFF">
                 <!-- Point Light --> 
                 <a-entity 
-                  animation="property: light.intensity;  from: 0; to: 1; dur: 60000; dir: alternate; easing: linear; loop: true"  
+                  animation="property: light.intensity;  from: 0; to: 1; dur: 45000; dir: alternate; easing: linear; loop: true"  
                   light="type:  point;  color:  #ff9500;  castShadow:  true"
                   position="0 0 0">
                 </a-entity>                
@@ -161,7 +166,7 @@
 
               <!-- Sky -->  
               <a-sky 
-                animation="property: material.color;  from: #FFFFFF; to: #333333; dur: 60000; dir: alternate; easing: linear; loop: true" 
+                animation="property: material.color;  from: #FFFFFF; to: #333333; dur: 45000; dir: alternate; easing: linear; loop: true" 
                 src="#sky"
                 rotation="0 60 0" 
                 color="#FFFFFF">
@@ -169,8 +174,8 @@
                 <a-entity light="type: directional;
                                  distance: 10000;
                                  castShadow: true" 
-                  animation="property: light.color;  from: #FF4444; to: #4444FF; dur: 60000; dir: alternate; easing: linear; loop: true"                  
-                  animation__intensity="property: light.intensity;  from: 1; to: 0.5; dur: 60000; dir: alternate; easing: linear; loop: true" 
+                  animation="property: light.color;  from: #FF4444; to: #4444FF; dur: 45000; dir: alternate; easing: linear; loop: true"                  
+                  animation__intensity="property: light.intensity;  from: 1; to: 0.5; dur: 45000; dir: alternate; easing: linear; loop: true" 
                   position="390 300 0">
                 </a-entity>
               </a-sky>
@@ -307,7 +312,7 @@
                 <!-- Roof -->
                 <a-box 
                   position="-1 2.65 -8"
-                  rotation="0 180 0"
+                  rotation="0 0 0"
                   scale="6 0.2 6"
                   shadow="cast: true"
                   src="#wood_panel"
