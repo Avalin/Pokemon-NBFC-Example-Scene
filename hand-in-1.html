@@ -29,6 +29,7 @@
   <!-- A-Frame Particle System -->
   <script src="https://unpkg.com/aframe-particle-system-component@1.0.9/dist/aframe-particle-system-component.min.js"></script>
   <script src="https://unpkg.com/aframe-environment-component/dist/aframe-environment-component.min.js"></script>
+
 </head>
 
 <body>
@@ -122,6 +123,7 @@
                 <img id="box_texture" src="textures/threejs/crate.png">
                 <img id="oWater" src="textures/liquid/OceanWater.jpg">
                 <img id="oWater_NRM" src="textures/liquid/OceanWater_NRM.jpg">
+                <img id="oWater_CST" src="textures/liquid/caustics.png">
                 <img id="sky" src="textures/bounds/evening_sky.jpg">
                 <img id="wood_panel" src="textures/bounds/wood_panel.png">
                 <img id="wood_panel_NRM" src="textures/bounds/wood_panel_NRM.png">
@@ -136,15 +138,24 @@
               <!-- Environment -->             
 
               <!-- Ambient Light --> 
-              <a-entity 
-                animation="property: light.color;  from: #FFFFFF; to: #333333; dur: 30000; dir: alternate; easing: linear; loop: true" 
-                light="type: ambient;
-                color: #FFFFFF">
-            </a-entity>   
+              <a-light 
+                animation="property: light.intensity;  from: 1; to: 0.2; dur: 60000; dir: alternate; easing: linear; loop: true" 
+                type="ambient"
+                color="#FFFFFF">
+              </a-light>   
+
+              <!-- Directional Light --> 
+              <a-light 
+                type="directional"
+                intensity="0.6"
+                castShadow="true"
+                position="0 1 0"
+                color="#FFFFFF">
+              </a-light>   
 
               <!-- Sky -->  
               <a-sky 
-                animation="property: material.color;  from: #FFFFFF; to: #333333; dur: 30000; dir: alternate; easing: linear; loop: true" 
+                animation="property: material.color;  from: #FFFFFF; to: #333333; dur: 60000; dir: alternate; easing: linear; loop: true" 
                 src="#sky"
                 rotation="0 60 0" 
                 color="#FFFFFF">
@@ -169,6 +180,8 @@
                 repeat="25 25"
                 normal-map="#oWater_NRM"
                 normal-texture-repeat="25 25"
+                material="shader: water-caustics"
+                causticTexture="#oWater_CST"
                 color="#FFFFFF">
               </a-circle>
 
