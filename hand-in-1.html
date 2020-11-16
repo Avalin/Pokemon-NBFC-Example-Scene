@@ -153,7 +153,7 @@
               color="#FFFFFF">
                 <!-- Point Light --> 
                 <a-entity 
-                  animation="property: light.intensity;  from: 0.3; to: 1; dur: 60000; dir: alternate; easing: linear; loop: true"  
+                  animation="property: light.intensity;  from: 0; to: 1; dur: 60000; dir: alternate; easing: linear; loop: true"  
                   light="type:  point;  color:  #ff9500;  castShadow:  true"
                   position="0 0 0">
                 </a-entity>                
@@ -166,15 +166,14 @@
                 rotation="0 60 0" 
                 color="#FFFFFF">
                 <!-- Directional Light --> 
-                <a-light 
+                <a-entity light="type: directional;
+                                 target: grass-island;
+                                 distance: 10000;
+                                 castShadow: true" 
                   animation="property: light.color;  from: #FF4444; to: #4444FF; dur: 60000; dir: alternate; easing: linear; loop: true"                  
                   animation__intensity="property: light.intensity;  from: 1; to: 0.5; dur: 60000; dir: alternate; easing: linear; loop: true" 
-                  type="spot"
-                  target="grass-island"
-                  distance="10000"
-                  castShadow="true"
                   position="390 300 0">
-                </a-light>
+                </a-entity>
               </a-sky>
 
               <!-- Grass Island -->
