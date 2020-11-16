@@ -131,7 +131,7 @@
               </a-assets>
 
               <!-- Sound: SFX & Music -->
-              <a-sound src="sounds/rain_loop.wav" volume="1" autoplay="true" loop="true" position="0 2 0"></a-sound>
+              <a-sound sound="src:  sounds/rain_loop.wav;  autoplay:  true;  loop: true; volume: 0.25; positional:  false"></a-sound>
 
               <!-- Weather: Rainy -->
               <a-entity position="0 2.25 -15" particle-system="preset: rain; color: #0000FF, #9999FF, #9999FF"></a-entity>
@@ -146,18 +146,17 @@
                        
               <!-- Point Light Sphere --> 
               <a-sphere 
-              position="0 2 0"
+              position="-1 1.75 -5.5"
               rotation="0 0 0"
               scale="0.25 0.25 0.25"  
               shadow="cast: true"
               color="#FFFFFF">
                 <!-- Point Light --> 
-                <a-light 
-                  type="point"
-                  color="#FFFFFF"
-                  castShadow="true"
+                <a-entity 
+                  animation="property: light.intensity;  from: 0.3; to: 1; dur: 60000; dir: alternate; easing: linear; loop: true"  
+                  light="type:  point;  color:  #ff9500;  castShadow:  true"
                   position="0 0 0">
-                </a-light>                
+                </a-entity>                
               </a-sphere> 
 
               <!-- Sky -->  
@@ -170,7 +169,8 @@
                 <a-light 
                   animation="property: light.color;  from: #FF4444; to: #4444FF; dur: 60000; dir: alternate; easing: linear; loop: true"                  
                   animation__intensity="property: light.intensity;  from: 1; to: 0.5; dur: 60000; dir: alternate; easing: linear; loop: true" 
-                  type="directional"
+                  type="spot"
+                  target="grass-island"
                   distance="10000"
                   castShadow="true"
                   position="390 300 0">
@@ -179,6 +179,7 @@
 
               <!-- Grass Island -->
               <a-entity 
+                id="grass-island"
                 shadow="receive: true"
                 position="0 -2 0"
                 rotation="-90 0 0"
@@ -213,11 +214,12 @@
               <!-- Buildings -->
               <!-- House -->
               <a-entity id="house">
+
                 <!-- Floor -->
                 <a-box 
                   position="-1 -1.25 -8"
                   rotation="0 0 0"
-                  scale="6 0.2 6"
+                  scale="6 0.2 5.95"
                   shadow="cast: true"
                   src="#teak"
                   repeat="2 2"
@@ -226,17 +228,97 @@
                   color="#FFFFFF">
                 </a-box>  
 
+                <!-- Back Wall -->
                 <a-box 
-                  position="-1 -1.25 -8"
-                  rotation="0 0 0"
-                  scale="0.2 6 6"
+                  position="-1 0.75 -10.90"
+                  rotation="0 180 0"
+                  scale="6 4 0.2"
                   shadow="cast: true"
                   src="#wood_panel"
                   repeat="2 2"
                   normal-map="#wood_panel_NRM"
                   normal-texture-repeat="2 2"
                   color="#FFFFFF">
-              </a-box>  
+                </a-box>  
+
+                <!-- Front Wall -->
+                <a-entity id="front-wall">
+                  <a-box 
+                    position="1 0.75 -5.10"
+                    rotation="0 0 0"
+                    scale="2 4 0.2"
+                    shadow="cast: true"
+                    src="#wood_panel"
+                    repeat="2 2"
+                    normal-map="#wood_panel_NRM"
+                    normal-texture-repeat="2 2"
+                    color="#FFFFFF">
+                  </a-box> 
+
+                  <a-box 
+                    position="-1 2.10 -5.10"
+                    rotation="0 0 0"
+                    scale="2 1 0.2"
+                    shadow="cast: true"
+                    src="#wood_panel"
+                    repeat="2 2"
+                    normal-map="#wood_panel_NRM"
+                    normal-texture-repeat="2 2"
+                    color="#FFFFFF">
+                  </a-box> 
+                  
+                  <a-box 
+                    position="-3 0.75 -5.10"
+                    rotation="0 0 0"
+                    scale="2 4 0.2"
+                    shadow="cast: true"
+                    src="#wood_panel"
+                    repeat="2 2"
+                    normal-map="#wood_panel_NRM"
+                    normal-texture-repeat="2 2"
+                    color="#FFFFFF">
+                </a-entity>
+
+
+                <!-- Right Wall -->
+                <a-box 
+                  position="2.10 0.75 -8"
+                  rotation="0 0 0"
+                  scale="0.2 4 6"
+                  shadow="cast: true"
+                  src="#wood_panel"
+                  repeat="2 2"
+                  normal-map="#wood_panel_NRM"
+                  normal-texture-repeat="2 2"
+                  color="#FFFFFF">
+                </a-box>  
+
+                <!-- Left Wall -->
+                <a-box 
+                  position="-4.10 0.75 -8"
+                  rotation="0 0 0"
+                  scale="0.2 4 6"
+                  shadow="cast: true"
+                  src="#wood_panel"
+                  repeat="2 2"
+                  normal-map="#wood_panel_NRM"
+                  normal-texture-repeat="2 2"
+                  color="#FFFFFF">
+                </a-box>  
+
+                <!-- Roof -->
+                <a-box 
+                  position="-1 2.65 -8"
+                  rotation="0 180 0"
+                  scale="6 0.2 6"
+                  shadow="cast: true"
+                  src="#wood_panel"
+                  repeat="2 2"
+                  normal-map="#wood_panel_NRM"
+                  normal-texture-repeat="2 2"
+                  color="#FFFFFF">
+                </a-box>  
+              
               </a-entity>
 
               <!-- Characters -->
