@@ -134,13 +134,12 @@
               <a-entity position="0 2.25 -15" particle-system="preset: rain; color: #0000FF, #9999FF, #9999FF"></a-entity>
               
               <!-- Environment -->             
-
               <!-- Ambient Light --> 
-              <a-entity 
-                animation="property: light.color;  from: #FFFFFF; to: #333333; dur: 30000; dir: alternate; easing: linear; loop: true" 
-                light="type: ambient;
-                color: #FFFFFF">
-            </a-entity>   
+              <a-light 
+                animation="property: light.intensity;  from: 1; to: 0.2; dur: 60000; dir: alternate; easing: linear; loop: true" 
+                type="ambient"
+                color="#FFFFFF">
+              </a-light>   
 
               <!-- Sky -->  
               <a-sky 
