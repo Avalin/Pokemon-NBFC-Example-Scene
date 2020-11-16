@@ -139,14 +139,14 @@
                 animation="property: light.intensity;  from: 1; to: 0.2; dur: 60000; dir: alternate; easing: linear; loop: true" 
                 type="ambient"
                 color="#FFFFFF">
-              </a-light>   
-
+              </a-light>  
+              
               <!-- Point Light --> 
               <a-light 
                 type="point"
-                distance="10"
+                color="#FFFFFF"
                 position="0 0 0">
-              </a-light>
+              </a-light>  
 
               <!-- Sky -->  
               <a-sky 
@@ -154,7 +154,14 @@
                 src="#sky"
                 rotation="0 60 0" 
                 color="#FFFFFF">
-                
+                <!-- Point Light --> 
+                <a-light 
+                  animation="property: light.color;  from: #FF4444; to: #4444FF; dur: 60000; dir: alternate; easing: linear; loop: true"                  
+                  animation__intensity="property: light.intensity;  from: 1; to: 0.5; dur: 60000; dir: alternate; easing: linear; loop: true" 
+                  type="directional"
+                  distance="10000"
+                  position="390 300 0">
+                </a-light>
               </a-sky>
 
               <!-- Grass Island -->
