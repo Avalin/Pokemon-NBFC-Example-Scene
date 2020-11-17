@@ -29,6 +29,7 @@
 </head>
 
 <body>
+  <script src="js/a-frame-custom-shaders.js"></script> 
   <script src="js/hand-in-2.js"></script> 
 
   <h1 class="site-heading text-center text-white d-none d-lg-block">
@@ -88,17 +89,317 @@
           </nav>
         
           <article class="col-6">
-            <!-- A-Frame start -->
-            
-            <a-scene embedded>
-              <a-box position="-1 0.5 -3" rotation="0 45 0" color="#4CC3D9"></a-box>
+            <!-- A-Frame start -->            
+            <a-scene embedded antialias="false">
+              <!-- A-Frame Asset Manager -->
+              <a-assets>
+
+                <!-- 3D Models -->
+                <a-asset-item id="CGrass-o" src="3dmodels/Environment/c-grass-patch/10438_Circular_Grass_Patch_v1_iterations-2.obj"></a-asset-item>
+                <a-asset-item id="CGrass-m" src="3dmodels/Environment/c-grass-patch/10438_Circular_Grass_Patch_v1_iterations-2.mtl"></a-asset-item>
+
+                <a-asset-item id="SouthernIsland-o" src="3dmodels/Environment/sonic-island/Southern_Island.obj"></a-asset-item>
+                <a-asset-item id="SouthernIsland-m" src="3dmodels/Environment/sonic-island/Southern_Island.mtl"></a-asset-item>
+                
+                <a-asset-item id="Spyro-o" src="3dmodels/Characters/Spyro/Spyro.obj"></a-asset-item>
+                <a-asset-item id="Spyro-m" src="3dmodels/Characters/Spyro/Spyro.mtl"></a-asset-item>
+                
+                <a-asset-item id="Bulbasaur-o" src="3dmodels/Characters/Bulbasaur/Bulbasaur.obj"></a-asset-item>
+                <a-asset-item id="Bulbasaur-m" src="3dmodels/Characters/Bulbasaur/Bulbasaur.mtl"></a-asset-item>
+ 
+                <a-asset-item id="Charmander-o" src="3dmodels/Characters/Charmander/Hitokage.obj"></a-asset-item>
+                <a-asset-item id="Charmander-m" src="3dmodels/Characters/Charmander/Hitokage.mtl"></a-asset-item>
+
+                <a-asset-item id="Squirtle-o" src="3dmodels/Characters/Squirtle/Zenigame.obj"></a-asset-item>
+                <a-asset-item id="Squirtle-m" src="3dmodels/Characters/Squirtle/Zenigame.mtl"></a-asset-item>
+ 
+                <a-asset-item id="Mew-o" src="3dmodels/Characters/Mew/Mew.obj"></a-asset-item>
+                <a-asset-item id="Mew-m" src="3dmodels/Characters/Mew/Mew.mtl"></a-asset-item>
+
+                <a-asset-item id="Ditto-gltf" src="3dmodels/Characters/Ditto/ditto.gltf"></a-asset-item>
+ 
+                <!-- Textures -->
+                <img id="box_texture" src="textures/threejs/crate.png">
+                <img id="oWater" src="textures/liquid/OceanWater.jpg">
+                <img id="oWater_NRM" src="textures/liquid/OceanWater_NRM.jpg">
+                <img id="oWater_CST" src="textures/liquid/caustics.png">
+                <img id="sky" src="textures/bounds/evening_sky.jpg">
+                <img id="wood_panel" src="textures/bounds/wood_panel.png">
+                <img id="wood_panel_NRM" src="textures/bounds/wood_panel_NRM.png">
+                <img id="teak" src="textures/bounds/teak.png">
+                <img id="teal_NRM" src="textures/bounds/teak_NRM.png">
+              </a-assets>
+
+              <!-- Sound: SFX & Music -->
+              <a-sound sound="src:  sounds/rain_loop.wav;  autoplay:  true;  loop: true; volume: 0.25; positional:  false"></a-sound>
+
+              <!-- Weather: Rainy -->
+              <a-entity position="0 2.25 -15" particle-system="preset: rain; color: #0000FF, #9999FF, #9999FF"></a-entity>
               
-            <a-entity id="mysphere1" geometry="primitive: sphere; radius: 1.25" rotation="0 45 0" position="0 1.25 -5" color="#EF2D5E"></a-entity>
-              <a-cylinder position="1 0.75 -3" radius="0.5" height="1.5" color="#FFC65D"></a-cylinder>
-              <a-plane position="0 0 -4" rotation="-90 0 0" width="4" height="4" color="#7BC8A4"></a-plane>
-              <a-sky color="#ECECEC"></a-sky>
-            </a-scene>
-            
+              <!-- Environment -->
+              <!-- Hemisphere Light --> 
+              <a-entity           
+                animation="property: light.intensity;  from: 0.5; to: 0.1; dur: 45000; dir: alternate; easing: linear; loop: true"  
+                light="type: hemisphere; color: #ff0000; castShadow: true; decay: 0.25; distance: 1; intensity: 0.5" position="0 10 0">
+              </a-entity>
+
+              <!-- Spot Light --> 
+              <a-entity light="type: spot; color: #c39292; castShadow: true; intensity: 2.2; penumbra: 1; angle: 45" position="-1.06044 1.62229 8.66293" rotation="-90 0 0">
+              </a-entity>
+
+              <!-- Ambient Light --> 
+              <a-light 
+                animation="property: light.intensity;  from: 1; to: 0.2; dur: 45000; dir: alternate; easing: linear; loop: true" 
+                type="ambient"
+                color="#FFFFFF">
+              </a-light>  
+                       
+              <!-- Point Light Sphere --> 
+              <a-sphere 
+              position="-1 1.75 -5.5"
+              rotation="0 0 0"
+              scale="0.25 0.25 0.25"  
+              shadow="cast: true"
+              color="#FFFFFF">
+                <!-- Point Light --> 
+                <a-entity 
+                  animation="property: light.intensity;  from: 0; to: 1; dur: 45000; dir: alternate; easing: linear; loop: true"  
+                  light="type:  point;  color:  #ff9500;  castShadow:  true"
+                  position="0 0 0">
+                </a-entity>                
+              </a-sphere> 
+
+              <!-- Sky -->  
+              <a-sky 
+                animation="property: material.color;  from: #FFFFFF; to: #333333; dur: 45000; dir: alternate; easing: linear; loop: true" 
+                src="#sky"
+                rotation="0 60 0" 
+                color="#FFFFFF">
+                <!-- Directional Light --> 
+                <a-entity light="type: directional;
+                                 distance: 10000;
+                                 castShadow: true" 
+                  animation="property: light.color;  from: #FF4444; to: #4444FF; dur: 45000; dir: alternate; easing: linear; loop: true"                  
+                  animation__intensity="property: light.intensity;  from: 1; to: 0.5; dur: 45000; dir: alternate; easing: linear; loop: true" 
+                  position="390 300 0">
+                </a-entity>
+              </a-sky>
+
+              <!-- Grass Island -->
+              <a-entity 
+                id="grass-island"
+                shadow="receive: true"
+                position="0 -2 0"
+                rotation="-90 0 0"
+                scale="0.075 0.075 0.075"
+                obj-model="obj: #CGrass-o; mtl: #CGrass-m">
+              </a-entity>  
+
+              <!-- Water -->
+              <a-circle 
+                shadow="receive: true"
+                position="0 -1.5 0"
+                scale="10 10 1"  
+                radius="5"
+                rotation="-90 0 0" 
+                material="shader: water-caustics"
+                src="#oWater"
+                repeat="25 25"
+                normal-map="#oWater_NRM"
+                normal-texture-repeat="25 25"
+                color="#FFFFFF">
+              </a-circle>
+
+              <a-entity 
+              position="-7 -1.5 25"
+              rotation="0 180 0"
+              scale="2 2 2"
+              shadow="cast: true"
+              obj-model="obj: #SouthernIsland-o; mtl: #SouthernIsland-m"
+              color="#FFFFFF">
+            </a-entity>  
+
+              <!-- Buildings -->
+              <!-- House -->
+              <a-entity id="house">
+
+                <!-- Floor -->
+                <a-box 
+                  position="-1 -1.25 -8"
+                  rotation="0 0 0"
+                  scale="6 0.2 5.95"
+                  shadow="cast: true"
+                  src="#teak"
+                  repeat="2 2"
+                  normal-map="#teak_NRM"
+                  normal-texture-repeat="2 2"
+                  color="#FFFFFF">
+                </a-box>  
+
+                <!-- Back Wall -->
+                <a-box 
+                  position="-1 0.75 -10.90"
+                  rotation="0 180 0"
+                  scale="6 4 0.2"
+                  shadow="cast: true"
+                  src="#wood_panel"
+                  repeat="2 2"
+                  normal-map="#wood_panel_NRM"
+                  normal-texture-repeat="2 2"
+                  color="#FFFFFF">
+                </a-box>  
+
+                <!-- Front Wall -->
+                <a-entity id="front-wall">
+                  <a-box 
+                    position="1 0.75 -5.10"
+                    rotation="0 0 0"
+                    scale="2 4 0.2"
+                    shadow="cast: true"
+                    src="#wood_panel"
+                    repeat="2 2"
+                    normal-map="#wood_panel_NRM"
+                    normal-texture-repeat="2 2"
+                    color="#FFFFFF">
+                  </a-box> 
+
+                  <a-box 
+                    position="-1 2.10 -5.10"
+                    rotation="0 0 0"
+                    scale="2 1 0.2"
+                    shadow="cast: true"
+                    src="#wood_panel"
+                    repeat="2 2"
+                    normal-map="#wood_panel_NRM"
+                    normal-texture-repeat="2 2"
+                    color="#FFFFFF">
+                  </a-box> 
+                  
+                  <a-box 
+                    position="-3 0.75 -5.10"
+                    rotation="0 0 0"
+                    scale="2 4 0.2"
+                    shadow="cast: true"
+                    src="#wood_panel"
+                    repeat="2 2"
+                    normal-map="#wood_panel_NRM"
+                    normal-texture-repeat="2 2"
+                    color="#FFFFFF">
+                </a-entity>
+
+
+                <!-- Right Wall -->
+                <a-box 
+                  position="2.10 0.75 -8"
+                  rotation="0 0 0"
+                  scale="0.2 4 6"
+                  shadow="cast: true"
+                  src="#wood_panel"
+                  repeat="2 2"
+                  normal-map="#wood_panel_NRM"
+                  normal-texture-repeat="2 2"
+                  color="#FFFFFF">
+                </a-box>  
+
+                <!-- Left Wall -->
+                <a-box 
+                  position="-4.10 0.75 -8"
+                  rotation="0 0 0"
+                  scale="0.2 4 6"
+                  shadow="cast: true"
+                  src="#wood_panel"
+                  repeat="2 2"
+                  normal-map="#wood_panel_NRM"
+                  normal-texture-repeat="2 2"
+                  color="#FFFFFF">
+                </a-box>  
+
+                <!-- Roof -->
+                <a-box 
+                  position="-1 2.65 -8"
+                  rotation="0 0 0"
+                  scale="6 0.2 6"
+                  shadow="cast: true"
+                  src="#wood_panel"
+                  repeat="2 2"
+                  normal-map="#wood_panel_NRM"
+                  normal-texture-repeat="2 2"
+                  color="#FFFFFF">
+                </a-box>  
+              
+              </a-entity>
+
+              <!-- Characters -->
+              <!-- Spyro -->
+              <a-entity 
+                position="-1 -1.10 8"
+                rotation="0 180 0"
+                scale="0.1 0.1 0.1"
+                shadow="cast: true"
+                obj-model="obj: #Spyro-o; mtl: #Spyro-m"
+                color="#FFFFFF">
+              </a-entity>  
+
+              <a-entity 
+                position="-1 -1.15 -1"
+                rotation="0 0 0"
+                scale="0.15 0.15 0.15"
+                shadow="cast: true"
+                obj-model="obj: #Bulbasaur-o; mtl: #Bulbasaur-m"
+                color="#FFFFFF">
+              </a-entity>  
+
+              <a-entity 
+              position="-2.5 -1.15 -0.25"
+              rotation="-90 -60 0"
+              scale="0.25 0.25 0.25"
+              shadow="cast: true"
+              obj-model="obj: #Charmander-o; mtl: #Charmander-m"
+              color="#FFFFFF">
+              </a-entity>  
+
+              <a-entity 
+              position="1.0 -1.15 -0.25"
+              rotation="-90 230 0"
+              scale="0.25 0.25 0.25"  
+              shadow="cast: true"
+              obj-model="obj: #Squirtle-o; mtl: #Squirtle-m"
+              color="#FFFFFF">
+              </a-entity> 
+
+              <a-entity              
+              animation="property: rotation;  from: -25 60 0; to: 335 60 0; dur: 2000; delay: 2000; easing: easeInSine; loop: true" 
+              animation__position="property: position;  from: -4 1.25 2; to: -4 0 2; dur: 2000;  dir: alternate; easing: easeInSine; loop: true"
+              position="-4 1.25 2"
+              rotation="-25 60 0"
+              scale="0.075 0.075 0.075"  
+              shadow="cast: true"
+              obj-model="obj: #Mew-o; mtl: #Mew-m"
+              color="#FFFFFF">
+              </a-entity> 
+
+              <a-entity 
+              id="ditto"
+              position="2.25 -1 1" 
+              rotation="0 -90 5" 
+              scale="0.125 0.125 0.125" 
+              shadow="cast: true"
+              animation="property: scale; to: 0.2 0.1 0.15; dur: 2000; dir: alternate; easing: easeInElastic; loop: true" 
+              gltf-model="3dmodels/Characters/Ditto/ditto.gltf" 
+              color="#FFFFFF">
+              </a-entity>
+
+              <!-- Camera -->  
+              <!-- Origin at 0 0 0 in VR -->  
+              <!-- Origin at 0 1.6 0 in Desktop -->  
+              <!-- Camera -->  
+              <a-entity position="0 0 4" rotation="0 150 0">
+                <a-camera
+                  user-height="1.6"
+                  active="true">                
+                </a-camera>
+              </a-entity>                
+            </a-scene> 
             <!-- A-Frame end -->
           </article>
         </section>

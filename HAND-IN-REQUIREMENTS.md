@@ -37,7 +37,7 @@ Setup camera to user-height and control position on camera in entity
 Setup lights (at least one of each) and shadows. Use the frame inspector ctrl-alt-i to help 
 position and control the lights in an easy way. Then copy the html code to your file. 
 
-8. [x]
+8. [-]
 Setup handlers for animation and show basic coded animations on your models, lights etc.
 -----------------------------------------------------------------------------
 

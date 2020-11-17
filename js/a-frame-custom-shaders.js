@@ -1,4 +1,3 @@
-console.log("Hello Hand-In 1 World!");
 AFRAME.registerShader('water-caustics', {
     schema: {
       waterColor: {type: 'color', is: 'uniform', default: '#0f6fff'},
