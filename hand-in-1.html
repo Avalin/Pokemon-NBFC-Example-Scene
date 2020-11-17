@@ -334,7 +334,8 @@
               <!-- Characters -->
               <!-- Spyro -->
               <a-entity 
-                position="-1 -1.10 8"
+                id="spyro" 
+                position="-1 -1.20 8"
                 rotation="0 180 0"
                 scale="0.1 0.1 0.1"
                 shadow="cast: true"
@@ -342,39 +343,43 @@
                 color="#FFFFFF">
               </a-entity>  
 
-              <a-entity 
-                position="-1 -1.15 -1"
+              <a-entity        
+                id="bulbasaur" 
+                position="-1 -1.25 -1"
                 rotation="0 0 0"
-                scale="0.15 0.15 0.15"
+                scale="0.10 0.10 0.10"
                 shadow="cast: true"
                 obj-model="obj: #Bulbasaur-o; mtl: #Bulbasaur-m"
                 color="#FFFFFF">
               </a-entity>  
 
-              <a-entity 
+              <a-entity               
+              id="charmander" 
               position="-2.5 -1.15 -0.25"
               rotation="-90 -60 0"
-              scale="0.25 0.25 0.25"
+              scale="0.15 0.15 0.15"
               shadow="cast: true"
               obj-model="obj: #Charmander-o; mtl: #Charmander-m"
               color="#FFFFFF">
               </a-entity>  
 
-              <a-entity 
-              position="1.0 -1.15 -0.25"
+              <a-entity    
+              id="squirtle" 
+              position="1.0 -1.30 -0.25"
               rotation="-90 230 0"
-              scale="0.25 0.25 0.25"  
+              scale="0.20 0.20 0.20"  
               shadow="cast: true"
               obj-model="obj: #Squirtle-o; mtl: #Squirtle-m"
               color="#FFFFFF">
               </a-entity> 
 
-              <a-entity              
+              <a-entity    
+              id="mew"          
               animation="property: rotation;  from: -25 60 0; to: 335 60 0; dur: 2000; delay: 2000; easing: easeInSine; loop: true" 
               animation__position="property: position;  from: -4 1.25 2; to: -4 0 2; dur: 2000;  dir: alternate; easing: easeInSine; loop: true"
               position="-4 1.25 2"
               rotation="-25 60 0"
-              scale="0.075 0.075 0.075"  
+              scale="0.070 0.070 0.070"  
               shadow="cast: true"
               obj-model="obj: #Mew-o; mtl: #Mew-m"
               color="#FFFFFF">
@@ -384,9 +389,9 @@
               id="ditto"
               position="2.25 -1 1" 
               rotation="0 -90 5" 
-              scale="0.125 0.125 0.125" 
+              scale="0.10 0.10 0.10" 
               shadow="cast: true"
-              animation="property: scale; to: 0.2 0.1 0.15; dur: 2000; dir: alternate; easing: easeInElastic; loop: true" 
+              animation="property: scale; to: 0.15 0.08 0.12; dur: 2000; dir: alternate; easing: easeInElastic; loop: true" 
               gltf-model="3dmodels/Characters/Ditto/ditto.gltf" 
               color="#FFFFFF">
               </a-entity>
@@ -395,7 +400,7 @@
               <!-- Origin at 0 0 0 in VR -->  
               <!-- Origin at 0 1.6 0 in Desktop -->  
               <!-- Camera -->  
-              <a-entity position="0 0 4" rotation="0 150 0">
+              <a-entity position="0 -1.20 4" rotation="0 150 0">
                 <a-camera
                   user-height="1.6"
                   active="true">                
