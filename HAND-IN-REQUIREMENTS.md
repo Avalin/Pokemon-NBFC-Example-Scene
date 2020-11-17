@@ -62,6 +62,5 @@ In this hand-in you must show that you can:
 
 Your documentation here is the HTML website with javascript files and also one (1) video showing VR headset and controllers in use. 
 
-You must integrate the video in the webpage and hand-in the 
-complete solution. 
+You must integrate the video in the webpage and hand-in the complete solution. 
 Hand-in is later in wiseflow. It is therefore possible to continue work until later.
