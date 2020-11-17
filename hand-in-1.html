@@ -131,7 +131,7 @@
                 <img id="oWater" src="textures/liquid/OceanWater.jpg">
                 <img id="oWater_NRM" src="textures/liquid/OceanWater_NRM.jpg">
                 <img id="oWater_CST" src="textures/liquid/caustics.png">
-                <img id="sky" src="textures/bounds/evening_sky.jpg">
+                <img id="sky" src="textures/sky/evening_sky.jpg">
                 <img id="wood_panel" src="textures/bounds/wood_panel.png">
                 <img id="wood_panel_NRM" src="textures/bounds/wood_panel_NRM.png">
                 <img id="teak" src="textures/bounds/teak.png">
@@ -383,6 +383,14 @@
                 position="0 0 0">
                 <a-entity 
                   class="clickable"
+                  event-set__jump="_event: click; 
+                                  _target: #squirtle;
+                                  animation.property: position;
+                                  animation.to: 0 1.5 0;
+                                  animation.dur: 500;
+                                  animation.easing: easeInExpo;
+                                  animation.loop: true;
+                                  animation.dir: alternate"
                   position="1 -1.30 -0.25" 
                   rotation="-90 180 50" 
                   scale="0.2 0.2 0.2" 
