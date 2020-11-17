@@ -136,11 +136,18 @@
                 <!-- Directional Light --> 
                 <a-entity light="type: directional;
                                  distance: 10000;
+                                 color:  #FFAA55;
                                  castShadow: true" 
-                  animation="property: light.color;  from: #FF4444; to: #4444FF; dur: 45000; dir: alternate; easing: linear; loop: true"                  
-                  animation__intensity="property: light.intensity;  from: 1; to: 0.5; dur: 45000; dir: alternate; easing: linear; loop: true" 
-                  position="390 300 0">
-                </a-entity>
+                  position="300 110 90">  
+
+                <a-entity light="type: spot;
+                  distance: 10000;
+                  color:  #FFFFFF;
+                  castShadow: true" 
+                  position="300 110 90">    
+                </a-entity>              
+
+                
               </a-sky>
 
               <!-- NBFC Forest -->
