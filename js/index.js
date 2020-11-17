@@ -1,3 +1,8 @@
+/*  Hi!  
+*   This section is just fiddling with ThreeJS in pure JavaScript (No JQuery) for the frontpage.
+*   The ThreeJS scene is responsive, and will adjust to the screen on resize. 
+*/
+
 let scene, camera, renderer, texLoader, cube;
 
 function init()

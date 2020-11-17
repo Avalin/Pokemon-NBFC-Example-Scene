@@ -1,3 +1,9 @@
+/*  
+*  Used in Hand-In 1:
+*  This js file is responsible for my custom shaders used for my A-Frame objects.  
+*/
+
+// Water-caustics creates the water-ripple effect and has some opacity usage. 
 AFRAME.registerShader('water-caustics', {
     schema: {
       waterColor: {type: 'color', is: 'uniform', default: '#0f6fff'},
