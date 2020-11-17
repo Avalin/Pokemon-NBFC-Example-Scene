@@ -1,6 +1,6 @@
 /*  
-*  Used in Hand-In 1:
-*  This js file is responsible for my custom shaders used for my A-Frame objects.  
+*  Used for Hand-In 1:
+*  This js file is responsible for registering my custom shaders used for my A-Frame objects.  
 */
 
 // Water-caustics creates the water-ripple effect and has some opacity usage. 
