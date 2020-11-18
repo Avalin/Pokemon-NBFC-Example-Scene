@@ -109,29 +109,22 @@
                 <a-asset-item id="SouthernIsland-o" src="3dmodels/Environment/sonic-island/Southern_Island.obj"></a-asset-item>
                 <a-asset-item id="SouthernIsland-m" src="3dmodels/Environment/sonic-island/Southern_Island.mtl"></a-asset-item>
                 
-                <a-asset-item id="Spyro-o" src="3dmodels/Characters/Spyro/Spyro.obj"></a-asset-item>
-                <a-asset-item id="Spyro-m" src="3dmodels/Characters/Spyro/Spyro.mtl"></a-asset-item>
-                
-                <a-asset-item id="Bulbasaur-o" src="3dmodels/Characters/Bulbasaur/Bulbasaur.obj"></a-asset-item>
-                <a-asset-item id="Bulbasaur-m" src="3dmodels/Characters/Bulbasaur/Bulbasaur.mtl"></a-asset-item>
- 
-                <a-asset-item id="Charmander-o" src="3dmodels/Characters/Charmander/Hitokage.obj"></a-asset-item>
-                <a-asset-item id="Charmander-m" src="3dmodels/Characters/Charmander/Hitokage.mtl"></a-asset-item>
-
-                <a-asset-item id="Squirtle-o" src="3dmodels/Characters/Squirtle/Zenigame.obj"></a-asset-item>
-                <a-asset-item id="Squirtle-m" src="3dmodels/Characters/Squirtle/Zenigame.mtl"></a-asset-item>
- 
-                <a-asset-item id="Mew-o" src="3dmodels/Characters/Mew/Mew.obj"></a-asset-item>
-                <a-asset-item id="Mew-m" src="3dmodels/Characters/Mew/Mew.mtl"></a-asset-item>
-
-                <a-asset-item id="Ditto-gltf" src="3dmodels/Characters/Ditto/ditto.gltf"></a-asset-item>
-                
                 <a-asset-item id="Basket-o" src="3dmodels/Objects/Basket/BasketSquare.obj"></a-asset-item>
                 <a-asset-item id="Basket-m" src="3dmodels/Objects/Basket/BasketSquare.mtl"></a-asset-item>
                
                 <a-asset-item id="Pokeball-o" src="3dmodels/Objects/Pokeball/pokeball.obj"></a-asset-item>
                 <a-asset-item id="Pokeball-m" src="3dmodels/Objects/Pokeball/pokeball.mtl"></a-asset-item>
- 
+                  
+                <!-- 3D Models: Dynamic Characters -->
+                <!-- I just want to note here the pain it was to meddle with mtl files to ensure proper gloss/specular, and converting these to glb to make them animation ready.  -->
+                <!-- I'm no 3D artist. Thank you for coming to my TED talk.  -->
+                <a-asset-item id="Spyro-glb" src="3dmodels/Characters/Spyro/Spyro.glb"></a-asset-item>
+                <a-asset-item id="Bulbasaur-glb" src="3dmodels/Characters/Bulbasaur/bulbasaur.glb"></a-asset-item>
+                <a-asset-item id="Charmander-glb" src="3dmodels/Characters/Charmander/charmander.glb"></a-asset-item>
+                <a-asset-item id="Squirtle-glb" src="3dmodels/Characters/Squirtle/squirtle.glb"></a-asset-item>
+                <a-asset-item id="Mew-glb" src="3dmodels/Characters/Mew/Mew.glb"></a-asset-item>
+                <a-asset-item id="Ditto-gltf" src="3dmodels/Characters/Ditto/ditto.gltf"></a-asset-item>
+
                 <!-- Textures -->
                 <img id="box_texture" src="textures/threejs/crate.png">
                 <img id="oWater" src="textures/liquid/OceanWater.jpg">
@@ -385,14 +378,14 @@
                   rotation="0 180 0"
                   scale="0.1 0.1 0.1"
                   shadow="cast: true"
-                  obj-model="obj: #Spyro-o; mtl: #Spyro-m"
+                  gltf-model="#Spyro-glb"
                   color="#FFFFFF">
                 </a-entity>  
               </a-entity>  
 
               <a-entity        
-                id="bulbasaur" 
-                position="0 0 0">
+              id="bulbasaur" 
+              position="0 0 0">
                 <a-entity   
                   class="clickable"  
                   sound="src:  #bulbasaur_sfx;  on: click; autoplay:  false;  volume: 1;"    
@@ -408,10 +401,10 @@
                   rotation="0 0 -4"
                   scale="0.10 0.10 0.10"
                   shadow="cast: true"
-                  obj-model="obj: #Bulbasaur-o; mtl: #Bulbasaur-m"
+                  gltf-model="#Bulbasaur-glb"
                   color="#FFFFFF">
                 </a-entity>  
-              </a-entity>  
+              </a-entity>    
 
               <a-entity 
                 id="charmander" 
@@ -431,7 +424,7 @@
                 rotation="-90 -60 0"
                 scale="0.15 0.15 0.15"
                 shadow="cast: true"
-                obj-model="obj: #Charmander-o; mtl: #Charmander-m"
+                gltf-model="#Charmander-glb"
                 color="#FFFFFF">
                 </a-entity>  
               </a-entity>  
@@ -454,12 +447,13 @@
                   rotation="-90 180 50" 
                   scale="0.2 0.2 0.2" 
                   shadow="cast: true" 
-                  obj-model="obj: #Squirtle-o; mtl: #Squirtle-m"
+                  gltf-model="#Squirtle-glb"
                   color="#FFFFFF">
                 </a-entity>
               </a-entity>
               
-            <a-entity id="mew" 
+            <a-entity 
+              id="mew" 
               position="0 0 0">
               <a-entity           
               class="clickable" 
@@ -470,7 +464,7 @@
               rotation="-25 60 0"
               scale="0.070 0.070 0.070"  
               shadow="cast: true"
-              obj-model="obj: #Mew-o; mtl: #Mew-m"
+              gltf-model="#Mew-glb"
               color="#FFFFFF">
               </a-entity> 
             </a-entity> 
@@ -501,7 +495,7 @@
               <!-- Origin at 0 0 0 in VR -->  
               <!-- Origin at 0 1.6 0 in Desktop -->  
               <!-- Camera -->  
-              <a-entity position="0 -1.20 4" rotation="0 150 0">
+              <a-entity id="camera-rig" position="0 -1.20 4" rotation="0 150 0">
                 <a-camera 
                   user-height="1.6"
                   active="true">     
