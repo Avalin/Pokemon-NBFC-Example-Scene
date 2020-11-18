@@ -137,7 +137,7 @@
                 <img id="teak" src="textures/bounds/teak.png">
                 <img id="teal_NRM" src="textures/bounds/teak_NRM.png">
 
-                <!-- Sound: SFX & Music -->
+                <!-- Sounds / Audio -->
                 <audio id="rain_ambience"  src="sounds/ambience/rain_loop.wav"></audio>
                   
                 <audio id="bulbasaur_sfx"  src="sounds/sfx/Bulbasaur.mp3"></audio>
@@ -361,7 +361,15 @@
                 position="0 0 0">
                 <a-entity   
                   class="clickable"  
-                  sound="src:  #bulbasaur_sfx;  on: click; autoplay:  false;  volume: 1;"     
+                  sound="src:  #bulbasaur_sfx;  on: click; autoplay:  false;  volume: 1;"    
+                  event-set__jump="_event: click; 
+                                  _target: #bulbasaur;
+                                  animation.property: position;
+                                  animation.to: 0 1.5 0;
+                                  animation.dur: 500;
+                                  animation.easing: easeInExpo;
+                                  animation.loop: 2;
+                                  animation.dir: alternate"    
                   position="-1 -1.30 -1"
                   rotation="0 0 -4"
                   scale="0.10 0.10 0.10"
@@ -376,7 +384,15 @@
                 position="0 0 0">
                 <a-entity   
                 class="clickable"    
-                sound="src:  #charmander_sfx;  on: click; autoplay:  false;  volume: 1;"          
+                sound="src:  #charmander_sfx;  on: click; autoplay:  false;  volume: 1;"    
+                event-set__jump="_event: click; 
+                                _target: #charmander;
+                                animation.property: position;
+                                animation.to: 0 1.5 0;
+                                animation.dur: 500;
+                                animation.easing: easeInExpo;
+                                animation.loop: 2;
+                                animation.dir: alternate"         
                 position="-2.5 -1.20 -0.25"
                 rotation="-90 -60 0"
                 scale="0.15 0.15 0.15"
@@ -398,7 +414,7 @@
                                   animation.to: 0 1.5 0;
                                   animation.dur: 500;
                                   animation.easing: easeInExpo;
-                                  animation.loop: true;
+                                  animation.loop: 2;
                                   animation.dir: alternate"              
                   position="1 -1.30 -0.25" 
                   rotation="-90 180 50" 
@@ -429,6 +445,14 @@
               position="0 0 0">
               <a-entity 
               class="clickable"
+              event-set__jump="_event: click; 
+                            _target: #ditto;
+                            animation.property: position;
+                            animation.to: 0 1.5 0;
+                            animation.dur: 500;
+                            animation.easing: easeInExpo;
+                            animation.loop: 2;
+                            animation.dir: alternate" 
               position="2.25 -1.05 1" 
               rotation="0 -90 7" 
               scale="0.10 0.10 0.10" 

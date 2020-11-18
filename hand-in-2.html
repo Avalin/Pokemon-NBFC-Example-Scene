@@ -101,9 +101,11 @@
  
                 <!-- Textures -->
                 <img id="sky" src="textures/sky/nbfc_sky.png">
-              </a-assets>
 
-              <!-- Sound: SFX & Music -->
+                
+                <!-- Sounds / Audio -->
+                <audio id="this-is-halloween-lofi-music"  src="sounds/music/nbfc/this-is-halloween-lofi.mp3"></audio>
+              </a-assets>
 
               <!-- Ambient Light --> 
               <a-light 
@@ -152,6 +154,7 @@
 
               <!-- NBFC Forest -->
               <a-entity 
+                sound="src:  #this-is-halloween-lofi-music;  autoplay:  true;  loop: true; volume: 0.05; positional:  false"
                 id="nbfc-forest"
                 shadow="receive: true"
                 position="0 0 0"
