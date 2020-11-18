@@ -34,6 +34,9 @@
   <!-- A-Frame Event System -->  
   <script src="https://unpkg.com/aframe-event-set-component@4.2.1/dist/aframe-event-set-component.min.js"></script> 
 
+    <!-- A-Frame Physics (Should be included with super hands, but eh...) -->  
+  <script src="https://cdn.jsdelivr.net/gh/n5ro/aframe-physics-system@v4.0.1/dist/aframe-physics-system.min.js"></script>
+
   <!-- A-Frame Extra Add-Ons -->  
   <script src="https://cdn.jsdelivr.net/gh/donmccurdy/aframe-extras@v6.1.1/dist/aframe-extras.min.js"></script>
 
@@ -105,7 +108,7 @@
         
           <article class="col-6">
             <!-- A-Frame start -->            
-            <a-scene embedded antialias="false">
+            <a-scene embedded antialias="false" physics="gravity: -9.8; debug: true">
               <!-- A-Frame Asset Manager -->
               <a-assets>
 
@@ -121,8 +124,7 @@
                 <a-asset-item id="Basket-o" src="3dmodels/Objects/Basket/BasketSquare.obj"></a-asset-item>
                 <a-asset-item id="Basket-m" src="3dmodels/Objects/Basket/BasketSquare.mtl"></a-asset-item>
                
-                <a-asset-item id="Pokeball-o" src="3dmodels/Objects/Pokeball/pokeball.obj"></a-asset-item>
-                <a-asset-item id="Pokeball-m" src="3dmodels/Objects/Pokeball/pokeball.mtl"></a-asset-item>
+                <a-asset-item id="Pokeball-glb" src="3dmodels/Objects/Pokeball/pokeball.glb"></a-asset-item>
                   
                 <!-- 3D Models: Dynamic Characters -->
                 <!-- I just want to note here the pain it was to meddle with mtl files to ensure proper gloss/specular, and converting these from obj to glb to make them animation ready.  -->
@@ -172,11 +174,31 @@
                   </a-entity>         
                 </a-camera>
                 
-                <a-entity sphere-collider="objects: a-box" super-hands hand-controls="hand: left"></a-entity>
-                <a-entity sphere-collider="objects: a-box" super-hands hand-controls="hand: right"></a-entity>  
+                <a-entity sphere-collider="objects: .interactable" handModelStyle: lowPoly; super-hands hand-controls="hand: left"></a-entity>
+                <a-entity sphere-collider="objects: .interactable" handModelStyle: lowPoly; super-hands hand-controls="hand: right"></a-entity>  
               </a-entity>    
               
-              <a-box class="interactable" hoverable grabbable stretchable draggable dropppable color="blue" position="0 1 -1"></a-box>
+              <a-entity 
+                hoverable grabbable draggable dropppable
+                id="pokeball-2" 
+                position="0 0 0">
+                <a-entity 
+                  dynamic-body
+                  class="interactable"
+                  position="0 0.6 3.8"
+                  rotation="0 0 0"
+                  scale="12 12 12"
+                  gltf-model="#Pokeball-glb"
+                  color="#FFFFFF">
+                </a-entity>  
+              </a-entity> 
+
+              <a-box  
+                dynamic-body                 
+                position="0 0.6 3.8"
+                rotation="0 0 0"
+                scale="1 1 1">
+              </a-box>  
 
               <!-- Environment -->            
               <!-- Weather: Rainy -->
@@ -186,7 +208,7 @@
               <!-- Hemisphere Light --> 
               <a-entity           
                 animation="property: light.color;  from: #FF9900; to: #0000FF; dur: 45000; dir: alternate; easing: linear; loop: true"  
-                light="type: hemisphere; color: #ff0000; castShadow: true; decay: 0.25; distance: 1; intensity: 0.5" position="0 10 0">
+                light="type: hemisphere; color: #ff0000; decay: 0.25; distance: 1; intensity: 0.5" position="0 10 0">
               </a-entity>
 
               <!-- Spot Light --> 
@@ -241,11 +263,18 @@
                 rotation="-90 0 0"
                 scale="0.075 0.075 0.075"
                 obj-model="obj: #CGrass-o; mtl: #CGrass-m">
+
+                <a-box 
+                  static-body
+                  position="0 0 0"
+                  scale="20 20 2"
+                  rotation="0 0 0" 
+                  color="#FFFFFF">
+                </a-box>
               </a-entity>  
 
               <!-- Water -->
               <a-circle 
-                shadow="receive: true"
                 position="0 -1.5 0"
                 scale="10 10 1"  
                 radius="5"
@@ -259,11 +288,10 @@
               </a-circle>
 
               <!-- Island In Background -->
-              <a-entity 
+              <a-entity    
                 position="-7 -1.5 25"
                 rotation="0 180 0"
                 scale="2 2 2"
-                shadow="cast: true"
                 obj-model="obj: #SouthernIsland-o; mtl: #SouthernIsland-m"
                 color="#FFFFFF">
               </a-entity>  
@@ -274,6 +302,7 @@
                 id="basket" 
                 position="0 0 0">
                 <a-entity 
+                  static-body
                   position="-5 -1.20 5.5"
                   rotation="0 0 0"
                   scale="0.75 0.5 1"
@@ -290,8 +319,8 @@
                 class="interactable"
                 position="-5 -1.00 5.5"
                 rotation="0 0 0"
-                scale="0.00125 0.00125 0.00125"
-                obj-model="obj: #Pokeball-o; mtl: #Pokeball-m"
+                scale="12 12 12"
+                gltf-model="#Pokeball-glb"
                 color="#FFFFFF">
               </a-entity>  
             </a-entity> 
@@ -301,10 +330,10 @@
               <a-entity id="house">
                 <!-- Floor -->
                 <a-box 
+                  static-body     
                   position="-1 -1.25 -8"
                   rotation="0 0 0"
                   scale="6 0.2 5.95"
-                  shadow="cast: true"
                   src="#teak"
                   repeat="2 2"
                   normal-map="#teak_NRM"
@@ -314,10 +343,10 @@
 
                 <!-- Back Wall -->
                 <a-box 
+                  static-body     
                   position="-1 0.75 -10.90"
                   rotation="0 180 0"
                   scale="6 4 0.2"
-                  shadow="cast: true"
                   src="#wood_panel"
                   repeat="2 2"
                   normal-map="#wood_panel_NRM"
@@ -328,10 +357,10 @@
                 <!-- Front Wall -->
                 <a-entity id="front-wall">
                   <a-box 
+                    static-body
                     position="1 0.75 -5.10"
                     rotation="0 0 0"
                     scale="2 4 0.2"
-                    shadow="cast: true"
                     src="#wood_panel"
                     repeat="2 2"
                     normal-map="#wood_panel_NRM"
@@ -339,19 +368,19 @@
                     color="#FFFFFF">
                   </a-box> 
                   <a-box 
+                    static-body
                     position="-1 2.10 -5.10"
                     rotation="0 0 0"
                     scale="2 1 0.2"
-                    shadow="cast: true"
                     src="#wood_panel"
                     normal-map="#wood_panel_NRM"
                     color="#FFFFFF">
                   </a-box>      
                   <a-box 
+                    static-body
                     position="-3 0.75 -5.10"
                     rotation="0 0 0"
                     scale="2 4 0.2"
-                    shadow="cast: true"
                     src="#wood_panel"
                     repeat="2 2"
                     normal-map="#wood_panel_NRM"
@@ -361,10 +390,10 @@
 
                 <!-- Right Wall -->
                 <a-box 
+                  static-body
                   position="2.10 0.75 -8"
                   rotation="0 0 0"
                   scale="0.2 4 6"
-                  shadow="cast: true"
                   src="#wood_panel"
                   repeat="2 2"
                   normal-map="#wood_panel_NRM"
@@ -373,11 +402,11 @@
                 </a-box>  
 
                 <!-- Left Wall -->
-                <a-box 
+                <a-box  
+                  static-body
                   position="-4.10 0.75 -8"
                   rotation="0 0 0"
                   scale="0.2 4 6"
-                  shadow="cast: true"
                   src="#wood_panel"
                   repeat="2 2"
                   normal-map="#wood_panel_NRM"
@@ -387,10 +416,10 @@
 
                 <!-- Roof -->
                 <a-box 
+                  static-body
                   position="-1 2.65 -8"
                   rotation="0 0 0"
                   scale="6 0.2 6"
-                  shadow="cast: true"
                   src="#wood_panel"
                   repeat="2 2"
                   normal-map="#wood_panel_NRM"
@@ -419,7 +448,8 @@
               <a-entity        
               id="bulbasaur" 
               position="0 0 0">
-                <a-entity   
+                <a-entity
+                  static-body   
                   class="interactable"  
                   sound="src:  #bulbasaur_sfx;  on: click; autoplay:  false;  volume: 1;"    
                   event-set__jump="_event: click; 
@@ -444,22 +474,23 @@
                 position="0 0 0">
                 
                 <a-box   
-                id="charmander_collider" 
-                class="interactable"    
-                sound="src:  #charmander_sfx;  on: click; autoplay:  false;  volume: 1;"    
-                event-set__jump="_event: click; 
-                                _target: #charmander;
-                                animation.property: position;
-                                animation.to: 0 1.2.5 0;
-                                animation.dur: 500;
-                                animation.easing: easeInExpo;
-                                animation.loop: 2;
-                                animation.dir: alternate"    
-                class="interactable"    
-                color="#FFFFFF"
-                position="-2.5 -0.75 -0.25"
-                scale="0.75 0.75 0.75"
-                visible="false">
+                  id="charmander_collider" 
+                  static-body
+                  class="interactable"    
+                  sound="src:  #charmander_sfx;  on: click; autoplay:  false;  volume: 1;"    
+                  event-set__jump="_event: click; 
+                                  _target: #charmander;
+                                  animation.property: position;
+                                  animation.to: 0 1.2.5 0;
+                                  animation.dur: 500;
+                                  animation.easing: easeInExpo;
+                                  animation.loop: 2;
+                                  animation.dir: alternate"    
+                  class="interactable"    
+                  color="#FFFFFF"
+                  position="-2.5 -0.75 -0.25"
+                  scale="0.40 0.75 0.50"
+                  visible="false">
                 </a-box>    
 
                 <a-entity  
