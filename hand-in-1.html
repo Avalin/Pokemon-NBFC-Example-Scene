@@ -159,7 +159,7 @@
                   active="true">     
                   <a-entity 
                     cursor="fuse: true; fuseTimeout: 1000" 
-                    raycaster="objects: .clickable"
+                    raycaster="objects: .interactable"
                     animation__fusing="property: scale; startEvents: fusing; easing: linear; dur: 1000; from: 1 1 1; to: 3 3 3"
                     animation__leave="property: scale; startEvents: mouseleave; easing: linear; dur: 1; from: 1 1 1; to: 1 1 1"
                     animation__click="property: scale; startEvents: click; easing: linear; dur: 150; from: 3 3 3; to: 1 1 1"
@@ -194,7 +194,7 @@
                        
               <!-- Point Light Sphere --> 
               <a-sphere 
-              class="clickable"
+              class="interactable"
               position="-1 1.75 -5.5"
               rotation="0 0 0"
               scale="0.25 0.25 0.25"  
@@ -279,7 +279,7 @@
               id="pokeball-1" 
               position="0 0 0">
               <a-entity 
-                class="clickable"
+                class="interactable"
                 position="-5 -1.00 5.5"
                 rotation="0 0 0"
                 scale="0.00125 0.00125 0.00125"
@@ -398,7 +398,7 @@
                 id="spyro" 
                 position="0 0 0">
                 <a-entity 
-                  class="clickable"
+                  class="interactable"
                   position="-1 -1.20 8"
                   rotation="0 180 0"
                   scale="0.1 0.1 0.1"
@@ -412,7 +412,7 @@
               id="bulbasaur" 
               position="0 0 0">
                 <a-entity   
-                  class="clickable"  
+                  class="interactable"  
                   sound="src:  #bulbasaur_sfx;  on: click; autoplay:  false;  volume: 1;"    
                   event-set__jump="_event: click; 
                                   _target: #bulbasaur;
@@ -437,7 +437,7 @@
                 
                 <a-box   
                 id="charmander_collider" 
-                class="clickable"    
+                class="interactable"    
                 sound="src:  #charmander_sfx;  on: click; autoplay:  false;  volume: 1;"    
                 event-set__jump="_event: click; 
                                 _target: #charmander;
@@ -447,7 +447,7 @@
                                 animation.easing: easeInExpo;
                                 animation.loop: 2;
                                 animation.dir: alternate"    
-                class="clickable"    
+                class="interactable"    
                 color="#FFFFFF"
                 position="-2.5 -0.75 -0.25"
                 scale="0.75 0.75 0.75"
@@ -470,7 +470,7 @@
                 id="squirtle"
                 position="0 0 0">
                 <a-entity 
-                  class="clickable"
+                  class="interactable"
                   sound="src:  #squirtle_sfx;  on: click; autoplay:  false;  volume: 1;"  
                   event-set__jump="_event: click; 
                                   _target: #squirtle;
@@ -493,7 +493,7 @@
                 id="mew" 
                 position="0 0 0">
                 <a-entity           
-                class="clickable" 
+                class="interactable" 
                 sound="src:  #mew_sfx;  on: click; autoplay:  false;  volume: 1;"
                 animation="property: rotation;  from: -25 60 0; to: 335 60 0; dur: 2000; delay: 2000; easing: easeInSine; loop: true" 
                 animation__position="property: position;  from: -4 1.25 2; to: -4 0 2; dur: 2000;  dir: alternate; easing: easeInSine; loop: true"
@@ -509,7 +509,7 @@
               <a-entity id="ditto" 
                 position="0 0 0">
                 <a-entity 
-                class="clickable"
+                class="interactable"
                 event-set__jump="_event: click; 
                               _target: #ditto;
                               animation.property: position;
