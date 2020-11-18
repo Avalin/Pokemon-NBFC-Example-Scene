@@ -129,8 +129,8 @@
                 <a-asset-item id="Basket-o" src="3dmodels/Objects/Basket/BasketSquare.obj"></a-asset-item>
                 <a-asset-item id="Basket-m" src="3dmodels/Objects/Basket/BasketSquare.mtl"></a-asset-item>
                
-                <a-asset-item id="Pokeball-o" src="3dmodels/Objects/Basket/pokeball.obj"></a-asset-item>
-                <a-asset-item id="Pokeball-m" src="3dmodels/Objects/Basket/pokeball.mtl"></a-asset-item>
+                <a-asset-item id="Pokeball-o" src="3dmodels/Objects/Pokeball/pokeball.obj"></a-asset-item>
+                <a-asset-item id="Pokeball-m" src="3dmodels/Objects/Pokeball/pokeball.mtl"></a-asset-item>
  
                 <!-- Textures -->
                 <img id="box_texture" src="textures/threejs/crate.png">
@@ -249,12 +249,25 @@
                 position="0 0 0">
                 <a-entity 
                   position="-5 -1.20 5.5"
-                  rotation="0 180 0"
+                  rotation="0 0 0"
                   scale="0.75 0.5 1"
                   obj-model="obj: #Basket-o; mtl: #Basket-m"
                   color="#FFFFFF">
                 </a-entity>  
               </a-entity> 
+
+              <!-- Pokeball -->
+              <a-entity 
+              id="pokeball-1" 
+              position="0 0 0">
+              <a-entity 
+                position="-5 -1.00 5.5"
+                rotation="0 0 0"
+                scale="0.00125 0.00125 0.00125"
+                obj-model="obj: #Pokeball-o; mtl: #Pokeball-m"
+                color="#FFFFFF">
+              </a-entity>  
+            </a-entity> 
 
               <!-- Buildings -->
               <!-- House -->
