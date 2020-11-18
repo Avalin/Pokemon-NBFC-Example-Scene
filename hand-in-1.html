@@ -136,13 +136,14 @@
                 <img id="wood_panel_NRM" src="textures/bounds/wood_panel_NRM.png">
                 <img id="teak" src="textures/bounds/teak.png">
                 <img id="teal_NRM" src="textures/bounds/teak_NRM.png">
+
+                <!-- Sound: SFX & Music -->
+                <audio id="rain_drops" src="sounds/ambience/rain_loop.wav"></a-sound>
               </a-assets>
 
-              <!-- Sound: SFX & Music -->
-              <a-sound sound="src:  sounds/ambience/rain_loop.wav;  autoplay:  true;  loop: true; volume: 0.05; positional:  false"></a-sound>
-
               <!-- Weather: Rainy -->
-              <a-entity position="0 2.25 -15" particle-system="preset: rain; color: #0000FF, #9999FF, #9999FF"></a-entity>
+              <a-entity position="0 2.25 -15" particle-system="preset: rain; color: #0000FF, #9999FF, #9999FF"
+                        sound="src:  #rain_drops;  autoplay:  true;  loop: true; volume: 0.05; positional:  false"></a-entity>
               
               <!-- Environment -->
               <!-- Hemisphere Light --> 
