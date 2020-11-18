@@ -33,6 +33,9 @@
  
   <!-- A-Frame Event System -->  
   <script src="https://unpkg.com/aframe-event-set-component@4.2.1/dist/aframe-event-set-component.min.js"></script> 
+
+  <!-- A-Frame Extra Add-Ons -->  
+  <script src="https://cdn.jsdelivr.net/gh/donmccurdy/aframe-extras@v6.1.1/dist/aframe-extras.min.js"></script>
 </head>
 
 <body>
@@ -122,7 +125,7 @@
                 <!-- I'm no 3D artist. Thank you for coming to my TED talk.  -->
                 <a-asset-item id="Spyro-glb" src="3dmodels/Characters/Spyro/Spyro.glb"></a-asset-item>
                 <a-asset-item id="Bulbasaur-glb" src="3dmodels/Characters/Bulbasaur/bulbasaur.glb"></a-asset-item>
-                <a-asset-item id="Charmander-glb" src="3dmodels/Characters/Charmander/charmander.glb"></a-asset-item>
+                <a-asset-item id="Charmander-glb" src="3dmodels/Characters/Charmander/charmander_anim.glb"></a-asset-item>
                 <a-asset-item id="Squirtle-glb" src="3dmodels/Characters/Squirtle/squirtle.glb"></a-asset-item>
                 <a-asset-item id="Mew-glb" src="3dmodels/Characters/Mew/Mew.glb"></a-asset-item>
                 <a-asset-item id="Ditto-gltf" src="3dmodels/Characters/Ditto/ditto.gltf"></a-asset-item>
@@ -409,9 +412,9 @@
               </a-entity>    
 
               <a-entity 
-                id="charmander" 
+                id="charmander"   
                 position="0 0 0">
-                <a-entity   
+                <a-box   
                 class="clickable"    
                 sound="src:  #charmander_sfx;  on: click; autoplay:  false;  volume: 1;"    
                 event-set__jump="_event: click; 
@@ -421,12 +424,22 @@
                                 animation.dur: 500;
                                 animation.easing: easeInExpo;
                                 animation.loop: 2;
-                                animation.dir: alternate"         
+                                animation.dir: alternate"   
+                id="collider"  
+                class="clickable"    
+                color="#FFFFFF"
+                position="-2.5 -0.75 -0.25"
+                scale="0.75 0.75 0.75"
+                visible="false">
+                </a-box>    
+                <a-entity  
+                id="mesh"       
                 position="-2.5 -1.20 -0.25"
-                rotation="-90 -60 0"
+                rotation="0 -60 0"
                 scale="0.15 0.15 0.15"
                 shadow="cast: true"
                 gltf-model="#Charmander-glb"
+                animation-mixer="clip: DwarfIdle"
                 color="#FFFFFF">
                 </a-entity>  
               </a-entity>  
