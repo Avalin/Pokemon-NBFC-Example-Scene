@@ -169,10 +169,15 @@
                     position="0 0 -1"
                     geometry="primitive: sphere; radius: 0.005"
                     material="color: #FF00FF; shader: flat; opacity: 0.5">                
-                  </a-entity>           
+                  </a-entity>         
                 </a-camera>
+                
+                <a-entity sphere-collider="objects: a-box" super-hands hand-controls="hand: left"></a-entity>
+                <a-entity sphere-collider="objects: a-box" super-hands hand-controls="hand: right"></a-entity>  
               </a-entity>    
               
+              <a-box class="interactable" hoverable grabbable stretchable draggable dropppable color="blue" position="0 1 -1"></a-box>
+
               <!-- Environment -->            
               <!-- Weather: Rainy -->
               <a-entity position="0 2.25 -15" particle-system="preset: rain; color: #0000FF, #9999FF, #9999FF"
