@@ -125,6 +125,9 @@
                 <a-asset-item id="Mew-m" src="3dmodels/Characters/Mew/Mew.mtl"></a-asset-item>
 
                 <a-asset-item id="Ditto-gltf" src="3dmodels/Characters/Ditto/ditto.gltf"></a-asset-item>
+                
+                <a-asset-item id="Basket-o" src="3dmodels/Objects/Basket/BasketSquare.obj"></a-asset-item>
+                <a-asset-item id="Basket-m" src="3dmodels/Objects/Basket/BasketSquare.mtl"></a-asset-item>
  
                 <!-- Textures -->
                 <img id="box_texture" src="textures/threejs/crate.png">
@@ -235,6 +238,20 @@
                 obj-model="obj: #SouthernIsland-o; mtl: #SouthernIsland-m"
                 color="#FFFFFF">
               </a-entity>  
+
+              <!-- Objects -->
+              <!-- Basket -->
+              <a-entity 
+                id="basket" 
+                position="0 0 0">
+                <a-entity 
+                  position="-5 -1.20 5.5"
+                  rotation="0 180 0"
+                  scale="0.75 0.5 1"
+                  obj-model="obj: #Basket-o; mtl: #Basket-m"
+                  color="#FFFFFF">
+                </a-entity>  
+              </a-entity> 
 
               <!-- Buildings -->
               <!-- House -->
@@ -365,7 +382,7 @@
                   event-set__jump="_event: click; 
                                   _target: #bulbasaur;
                                   animation.property: position;
-                                  animation.to: 0 1.5 0;
+                                  animation.to: 0 1.2.5 0;
                                   animation.dur: 500;
                                   animation.easing: easeInExpo;
                                   animation.loop: 2;
@@ -388,7 +405,7 @@
                 event-set__jump="_event: click; 
                                 _target: #charmander;
                                 animation.property: position;
-                                animation.to: 0 1.5 0;
+                                animation.to: 0 1.2.5 0;
                                 animation.dur: 500;
                                 animation.easing: easeInExpo;
                                 animation.loop: 2;
@@ -411,7 +428,7 @@
                   event-set__jump="_event: click; 
                                   _target: #squirtle;
                                   animation.property: position;
-                                  animation.to: 0 1.5 0;
+                                  animation.to: 0 1.2 0;
                                   animation.dur: 500;
                                   animation.easing: easeInExpo;
                                   animation.loop: 2;
@@ -448,7 +465,7 @@
               event-set__jump="_event: click; 
                             _target: #ditto;
                             animation.property: position;
-                            animation.to: 0 1.5 0;
+                            animation.to: 0 1.2 0;
                             animation.dur: 500;
                             animation.easing: easeInExpo;
                             animation.loop: 2;
