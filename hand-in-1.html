@@ -36,12 +36,15 @@
 
   <!-- A-Frame Extra Add-Ons -->  
   <script src="https://cdn.jsdelivr.net/gh/donmccurdy/aframe-extras@v6.1.1/dist/aframe-extras.min.js"></script>
-
-  <!-- A-Frame Super Hands -->  
-  <script src="https://unpkg.com/super-hands@3.0.0/dist/super-hands.min.js"></script>
+  
+  <!-- A-Frame Physics -->  
+  <script src="https://cdn.jsdelivr.net/gh/n5ro/aframe-physics-system@v4.0.1/dist/aframe-physics-system.min.js"></script>
  
   <!-- A-Frame Physics Extra Add-On -->  
   <script src="https://unpkg.com/aframe-physics-extras@0.1.2/dist/aframe-physics-extras.min.js"></script>
+
+  <!-- A-Frame Super Hands -->  
+  <script src="https://unpkg.com/super-hands@3.0.0/dist/super-hands.min.js"></script> 
 
     <!-- My Custom JS Files -->
     <script src="js/animation-handler.js"></script> 
@@ -177,20 +180,6 @@
                 <a-entity sphere-collider="objects: .interactable" handModelStyle: lowPoly; super-hands hand-controls="hand: left"></a-entity>
                 <a-entity sphere-collider="objects: .interactable" handModelStyle: lowPoly; super-hands hand-controls="hand: right"></a-entity>  
               </a-entity>    
-              
-              <a-entity 
-                hoverable grabbable draggable droppable
-                id="pokeball-2" 
-                position="0 0 0">
-                <a-entity 
-                  class="interactable"
-                  position="0 0.6 3.8"
-                  rotation="0 0 0"
-                  scale="12 12 12"
-                  gltf-model="#Pokeball-glb"
-                  color="#FFFFFF">
-                </a-entity>  
-              </a-entity> 
 
               <a-box  
                 dynamic-body                 
@@ -263,7 +252,6 @@
                 rotation="-90 0 0"
                 scale="0.075 0.075 0.075"
                 obj-model="obj: #CGrass-o; mtl: #CGrass-m">
-
                 <a-box 
                   static-body
                   position="0 0 0"
@@ -311,18 +299,29 @@
                 </a-entity>  
               </a-entity> 
 
-              <!-- Pokeball -->
+              <!-- Pokeball -->                            
               <a-entity 
-              id="pokeball-1" 
-              position="0 0 0">
-              <a-entity 
-                class="interactable"
-                position="-5 -1.00 5.5"
-                rotation="0 0 0"
-                scale="12 12 12"
-                gltf-model="#Pokeball-glb"
-                color="#FFFFFF">
-              </a-entity>  
+                id="pokeball-2" 
+                position="0 0 0">
+                <a-sphere 
+                  id="pokeball-2-collider"
+                  grabbable
+                  dynamic-body="mass: 0.2; linearDamping: 0.05; angularDamping: 0.3; shape: sphere; sphereRadius: 0.125;"
+                  class="interactable pokeball"
+                  radius="5"
+                  position="0 0.6 3.8"
+                  scale="0.02 0.02 0.02">
+                  <a-entity
+                    id="pokeball-2-mesh" 
+                    position="0 -6 0"
+                    rotation="0 0 0"
+                    scale="600 600 600"
+                    gltf-model="#Pokeball-glb"
+                    color="#FFFFFF">
+                  </a-entity>  
+                </a-sphere>
+              </a-entity> 
+
             </a-entity> 
 
               <!-- Buildings -->
