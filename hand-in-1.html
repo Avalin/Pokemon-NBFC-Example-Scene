@@ -36,13 +36,14 @@
 
   <!-- A-Frame Extra Add-Ons -->  
   <script src="https://cdn.jsdelivr.net/gh/donmccurdy/aframe-extras@v6.1.1/dist/aframe-extras.min.js"></script>
+
+    <!-- My Custom JS Files -->
+    <script src="js/animation-handler.js"></script> 
+    <script src="js/a-frame-custom-shaders.js"></script> 
+  
 </head>
 
 <body>
-  <!-- My Custom JS Files -->
-  <script src="js/animation-handler.js"></script> 
-  <script src="js/a-frame-custom-shaders.js"></script> 
-
   <h1 class="site-heading text-center text-white d-none d-lg-block">
     <span class="site-heading-upper text-primary mb-3">Welcome to...</span>
     <span class="site-heading-lower">WebVR Project Showcases</span>
@@ -414,7 +415,9 @@
               <a-entity 
                 id="charmander"   
                 position="0 0 0">
+                
                 <a-box   
+                id="charmander_collider" 
                 class="clickable"    
                 sound="src:  #charmander_sfx;  on: click; autoplay:  false;  volume: 1;"    
                 event-set__jump="_event: click; 
@@ -424,16 +427,16 @@
                                 animation.dur: 500;
                                 animation.easing: easeInExpo;
                                 animation.loop: 2;
-                                animation.dir: alternate"   
-                id="collider"  
+                                animation.dir: alternate"    
                 class="clickable"    
                 color="#FFFFFF"
                 position="-2.5 -0.75 -0.25"
                 scale="0.75 0.75 0.75"
                 visible="false">
                 </a-box>    
+
                 <a-entity  
-                id="mesh"       
+                id="charmander_mesh"       
                 position="-2.5 -1.20 -0.25"
                 rotation="0 -60 0"
                 scale="0.15 0.15 0.15"
