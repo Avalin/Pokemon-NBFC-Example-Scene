@@ -138,12 +138,17 @@
                 <img id="teal_NRM" src="textures/bounds/teak_NRM.png">
 
                 <!-- Sound: SFX & Music -->
-                <audio id="rain_drops" src="sounds/ambience/rain_loop.wav"></a-sound>
+                <audio id="rain_ambience"  src="sounds/ambience/rain_loop.wav"></audio>
+                  
+                <audio id="bulbasaur_sfx"  src="sounds/sfx/Bulbasaur.mp3"></audio>
+                <audio id="charmander_sfx" src="sounds/sfx/Charmander.mp3"></audio>
+                <audio id="mew_sfx"        src="sounds/sfx/Mew.mp3"></audio>
+                <audio id="squirtle_sfx"   src="sounds/sfx/Squirtle.mp3"></audio>
               </a-assets>
 
               <!-- Weather: Rainy -->
               <a-entity position="0 2.25 -15" particle-system="preset: rain; color: #0000FF, #9999FF, #9999FF"
-                        sound="src:  #rain_drops;  autoplay:  true;  loop: true; volume: 0.05; positional:  false"></a-entity>
+                        sound="src:  #rain_ambience;  autoplay:  true;  loop: true; volume: 0.05; positional:  false"></a-entity>
               
               <!-- Environment -->
               <!-- Hemisphere Light --> 
@@ -355,7 +360,8 @@
                 id="bulbasaur" 
                 position="0 0 0">
                 <a-entity   
-                  class="clickable"     
+                  class="clickable"  
+                  sound="src:  #bulbasaur_sfx;  on: click; autoplay:  false;  volume: 1;"     
                   position="-1 -1.30 -1"
                   rotation="0 0 -4"
                   scale="0.10 0.10 0.10"
@@ -369,7 +375,8 @@
                 id="charmander" 
                 position="0 0 0">
                 <a-entity   
-                class="clickable"            
+                class="clickable"    
+                sound="src:  #charmander_sfx;  on: click; autoplay:  false;  volume: 1;"          
                 position="-2.5 -1.20 -0.25"
                 rotation="-90 -60 0"
                 scale="0.15 0.15 0.15"
@@ -380,10 +387,11 @@
               </a-entity>  
 
               <a-entity 
-              id="squirtle"
+                id="squirtle"
                 position="0 0 0">
                 <a-entity 
                   class="clickable"
+                  sound="src:  #squirtle_sfx;  on: click; autoplay:  false;  volume: 1;"  
                   event-set__jump="_event: click; 
                                   _target: #squirtle;
                                   animation.property: position;
@@ -391,7 +399,7 @@
                                   animation.dur: 500;
                                   animation.easing: easeInExpo;
                                   animation.loop: true;
-                                  animation.dir: alternate"
+                                  animation.dir: alternate"              
                   position="1 -1.30 -0.25" 
                   rotation="-90 180 50" 
                   scale="0.2 0.2 0.2" 
@@ -405,6 +413,7 @@
               position="0 0 0">
               <a-entity           
               class="clickable" 
+              sound="src:  #mew_sfx;  on: click; autoplay:  false;  volume: 1;"
               animation="property: rotation;  from: -25 60 0; to: 335 60 0; dur: 2000; delay: 2000; easing: easeInSine; loop: true" 
               animation__position="property: position;  from: -4 1.25 2; to: -4 0 2; dur: 2000;  dir: alternate; easing: easeInSine; loop: true"
               position="-4 1.25 2"
