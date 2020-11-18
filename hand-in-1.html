@@ -34,14 +34,14 @@
   <!-- A-Frame Event System -->  
   <script src="https://unpkg.com/aframe-event-set-component@4.2.1/dist/aframe-event-set-component.min.js"></script> 
 
-    <!-- A-Frame Physics (Should be included with super hands, but eh...) -->  
-  <script src="https://cdn.jsdelivr.net/gh/n5ro/aframe-physics-system@v4.0.1/dist/aframe-physics-system.min.js"></script>
-
   <!-- A-Frame Extra Add-Ons -->  
   <script src="https://cdn.jsdelivr.net/gh/donmccurdy/aframe-extras@v6.1.1/dist/aframe-extras.min.js"></script>
 
   <!-- A-Frame Super Hands -->  
   <script src="https://unpkg.com/super-hands@3.0.0/dist/super-hands.min.js"></script>
+ 
+  <!-- A-Frame Physics Extra Add-On -->  
+  <script src="https://unpkg.com/aframe-physics-extras@0.1.2/dist/aframe-physics-extras.min.js"></script>
 
     <!-- My Custom JS Files -->
     <script src="js/animation-handler.js"></script> 
@@ -179,11 +179,10 @@
               </a-entity>    
               
               <a-entity 
-                hoverable grabbable draggable dropppable
+                hoverable grabbable draggable droppable
                 id="pokeball-2" 
                 position="0 0 0">
                 <a-entity 
-                  dynamic-body
                   class="interactable"
                   position="0 0.6 3.8"
                   rotation="0 0 0"
@@ -197,6 +196,7 @@
                 dynamic-body                 
                 position="0 0.6 3.8"
                 rotation="0 0 0"
+                visible="false"
                 scale="1 1 1">
               </a-box>  
 
