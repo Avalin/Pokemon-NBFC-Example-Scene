@@ -103,12 +103,14 @@
               <a-assets>
 
                 <!-- 3D Models -->
+               <!-- 3D Models: Environment -->
                 <a-asset-item id="CGrass-o" src="3dmodels/Environment/c-grass-patch/10438_Circular_Grass_Patch_v1_iterations-2.obj"></a-asset-item>
                 <a-asset-item id="CGrass-m" src="3dmodels/Environment/c-grass-patch/10438_Circular_Grass_Patch_v1_iterations-2.mtl"></a-asset-item>
 
                 <a-asset-item id="SouthernIsland-o" src="3dmodels/Environment/sonic-island/Southern_Island.obj"></a-asset-item>
                 <a-asset-item id="SouthernIsland-m" src="3dmodels/Environment/sonic-island/Southern_Island.mtl"></a-asset-item>
                 
+               <!-- 3D Models: Objects -->
                 <a-asset-item id="Basket-o" src="3dmodels/Objects/Basket/BasketSquare.obj"></a-asset-item>
                 <a-asset-item id="Basket-m" src="3dmodels/Objects/Basket/BasketSquare.mtl"></a-asset-item>
                
@@ -116,7 +118,7 @@
                 <a-asset-item id="Pokeball-m" src="3dmodels/Objects/Pokeball/pokeball.mtl"></a-asset-item>
                   
                 <!-- 3D Models: Dynamic Characters -->
-                <!-- I just want to note here the pain it was to meddle with mtl files to ensure proper gloss/specular, and converting these to glb to make them animation ready.  -->
+                <!-- I just want to note here the pain it was to meddle with mtl files to ensure proper gloss/specular, and converting these from obj to glb to make them animation ready.  -->
                 <!-- I'm no 3D artist. Thank you for coming to my TED talk.  -->
                 <a-asset-item id="Spyro-glb" src="3dmodels/Characters/Spyro/Spyro.glb"></a-asset-item>
                 <a-asset-item id="Bulbasaur-glb" src="3dmodels/Characters/Bulbasaur/bulbasaur.glb"></a-asset-item>
@@ -152,7 +154,7 @@
               <!-- Environment -->
               <!-- Hemisphere Light --> 
               <a-entity           
-                animation="property: light.intensity;  from: 0.5; to: 0.1; dur: 45000; dir: alternate; easing: linear; loop: true"  
+                animation="property: light.color;  from: #FF9900; to: #0000FF; dur: 45000; dir: alternate; easing: linear; loop: true"  
                 light="type: hemisphere; color: #ff0000; castShadow: true; decay: 0.25; distance: 1; intensity: 0.5" position="0 10 0">
               </a-entity>
 
