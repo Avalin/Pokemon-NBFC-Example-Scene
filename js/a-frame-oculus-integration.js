@@ -67,7 +67,7 @@ AFRAME.registerComponent('input-listen', {
             });
 
             //A-button Released 
-            this.el.addEventListener('abuttondown', function (e) {
+            this.el.addEventListener('abuttonup', function (e) {
                 this.emit('teleportend');
             });
 
