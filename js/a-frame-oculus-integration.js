@@ -26,10 +26,6 @@ AFRAME.registerComponent('input-listen', {
                 force.multiplyScalar(2000);                   
                 ball.force = this.object3D.localToWorld(force);
 
-                //Instantiate ball entity in a-scene
-                var scene = document.querySelector('a-scene');
-                scene.appendChild(ball);
-
                 //shoot "ball" after physics information getting ready. 
                 ball.addEventListener('body-loaded', function (e) {
                     //"this" refers ball entity in this function
@@ -67,12 +63,12 @@ AFRAME.registerComponent('input-listen', {
 
             //A-button Pressed 
             this.el.addEventListener('abuttondown', function (e) {
-                //Aqurire all ball entities which are instantiated in a-scene
-                var els = document.querySelectorAll('.ball');
-                //Destroy all ball entities
-                for (var i = 0; i < els.length; i++) {
-                    els[i].parentNode.removeChild(els[i]);
-                }
+                this.emit('teleportstart');
+            });
+
+            //A-button Released 
+            this.el.addEventListener('abuttondown', function (e) {
+                this.emit('teleportend');
             });
 
             //X-button Pressed 
@@ -90,7 +86,7 @@ AFRAME.registerComponent('input-listen', {
             //console.log(this);
         },
 
-    //called evry frame.
+    //called every frame.
     tick: function () {
 
         if (!this.el.selectedObj) { return; }
