@@ -32,30 +32,29 @@ AFRAME.registerComponent('entity-spawner', {
 });*/
 
 AFRAME.registerComponent('pokeball-spawner', {
+    schema: {},
 	init: function () {
-		let spawnPoint = document.querySelector('#pokeball_spawn_point');
-        let scene = document.querySelector('a-scene');
-		
-		this.el.addEventListener('click', function () {
-			let position = new THREE.Vector3(0, 5, 0);
-			let direction = new THREE.Vector3();
-			let target = new THREE.Vector3();
-			
-			spawnPoint.object3D.getWorldPosition(position);
-			target.add(position).add(direction);
-
-            let sphere = document.createElement('a-sphere');
-            sphere.setAttribute('material', {color: '#0077FF', side: 'double'});
-            sphere.setAttribute('radius', 0.25);
-            sphere.setAttribute('position', target);
-    
-            scene.appendChild(sphere);
-
-            createPokeball();
-		});
+		this.el.addEventListener('click', this.instantiatePokeball);
     },
     
-    createPokeball: function() {
+    instantiatePokeball: function () {
+        let spawnPoint = document.querySelector('#pokeball_spawn_point');
+        let scene = document.querySelector('a-scene');
+        let position = new THREE.Vector3(0, 5, 0);
+        let direction = new THREE.Vector3();
+        let target = new THREE.Vector3();
+        
+        spawnPoint.object3D.getWorldPosition(position);
+        target.add(position).add(direction);
 
+        let sphere = document.createElement('a-sphere');
+        sphere.setAttribute('grabbable');
+        sphere.setAttribute('dynamic-body', {mass: '0.08', linearDamping: '0.05', angularDamping: '0.3', shape: 'sphere', sphereRadius: '0.125'});
+        sphere.setAttribute('material', {color: '#FF00FF', side: 'double'});
+        sphere.setAttribute('radius', 5);
+        sphere.setAttribute('scale', '0.02 0.02 0.02');
+        sphere.setAttribute('position', target);
+        
+        scene.appendChild(sphere);
     }
 });
