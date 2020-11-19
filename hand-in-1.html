@@ -131,6 +131,7 @@
                 <a-asset-item id="SouthernIsland-m" src="3dmodels/Environment/sonic-island/Southern_Island.mtl"></a-asset-item>
               
                 <a-asset-item id="navmesh-gltf" src="3dmodels/Navmeshes/scene-1.gltf"></a-asset-item>
+                <a-asset-item id="navmesh-f-gltf" src="3dmodels/Navmeshes/scene-1-flat.gltf"></a-asset-item>
                 
                <!-- 3D Models: Objects -->
                 <a-asset-item id="Basket-o" src="3dmodels/Objects/Basket/BasketSquare.obj"></a-asset-item>
@@ -185,10 +186,12 @@
                   </a-entity>      
                 </a-entity>
 
-                <a-entity input-listen teleport-controls="cameraRig: #camera-rig; teleportOrigin: #head; collisionEntities: #navmesh; startEvents: teleportstart; endEvents: teleportend" 
+                <a-entity input-listen teleport-controls="cameraRig: #camera-rig; teleportOrigin: #head; collisionEntities: #navmesh; startEvents: teleportstart; endEvents: teleportend"  
+                static-body="shape: sphere; sphereRadius: 0.02;"
                 sphere-collider="objects: .interactable" handModelStyle: lowPoly; super-hands hand-controls="hand: left"></a-entity>
                 
                 <a-entity input-listen teleport-controls="cameraRig: #camera-rig; teleportOrigin: #head; collisionEntities: #navmesh; startEvents: teleportstart; endEvents: teleportend" 
+                static-body="shape: sphere; sphereRadius: 0.02;"
                 sphere-collider="objects: .interactable" handModelStyle: lowPoly; super-hands hand-controls="hand: right"></a-entity>  
               
               </a-entity>    
@@ -197,7 +200,7 @@
                 id="navmesh" 
                 position="0 0 0"
                 visible="false"
-                gltf-model="#navmesh-gltf">  
+                gltf-model="#navmesh-f-gltf">  
               </a-entity>  
 
               <a-box  
@@ -325,7 +328,7 @@
                 <a-sphere 
                   id="pokeball-2-collider"
                   grabbable
-                  dynamic-body="mass: 0.2; linearDamping: 0.05; angularDamping: 0.3; shape: sphere; sphereRadius: 0.125;"
+                  dynamic-body="mass: 0.08; linearDamping: 0.05; angularDamping: 0.3; shape: sphere; sphereRadius: 0.125;"
                   class="interactable pokeball"
                   radius="5"
                   position="0 0.6 3.8"
@@ -488,7 +491,6 @@
               <a-entity 
                 id="charmander"   
                 position="0 0 0">
-                
                 <a-box   
                   id="charmander_collider" 
                   static-body
@@ -501,8 +503,7 @@
                                   animation.dur: 500;
                                   animation.easing: easeInExpo;
                                   animation.loop: 2;
-                                  animation.dir: alternate"    
-                  class="interactable"    
+                                  animation.dir: alternate"      
                   color="#FFFFFF"
                   position="-2.5 -0.75 -0.25"
                   scale="0.40 0.75 0.50"
@@ -519,7 +520,7 @@
                 animation-mixer="clip: DwarfIdle"
                 color="#FFFFFF">
                 </a-entity>  
-              </a-entity>  
+              </a-entity>
 
               <a-entity 
                 id="squirtle"
@@ -543,7 +544,7 @@
                   color="#FFFFFF">
                 </a-entity>
               </a-entity>
-                
+              
               <a-entity 
                 id="mew" 
                 position="0 0 0">

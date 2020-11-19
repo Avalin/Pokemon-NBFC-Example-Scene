@@ -51,7 +51,7 @@ and also comment on methods, handlers etc.
 In this hand-in you must show that you can:
 1. Use a VR headset                                                         [✔]
 2. Use Controllers                                                          [✔]
-3. Use physics system                                                       [x]        
+3. Use physics system                                                       [✔]        
 4. Code a working handler in Javascript                                     [x]
 5. Use a reference to the 3D model in javascript.                           [x]
 6. Change behavior in the 3D model using Javascript                         [x]
