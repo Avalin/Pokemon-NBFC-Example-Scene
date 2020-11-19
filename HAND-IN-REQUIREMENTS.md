@@ -49,14 +49,14 @@ In the javascript files make sure to use comments to show us, where hand-in 2 is
 and also comment on methods, handlers etc.  
 
 In this hand-in you must show that you can:
-1. Use a VR headset                                                         [x]
-2. Use Controllers                                                          [x]
-3. Use physic system                                                        [x]        
+1. Use a VR headset                                                         [✔]
+2. Use Controllers                                                          [✔]
+3. Use physics system                                                        [x]        
 4. Code a working handler in Javascript                                     [x]
 5. Use a reference to the 3D model in javascript.                           [x]
 6. Change behavior in the 3D model using Javascript                         [x]
-7. Add Gaze based interaction                                               [x]
-8. Add teleportation                                                        [x]
+7. Add Gaze based interaction                                               [✔]
+8. Add teleportation                                                        [✔]
 9. Add tracked controls                                                     [x]
 10. Write and use a custom component with standard methods like init etc.   [x]
 

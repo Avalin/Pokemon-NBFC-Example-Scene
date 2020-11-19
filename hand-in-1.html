@@ -149,7 +149,7 @@
                 <a-asset-item id="Ditto-gltf" src="3dmodels/Characters/Ditto/ditto.gltf"></a-asset-item>
 
                 <!-- Textures -->
-                <img id="box_texture" src="textures/threejs/crate.png">
+                <img id="pokegnette" src="textures/vignette/pokegnette.png">
                 <img id="oWater" src="textures/liquid/OceanWater.jpg">
                 <img id="oWater_NRM" src="textures/liquid/OceanWater_NRM.jpg">
                 <img id="oWater_CST" src="textures/liquid/caustics.png">
@@ -182,13 +182,15 @@
                     position="0 0 -1"
                     geometry="primitive: sphere; radius: 0.005"
                     material="color: #FF00FF; shader: flat; opacity: 0.5">                
-                  </a-entity>         
+                  </a-entity>      
                 </a-entity>
-                
+
                 <a-entity input-listen teleport-controls="cameraRig: #camera-rig; teleportOrigin: #head; collisionEntities: #navmesh; startEvents: teleportstart; endEvents: teleportend" 
                 sphere-collider="objects: .interactable" handModelStyle: lowPoly; super-hands hand-controls="hand: left"></a-entity>
+                
                 <a-entity input-listen teleport-controls="cameraRig: #camera-rig; teleportOrigin: #head; collisionEntities: #navmesh; startEvents: teleportstart; endEvents: teleportend" 
                 sphere-collider="objects: .interactable" handModelStyle: lowPoly; super-hands hand-controls="hand: right"></a-entity>  
+              
               </a-entity>    
 
               <a-entity 
