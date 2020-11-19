@@ -52,13 +52,13 @@ In this hand-in you must show that you can:
 1. Use a VR headset                                                         [✔] //Tested both hand-ins with Oculus Quest.
 2. Use Controllers                                                          [✔] //Tested hand-in 2 with Oculus Quest controllers.
 3. Use physics system                                                       [✔] //Generated pokéballs use physics.      
-4. Code a working handler in Javascript                                     [✔] //Multiple. Example: a-frame-entity-spawners
-5. Use a reference to the 3D model in javascript.                           [x]
-6. Change behavior in the 3D model using Javascript                         [x]
+4. Code a working handler in Javascript                                     [✔] //Multiple scripts does this. Example: a-frame-entity-spawners
+5. Use a reference to the 3D model in javascript.                           [✔] //Multiple scripts does this. Example: a-frame-pokemon-interaction
+6. Change behavior in the 3D model using Javascript                         [✔]  //Multiple scripts does this. Example: a-frame-pokemon-interaction
 7. Add Gaze based interaction                                               [✔] //Interaction with pokémons and spawning pokéballs can be done with gaze
 8. Add teleportation                                                        [✔] //Works with minor bugs (Sometimes spawning in ground, initially spawns in the air)
 9. Add tracked controls                                                     [✔] //Works with WASD and thumbstick on Oculus Quest
-10. Write and use a custom component with standard methods like init etc.   [✔] //Multiple. Example: a-frame-pokemon-interaction
+10. Write and use a custom component with standard methods like init etc.   [✔] //Multiple scripts does this. Example: a-frame-pokemon-interaction
 
 Your documentation here is the HTML website with javascript files and also one (1) video showing VR headset and controllers in use. 
 
