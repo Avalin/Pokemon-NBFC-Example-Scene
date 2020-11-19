@@ -10,35 +10,7 @@ AFRAME.registerComponent('input-listen', {
 
             //Called when trigger is pressed 
             this.el.addEventListener('triggerdown', function (e) {
-                //"this" refers right hand controller or left hand controller in this function
-                var point = this.object3D.getWorldPosition();
 
-                //Creating ball entity.
-                var ball = document.createElement('a-sphere');
-                ball.setAttribute('class', 'ball');
-                ball.setAttribute('scale', '0.2 0.2 0.2');
-                ball.setAttribute('position', point);
-                ball.setAttribute('dynamic-body', 'shape: sphere; sphereRadius:0.2; ');
-
-                //Getting raycaster which was attached to right hand controller or left hand controller 
-                var dir = this.getAttribute("raycaster").direction;
-
-                //Setting shoot dierction and speed 
-                var force = new THREE.Vector3(dir.x, dir.y, dir.z);
-                force.multiplyScalar(2000);                   
-                ball.force = this.object3D.localToWorld(force);
-
-                //shoot "ball" after physics information getting ready. 
-                ball.addEventListener('body-loaded', function (e) {
-                    //"this" refers ball entity in this function
-                    var p = this.object3D.position;
-                    //this.velocity was calculated before this function is called.
-                    var f = this.force;
-                    this.body.applyForce(
-                        new CANNON.Vec3(f.x, f.y, f.z),
-                        new CANNON.Vec3(p.x, p.y, p.z)
-                    );
-                });
             });
 
             //Thumbstick touched.
