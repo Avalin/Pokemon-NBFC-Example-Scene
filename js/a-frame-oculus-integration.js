@@ -1,3 +1,5 @@
+/*  https://aframe.io/docs/1.0.0/components/oculus-touch-controls.html#events 
+ *  ^ Link til flere interaction muligheder */
 AFRAME.registerComponent('input-listen', {
     init:
         function () {
