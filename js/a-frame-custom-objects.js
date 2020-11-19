@@ -1,5 +1,7 @@
 /*
- * This component will be responsible for removing objects the player may have thrown out of the scene etc.
+ * This component will be responsible for objects that the user can move around in the scene.
+ * I.e by removing objects the player may have thrown out of the scene etc.
+
  */
 
 AFRAME.registerComponent('custom-object', {
