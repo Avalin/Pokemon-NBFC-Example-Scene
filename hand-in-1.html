@@ -136,8 +136,10 @@
                <!-- 3D Models: Objects -->
                 <a-asset-item id="Basket-o" src="3dmodels/Objects/Basket/BasketSquare.obj"></a-asset-item>
                 <a-asset-item id="Basket-m" src="3dmodels/Objects/Basket/BasketSquare.mtl"></a-asset-item>
-               
+
                 <a-asset-item id="Pokeball-glb" src="3dmodels/Objects/Pokeball/pokeball.glb"></a-asset-item>
+         
+                <a-asset-item id="WoodenTable-gltf" src="3dmodels/Objects/WoodenTable/table.gltf"></a-asset-item>
                   
                 <!-- 3D Models: Dynamic Characters -->
                 <!-- I just want to note here the pain it was to meddle with mtl files to ensure proper gloss/specular, and converting these from obj to glb to make them animation ready.  -->
@@ -202,14 +204,6 @@
                 visible="false"
                 gltf-model="#navmesh-f-gltf">  
               </a-entity>  
-
-              <a-box  
-                dynamic-body                 
-                position="0 0.6 3.8"
-                rotation="0 0 0"
-                visible="false"
-                scale="1 1 1">
-              </a-box>  
 
               <!-- Environment -->            
               <!-- Weather: Rainy -->
@@ -307,42 +301,92 @@
               </a-entity>  
 
               <!-- Objects -->
+              <a-entity
+                position="-4.75 -1.25 5.5">
+                <a-entity 
+                  position="0 0 0"
+                  rotation="0 0 0"
+                  scale="0.075 0.05 0.05"
+                  gltf-model="#WoodenTable-gltf"
+                  color="#FFFFFF">
+                </a-entity>  
+                <a-box  
+                  static-body
+                  visible="false"
+                  position="-0.525 0.66 0.15" 
+                  scale="2.35 1.5 3.5"
+                  color="#FFFFFF">
+                </a-box> 
+              </a-entity>  
+
               <!-- Basket -->
+              <!-- Due to the hardcoded colliders, resizing is not super efficient -->
               <a-entity 
                 id="basket" 
-                position="0 0 0">
+                position="-5 0.2 5.65">
                 <a-entity 
-                  static-body
-                  position="-5 -1.20 5.5"
+                  position="0 0 0"
                   rotation="0 0 0"
                   scale="0.75 0.5 1"
                   obj-model="obj: #Basket-o; mtl: #Basket-m"
                   color="#FFFFFF">
                 </a-entity>  
+                <a-box 
+                  visible="false"
+                  static-body
+                  position="0 0.05 0"
+                  rotation="0 0 0"
+                  scale="1.4 0.1 1.25"
+                  color="#FFFFFF">
+                </a-box> 
+                <a-box 
+                visible="false"
+                  static-body
+                  position="-0.70 0.275 0"
+                  scale="0.1 0.55 1.25"
+                  color="#FFFFFF">
+                </a-box> 
+                <a-box 
+                  visible="false"
+                  static-body
+                  position="0.70 0.275 0"
+                  scale="0.1 0.55 1.25"
+                  color="#FFFFFF">
+                </a-box> 
+                <a-box 
+                  visible="false"
+                  static-body
+                  position="0.015 0.275 -0.60" 
+                  scale="1.45 0.55 0.1"
+                  color="#FFFFFF">
+                </a-box> 
+                <a-box 
+                  visible="false"
+                  static-body
+                  position="0.015 0.275 0.60" 
+                  scale="1.45 0.55 0.1"
+                  color="#FFFFFF">
+                </a-box> 
               </a-entity> 
 
               <!-- Pokeball -->                            
-              <a-entity 
-                id="pokeball-2" 
-                position="0 0 0">
-                <a-sphere 
-                  id="pokeball-2-collider"
-                  grabbable
-                  dynamic-body="mass: 0.08; linearDamping: 0.05; angularDamping: 0.3; shape: sphere; sphereRadius: 0.125;"
-                  class="interactable pokeball"
-                  radius="5"
-                  position="0 0.6 3.8"
-                  scale="0.02 0.02 0.02">
-                  <a-entity
-                    id="pokeball-2-mesh" 
-                    position="0 -6 0"
-                    rotation="0 0 0"
-                    scale="600 600 600"
-                    gltf-model="#Pokeball-glb"
-                    color="#FFFFFF">
-                  </a-entity>  
-                </a-sphere>
-              </a-entity> 
+              <a-sphere 
+                id="pokeball-2"
+                grabbable
+                dynamic-body="mass: 0.08; linearDamping: 0.05; angularDamping: 0.3; shape: sphere; sphereRadius: 0.125;"
+                class="interactable pokeball"
+                radius="5"
+                position="-5 2 5.65"
+                scale="0.02 0.02 0.02">
+                <a-entity
+                  id="pokeball-2-mesh" 
+                  position="0 -6 0"
+                  rotation="0 0 0"
+                  scale="600 600 600"
+                  gltf-model="#Pokeball-glb"
+                  color="#FFFFFF">
+                </a-entity>  
+              </a-sphere>
 
               <!-- Buildings -->
               <!-- House -->
