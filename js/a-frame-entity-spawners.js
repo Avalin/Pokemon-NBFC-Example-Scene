@@ -33,9 +33,12 @@ AFRAME.registerComponent('pokeball-spawner', {
     },
     
     instantiatePokeball: function () {
+        
         let pokeballsInSceneAmount = document.getElementsByClassName('pokeball').length + 1;
+        let pokeballID = "pokeball-"+pokeballsInSceneAmount;
+        let pokeballLimit = 6;
 
-        if(pokeballsInSceneAmount <= 3)
+        if(pokeballsInSceneAmount <= pokeballLimit)
         {
             //Setup the spawn-point for the new pokeball to be in the basket in the scene
             let spawnPoint = document.querySelector('#pokeball_spawn_point');
@@ -49,7 +52,7 @@ AFRAME.registerComponent('pokeball-spawner', {
 
             //Create the pokeball container, with collider and grabbable sphere
             let pokeballContainer = document.createElement('a-sphere');
-            pokeballContainer.setAttribute('id', 'PLEASELOVEME');
+            pokeballContainer.setAttribute('id', pokeballID);
             pokeballContainer.classList.add('interactable')
             pokeballContainer.classList.add('pokeball')
             pokeballContainer.setAttribute('grabbable', '');
