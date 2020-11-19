@@ -5,7 +5,7 @@
 
 /* 
 * Not a used component, just putting it as is from the lecture here, in case I want to add something from it
-*/
+*
 AFRAME.registerComponent('entity-spawner', {
 	init: function () {
 		let camera = document.querySelector('#camera-rig');
@@ -29,7 +29,7 @@ AFRAME.registerComponent('entity-spawner', {
 			scene.appendChild(sphere);
 		});
 	}
-});
+});*/
 
 AFRAME.registerComponent('pokeball-spawner', {
 	init: function () {
