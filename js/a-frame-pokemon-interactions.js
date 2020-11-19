@@ -14,7 +14,8 @@ AFRAME.registerComponent('pokemon', {
           if(collidedObj.classList.contains("pokeball"))
           {      
               collidedObj.setAttribute('sound', {src: 'sounds/sfx/PokeballOpening.mp3', autoplay: 'true', loop: 'false'});          
-              pokemon.setAttribute('material', {color: '#FFFFFF'});
+              pokemon.setAttribute('animation', {property: 'scale', to: '0 0 0', dur: '3000', easing: 'linear'});  
+              pokemon.components.material.material.color = "#000000"
           }
       });
 	}
