@@ -1,12 +1,16 @@
 AFRAME.registerComponent('pokemon', {   
 	  init: function () {		
+      let pokemon = this.el;
+
 		  this.el.addEventListener('click', function () {
-        console.log(this.el + " was clicked!");
-	  	});
+        console.log(pokemon.parentNode.id + " was clicked!");
+      });
+      
+      this.el.addEventListener('collide', this.catchPokemon)
     },
 
     tick: function () {		
-      this.el.addEventListener('collide', this.catchPokemon)
+
     },
 
     catchPokemon: function (e) {		
