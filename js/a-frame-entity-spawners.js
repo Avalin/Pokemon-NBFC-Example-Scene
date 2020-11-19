@@ -53,14 +53,15 @@ AFRAME.registerComponent('pokeball-spawner', {
             //Create the pokeball container, with collider and grabbable sphere
             let pokeballContainer = document.createElement('a-sphere');
             pokeballContainer.setAttribute('id', pokeballID);
-            pokeballContainer.classList.add('interactable')
-            pokeballContainer.classList.add('pokeball')
             pokeballContainer.setAttribute('grabbable', '');
+            pokeballContainer.setAttribute('custom-object', '');
             pokeballContainer.setAttribute('dynamic-body', {mass: '0.08', linearDamping: '0.05', angularDamping: '0.3', shape: 'sphere', sphereRadius: '0.125'});
-            pokeballContainer.setAttribute('material', {color: '#FF00FF', side: 'double'});
+            pokeballContainer.setAttribute('material', {color: '#FFFFFF', side: 'double'});
             pokeballContainer.setAttribute('radius', 5);
             pokeballContainer.setAttribute('scale', '0.02 0.02 0.02');
             pokeballContainer.setAttribute('position', target);
+            pokeballContainer.classList.add('interactable')
+            pokeballContainer.classList.add('pokeball')
             
             //Creates the visible model
             let pokeballMesh = document.createElement('a-entity');
