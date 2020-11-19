@@ -129,8 +129,7 @@
 
                 <a-asset-item id="SouthernIsland-o" src="3dmodels/Environment/sonic-island/Southern_Island.obj"></a-asset-item>
                 <a-asset-item id="SouthernIsland-m" src="3dmodels/Environment/sonic-island/Southern_Island.mtl"></a-asset-item>
-
-                
+              
                 <a-asset-item id="navmesh-gltf" src="3dmodels/Navmeshes/scene-1.gltf"></a-asset-item>
                 
                <!-- 3D Models: Objects -->
@@ -186,11 +185,18 @@
                   </a-entity>         
                 </a-entity>
                 
-                <a-entity input-listen teleport-controls="cameraRig: #camera-rig; teleportOrigin: #head; startEvents: teleportstart; endEvents: teleportend" 
+                <a-entity input-listen teleport-controls="cameraRig: #camera-rig; teleportOrigin: #head; collisionEntities: #navmesh; startEvents: teleportstart; endEvents: teleportend" 
                 sphere-collider="objects: .interactable" handModelStyle: lowPoly; super-hands hand-controls="hand: left"></a-entity>
-                <a-entity input-listen teleport-controls="cameraRig: #camera-rig; teleportOrigin: #head; startEvents: teleportstart; endEvents: teleportend" 
+                <a-entity input-listen teleport-controls="cameraRig: #camera-rig; teleportOrigin: #head; collisionEntities: #navmesh; startEvents: teleportstart; endEvents: teleportend" 
                 sphere-collider="objects: .interactable" handModelStyle: lowPoly; super-hands hand-controls="hand: right"></a-entity>  
               </a-entity>    
+
+              <a-entity 
+                id="navmesh" 
+                position="0 -0.5 0"
+                visible="false"
+                gltf-model="#navmesh-gltf">  
+              </a-entity>  
 
               <a-box  
                 dynamic-body                 
