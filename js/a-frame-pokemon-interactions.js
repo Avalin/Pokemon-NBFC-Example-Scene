@@ -1,13 +1,13 @@
 AFRAME.registerComponent('pokemon', {   
 	init: function () {		
 		this.el.addEventListener('click', function () {
-            
-		});
+            console.log(this.el + " was clicked!");
+	  	});
     },
 
     tick: function () {		
 		this.el.addEventListener('collide', function (e) {
-            console.log('Collided with body #' + e.detail.body.id);
+            console.log(this.el + 'collided with ' + e.detail.body.el);
 
             e.detail.target.el;  // Original entity (playerEl).
             e.detail.body.el;    // Other entity, which playerEl touched.
