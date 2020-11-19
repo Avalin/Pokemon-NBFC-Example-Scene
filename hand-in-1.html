@@ -174,7 +174,7 @@
 
               <!-- Camera -->  
               <a-entity id="camera-rig" movement-controls="constrainToNavMesh: true" position="0 0 4" rotation="0 150 0">
-                <a-entity camera id="head" position="0 0 0">                      
+                <a-entity camera id="head" position="0 0 0" wasd-controls look-controls>                      
                   <!-- Gaze-pointer -->  
                   <a-entity cursor="fuse: true; fuseTimeout: 1000" 
                     raycaster="objects: .interactable"
@@ -377,7 +377,7 @@
                 dynamic-body="mass: 0.08; linearDamping: 0.05; angularDamping: 0.3; shape: sphere; sphereRadius: 0.125;"
                 class="interactable pokeball"
                 radius="5"
-                position="-5 2 5.65"
+                position="-5 0 5.65"
                 scale="0.02 0.02 0.02">
                 <a-entity
                   id="pokeball-2-mesh" 

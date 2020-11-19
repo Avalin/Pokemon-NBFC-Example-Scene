@@ -57,7 +57,7 @@ In this hand-in you must show that you can:
 6. Change behavior in the 3D model using Javascript                         [x]
 7. Add Gaze based interaction                                               [✔]
 8. Add teleportation                                                        [✔]
-9. Add tracked controls                                                     [x]
+9. Add tracked controls                                                     [✔]
 10. Write and use a custom component with standard methods like init etc.   [x]
 
 Your documentation here is the HTML website with javascript files and also one (1) video showing VR headset and controllers in use. 
