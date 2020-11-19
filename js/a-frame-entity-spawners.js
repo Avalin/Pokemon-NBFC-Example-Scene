@@ -3,6 +3,9 @@
     I guess I am getting used to this approach now
 */
 
+/* 
+* Not a used component, just putting it as is from the lecture here, in case I want to add something from it
+*/
 AFRAME.registerComponent('entity-spawner', {
 	init: function () {
 		let camera = document.querySelector('#camera-rig');
@@ -30,8 +33,7 @@ AFRAME.registerComponent('entity-spawner', {
 
 AFRAME.registerComponent('pokeball-spawner', {
 	init: function () {
-		let camera = document.querySelector('#camera-rig');
-		let basket = document.querySelector('#pokeball_spawn_point');
+		let spawnPoint = document.querySelector('#pokeball_spawn_point');
 		let scene = document.querySelector('a-scene');
 		
 		this.el.addEventListener('click', function () {
@@ -39,7 +41,7 @@ AFRAME.registerComponent('pokeball-spawner', {
 			let direction = new THREE.Vector3();
 			let target = new THREE.Vector3();
 			
-			basket.object3D.getWorldPosition(position);
+			spawnPoint.object3D.getWorldPosition(position);
 			target.add(position).add(direction);
 
 			let sphere = document.createElement('a-sphere');
