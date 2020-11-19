@@ -6,7 +6,10 @@
 
 /* Meant to spawn wild pokemon */
 AFRAME.registerComponent('pokemon-generator', {
-    schema: {},
+    schema: {
+        init_position: { type: 'vec3', default: {x: 0, y: 0, z: 0} },
+        pokemon_type: { type: 'string', default: 'bulbasaur' }    
+    },
 	init: function () {
 
     },
