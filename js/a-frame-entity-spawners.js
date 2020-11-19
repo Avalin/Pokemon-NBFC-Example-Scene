@@ -1,31 +1,3 @@
-/* 
-*  Just adding this as a template from the lecture here, in case I want to use any of the variables from it
-*
-AFRAME.registerComponent('entity-spawner', {
-	init: function () {
-		let camera = document.querySelector('#camera-rig');
-		let scene = document.querySelector('a-scene');
-		
-		this.el.addEventListener('click', function () {
-			let position = new THREE.Vector3();
-			let direction = new THREE.Vector3();
-			let target = new THREE.Vector3();
-			
-			camera.object3D.getWorldPosition(position);
-            camera.object3D.getWorldDirection(direction);
-            direction.multiplyScalar(2);
-			target.add(position).add(direction);
-
-			let sphere = document.createElement('a-sphere');
-			sphere.setAttribute('material', {color: '#0077FF', side: 'double'});
-			sphere.setAttribute('radius', 0.25);
-			sphere.setAttribute('position', target);
-
-			scene.appendChild(sphere);
-		});
-	}
-});*/
-
 AFRAME.registerComponent('pokeball-spawner', {
     schema: {},
 	init: function () {
