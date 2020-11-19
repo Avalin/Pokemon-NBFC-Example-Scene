@@ -38,6 +38,7 @@ AFRAME.registerComponent('pokeball-spawner', {
     },
     
     instantiatePokeball: function () {
+        //Setup the spawn-point for the new pokeball to be in the basket in the scene
         let spawnPoint = document.querySelector('#pokeball_spawn_point');
         let scene = document.querySelector('a-scene');
         let position = new THREE.Vector3(0, 5, 0);
@@ -47,6 +48,7 @@ AFRAME.registerComponent('pokeball-spawner', {
         spawnPoint.object3D.getWorldPosition(position);
         target.add(position).add(direction);
 
+        //Create the pokeball container, with collider and grabbable sphere
         let pokeballContainer = document.createElement('a-sphere');
         pokeballContainer.setAttribute('id', 'PLEASELOVEME');
         pokeballContainer.setAttribute('grabbable');
@@ -56,6 +58,7 @@ AFRAME.registerComponent('pokeball-spawner', {
         pokeballContainer.setAttribute('scale', '0.02 0.02 0.02');
         pokeballContainer.setAttribute('position', target);
          
+        //Creates the visible model
         let pokeballMesh = document.createElement('a-entity');
         pokeballContainer.appendChild(pokeballMesh);
         pokeballMesh.setAttribute('position', '0 -6 0');
