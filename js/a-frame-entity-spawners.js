@@ -44,12 +44,16 @@ AFRAME.registerComponent('pokeball-spawner', {
 			spawnPoint.object3D.getWorldPosition(position);
 			target.add(position).add(direction);
 
-			let sphere = document.createElement('a-sphere');
-			sphere.setAttribute('material', {color: '#0077FF', side: 'double'});
-			sphere.setAttribute('radius', 0.25);
-			sphere.setAttribute('position', target);
-
-			scene.appendChild(sphere);
+            createPokeball();
 		});
-	}
+    },
+    
+    createPokeball: function() {
+        let sphere = document.createElement('a-sphere');
+        sphere.setAttribute('material', {color: '#0077FF', side: 'double'});
+        sphere.setAttribute('radius', 0.25);
+        sphere.setAttribute('position', target);
+
+        scene.appendChild(sphere);
+    }
 });
