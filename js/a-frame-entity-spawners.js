@@ -53,9 +53,10 @@ AFRAME.registerComponent('pokeball-spawner', {
 AFRAME.registerComponent('pokemon-spawner', {
     schema: {
         init_position: { type: 'vec3', default: {x: 0, y: 0, z: 0} },
+        init_rotation: { type: 'vec3', default: {x: 0, y: 0, z: 0} },
         pokemon_type: { type: 'string', default: 'bulbasaur' }    
     },
 	init: function () {
-
+        
     },
 });
