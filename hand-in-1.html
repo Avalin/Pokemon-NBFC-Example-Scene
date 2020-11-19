@@ -53,7 +53,6 @@
   <script src="https://recast-api.donmccurdy.com/aframe-inspector-plugin-recast.js"></script>
 
   <!-- My Custom JS Files -->
-  <script src="js/animation-handler.js"></script> 
   <script src="js/a-frame-custom-shaders.js"></script> 
   <script src="js/a-frame-oculus-integration.js"></script> 
   
@@ -174,8 +173,8 @@
               <!-- Camera, Controllers & VR Setup -->  
 
               <!-- Camera -->  
-              <a-entity id="camera-rig" movement-controls position="0 0 4" rotation="0 150 0">
-                <a-entity camera id="head" wasd-controls look-controls position="0 1.6 0">                      
+              <a-entity id="camera-rig" movement-controls="constrainToNavMesh: true" position="0 0 4" rotation="0 150 0">
+                <a-entity camera id="head" position="0 0 0">                      
                   <!-- Gaze-pointer -->  
                   <a-entity cursor="fuse: true; fuseTimeout: 1000" 
                     raycaster="objects: .interactable"
