@@ -176,7 +176,7 @@
 
               <!-- Camera -->  
               <a-entity id="camera-rig" movement-controls="constrainToNavMesh: true" position="0 0 4" rotation="0 150 0">
-                <a-entity camera id="head" position="0 0 0" wasd-controls look-controls>                      
+                <a-entity camera id="head" position="0 0 0" wasd-controls look-controls user-height="1.6">                      
                   <!-- Gaze-pointer -->  
                   <a-entity cursor="fuse: true; fuseTimeout: 1000" 
                     raycaster="objects: .interactable"
@@ -231,6 +231,7 @@
               <!-- Point Light Sphere --> 
               <a-sphere 
               class="interactable"
+              entity-spawner
               position="-1 1.75 -5.5"
               rotation="0 0 0"
               scale="0.25 0.25 0.25"  
@@ -328,12 +329,22 @@
                 scale="0.5 0.5 0.5"
                 position="-5 -0.5 5.65">
                 <a-entity 
+                pokeball-spawner
+                class="interactable"
                   position="0 0 0"
                   rotation="0 0 0"
                   scale="0.75 0.5 1"
                   obj-model="obj: #Basket-o; mtl: #Basket-m"
                   color="#FFFFFF">
                 </a-entity>  
+                <a-box 
+                  id="pokeball_spawn_point"
+                  visible="false"
+                  position="0 0.55 0"
+                  rotation="0 0 0"
+                  scale="0.7 0.075 0.75"
+                  color="#FFFFFF">
+                </a-box> 
                 <a-box 
                   visible="false"
                   static-body

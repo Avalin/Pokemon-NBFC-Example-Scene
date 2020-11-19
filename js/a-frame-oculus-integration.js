@@ -81,13 +81,13 @@ AFRAME.registerComponent('input-listen', {
         //Thumbstick moved. Doesnt register for some reason :( maybe because of overlapping preloaded scripts
         this.el.addEventListener('thumbstickchanged', function (e) {
                 // TODO: Code to rotate #head
-                var cam = document.getElementById("camera-rig");
-                cam.object3D.rotation.set(
+		        let camera = document.querySelector('#camera-rig');
+                camera.object3D.rotation.set(
                     THREE.Math.degToRad(15),
                     THREE.Math.degToRad(30),
                     THREE.Math.degToRad(90)
                   );
-                  cam.object3D.rotation.y += Math.PI;
+                camera.object3D.rotation.y += Math.PI;
         });
     }
 });
