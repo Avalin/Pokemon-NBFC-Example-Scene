@@ -17,8 +17,8 @@ AFRAME.registerComponent('pokemon', {
             e.detail.contact.ni; // Normal (direction) of the collision (CANNON.Vec3).
 
             if(collidedObj.classList.contains("pokeball"))
-            {
-              console.log("Ayy caramba");
+            {      
+                collidedObj.setAttribute('sound', {src: 'sounds/sfx/PokeballOpening.mp3', autoplay: 'true', loop: 'false'});
             }
 		});
 	}
