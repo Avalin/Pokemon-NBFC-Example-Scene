@@ -79,7 +79,7 @@ AFRAME.registerComponent('input-listen', {
         this.el.selectedObj.object3D.position.set(p.x, p.y, p.z);
   
         //Thumbstick moved. Doesnt register for some reason :( maybe because of overlapping preloaded scripts
-        this.el.addEventListener('thumbstickmoved', function (e) {
+        this.el.addEventListener('thumbstickchanged', function (e) {
                 // TODO: Code to rotate #head
                 var cam = document.getElementById("camera-rig");
                 cam.object3D.rotation.set(
