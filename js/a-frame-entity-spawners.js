@@ -59,7 +59,7 @@ AFRAME.registerComponent('pokeball-spawner', {
         let pokeballMesh = document.createElement('a-entity');
         pokeballContainer.appendChild(pokeballMesh);
         pokeballMesh.setAttribute('position', '0 -6 0');
-        pokeballMesh.setAttribute('gltf-model', {obj: '3dmodels/Objects/Pokeball/pokeball.glb'});
+        pokeballMesh.setAttribute('gltf-model', '3dmodels/Objects/Pokeball/pokeball.glb');
         pokeballMesh.setAttribute('scale', '600 600 600');
         scene.appendChild(pokeballContainer);
     }
