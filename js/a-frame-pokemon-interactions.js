@@ -6,8 +6,8 @@ AFRAME.registerComponent('pokemon', {
     },
 
     tick: function () {		
-		this.el.addEventListener('collide', function (e) {
-
+    this.el.addEventListener('collide', function (e) 
+    {
             let collidedObj = e.detail.body.el;
             console.log(this.el + 'collided with ' + e.detail.body.el);
 
