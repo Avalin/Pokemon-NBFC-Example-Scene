@@ -1,10 +1,5 @@
-/*
-    I know what you're thinking: Why is she not using JQuery for this?
-    I guess I am getting used to this approach now
-*/
-
 /* 
-* Not a used component, just putting it as is from the lecture here, in case I want to add something from it
+*  Just adding this as a template from the lecture here, in case I want to use any of the variables from it
 *
 AFRAME.registerComponent('entity-spawner', {
 	init: function () {
