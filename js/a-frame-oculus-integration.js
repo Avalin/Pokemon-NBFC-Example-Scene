@@ -41,6 +41,23 @@ AFRAME.registerComponent('input-listen', {
                 });
             });
 
+            //Thumbstick touched.
+            this.el.addEventListener('thumbsticktouchstart', function (e) {
+                    // TODO: Code to rotate #head
+                    var head = document.getElementById("head");
+                    head.object3D.rotation.set(
+                        THREE.Math.degToRad(15),
+                        THREE.Math.degToRad(30),
+                        THREE.Math.degToRad(90)
+                      );
+                      head.object3D.rotation.x += Math.PI;
+            });
+
+            //Thumbstick touch ended.
+            this.el.addEventListener('thumbsticktouchend', function (e) {
+                    // TODO: Code to stop rotate #head
+            });
+
             //Grip pressed
             this.el.addEventListener('gripdown', function (e) {
                 //Setting grip flag as true.

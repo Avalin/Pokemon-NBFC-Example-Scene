@@ -175,9 +175,9 @@
 
               <!-- Camera -->  
               <a-entity id="camera-rig" movement-controls position="0 0 4" rotation="0 150 0">
-                <a-entity camera id="head" wasd-controls look-controls position="0 1.6 0">     
-                  <a-entity 
-                    cursor="fuse: true; fuseTimeout: 1000" 
+                <a-entity camera id="head" wasd-controls look-controls position="0 1.6 0">                      
+                  <!-- Gaze-pointer -->  
+                  <a-entity cursor="fuse: true; fuseTimeout: 1000" 
                     raycaster="objects: .interactable"
                     animation__fusing="property: scale; startEvents: fusing; easing: linear; dur: 1000; from: 1 1 1; to: 3 3 3"
                     animation__leave="property: scale; startEvents: mouseleave; easing: linear; dur: 1; from: 1 1 1; to: 1 1 1"
@@ -570,7 +570,7 @@
                 id="squirtle"
                 position="0 0 0">
                 <a-entity       
-                  id="squirtle_mesh"       
+                  id="squirtle_mesh"   
                   position="1 -1.30 -0.25" 
                   rotation="-90 180 50" 
                   scale="0.2 0.2 0.2" 
@@ -581,7 +581,7 @@
 
                 <a-box   
                   id="squirtle_collider" 
-                  static-body
+                  static-body    
                   class="interactable"    
                   sound="src:  #squirtle_sfx;  on: click; autoplay:  false;  volume: 1;"    
                   event-set__jump="_event: click; 
@@ -601,7 +601,7 @@
               <a-entity 
                 id="mew" 
                 position="0 0 0">
-                <a-entity           
+                <a-entity    
                 class="interactable" 
                 sound="src:  #mew_sfx;  on: click; autoplay:  false;  volume: 1;"
                 animation="property: rotation;  from: -25 60 0; to: 335 60 0; dur: 2000; delay: 2000; easing: easeInSine; loop: true" 
