@@ -54,6 +54,7 @@
 
   <!-- My Custom JS Files -->
   <script src="js/a-frame-custom-shaders.js"></script> 
+  <script src="js/a-frame-custom-objects.js"></script> 
   <script src="js/a-frame-oculus-integration.js"></script> 
   <script src="js/a-frame-entity-spawners.js"></script> 
   <script src="js/a-frame-light-modifiers.js"></script> 
@@ -166,10 +167,10 @@
                 <!-- Sounds / Audio -->
                 <audio id="rain_ambience"  src="sounds/ambience/rain_loop.wav"></audio>
                   
-                <audio id="bulbasaur_sfx"  src="sounds/sfx/Bulbasaur.mp3"></audio>
-                <audio id="charmander_sfx" src="sounds/sfx/Charmander.mp3"></audio>
-                <audio id="mew_sfx"        src="sounds/sfx/Mew.mp3"></audio>
-                <audio id="squirtle_sfx"   src="sounds/sfx/Squirtle.mp3"></audio>
+                <audio preload="auto" bulbasaur_sfx"  src="sounds/sfx/Bulbasaur.mp3"      ></audio>
+                <audio preload="auto" id="charmander_sfx" src="sounds/sfx/Charmander.mp3" ></audio>
+                <audio preload="auto" id="mew_sfx"        src="sounds/sfx/Mew.mp3"        ></audio>
+                <audio preload="auto" id="squirtle_sfx"   src="sounds/sfx/Squirtle.mp3"   ></audio>
               </a-assets>
 
               <!-- Camera, Controllers & VR Setup -->  
@@ -382,7 +383,7 @@
                   color="#FFFFFF">
                 </a-box> 
               </a-entity> 
-              
+
               <!-- Buildings -->
               <!-- House -->
               <a-entity id="house">
@@ -594,6 +595,7 @@
               </a-entity>
               
               <a-entity 
+                custom-object
                 id="mew" 
                 position="0 0 0">
                 <a-entity    
