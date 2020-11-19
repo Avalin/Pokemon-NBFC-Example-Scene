@@ -3,15 +3,13 @@ AFRAME.registerComponent('input-listen', {
         function () {
             //Declaration and initialization of flag 
             //which exprains grip button is pressed or not.
-            //"this.el" reffers ctlR or L in this function
+            //"this.el" refers right hand controller or left hand controller in this function
             this.el.grip = false;
 
             //Called when trigger is pressed 
             this.el.addEventListener('triggerdown', function (e) {
-                //"this" reffers ctlR or L in this function
+                //"this" refers right hand controller or left hand controller in this function
                 var point = this.object3D.getWorldPosition();
-
-                //txt.setAttribute("value",point.x.toFixed(2)+","+point.y.toFixed(2)+","+point.z.toFixed(2));
 
                 //Creating ball entity.
                 var ball = document.createElement('a-sphere');
@@ -20,7 +18,7 @@ AFRAME.registerComponent('input-listen', {
                 ball.setAttribute('position', point);
                 ball.setAttribute('dynamic-body', 'shape: sphere; sphereRadius:0.2; ');
 
-                //Getting raycaster which was attached to ctrlR or L
+                //Getting raycaster which was attached to right hand controller or left hand controller 
                 var dir = this.getAttribute("raycaster").direction;
 
                 //Setting shoot dierction and speed 
@@ -34,7 +32,7 @@ AFRAME.registerComponent('input-listen', {
 
                 //shoot "ball" after physics information getting ready. 
                 ball.addEventListener('body-loaded', function (e) {
-                    //"this" reffers ball entity in this function
+                    //"this" refers ball entity in this function
                     var p = this.object3D.position;
                     //this.velocity was calculated before this function is called.
                     var f = this.force;
@@ -45,12 +43,12 @@ AFRAME.registerComponent('input-listen', {
                 });
             });
 
-            //Grip Pressed
+            //Grip pressed
             this.el.addEventListener('gripdown', function (e) {
                 //Setting grip flag as true.
                 this.grip = true;
             });
-            //Grip Released
+            //Grip released
             this.el.addEventListener('gripup', function (e) {
                 //Setting grip flag as false.
                 this.grip = false;
@@ -98,8 +96,8 @@ AFRAME.registerComponent('input-listen', {
         if (!this.el.selectedObj) { return; }
         if (!this.el.grip) { return; }
       
-        //Getting raycaster component which is attatched to ctlR or L
-        //this.el means entity of ctlR or L in this function.
+        //Getting raycaster component which is attatched to right hand controller or left hand controller 
+        //this.el means entity of right hand controller or left hand controller in this function.
         var ray = this.el.getAttribute("raycaster").direction;
         //setting tip of raycaster as 1.1m forward of controller.  
         var p = new THREE.Vector3(ray.x, ray.y, ray.z);
