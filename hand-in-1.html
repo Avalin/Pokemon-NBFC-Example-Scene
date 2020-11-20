@@ -24,12 +24,15 @@
   <link rel="shortcut icon" href="img/favicon.ico" type="image/x-icon"/>
  
   <!-- A-Frame -->
-	<script src="https://aframe.io/releases/1.0.4/aframe.min.js"></script>
-
+  <script src="https://aframe.io/releases/1.0.4/aframe.min.js"></script>
+  
+  <!-- My Custom JS Files -->
+  <script src="js/a-frame-custom-shaders.js"></script> 
+  <script src="js/a-frame-creature-components.js"></script> 
+  <script src="js/a-frame-light-modifiers.js"></script> 
 </head>
 
 <body>
-  <script src="js/a-frame-light-modifiers.js"></script> 
 
   <h1 class="site-heading text-center text-white d-none d-lg-block">
     <span class="site-heading-upper text-primary mb-3">Welcome to...</span>
@@ -109,6 +112,27 @@
                 <audio id="this-is-halloween-lofi-music"  src="sounds/music/nbfc/this-is-halloween-lofi.mp3"></audio>
               </a-assets>
 
+              <!-- Camera -->  
+              <!-- Origin at 0 0 0 in VR -->  
+              <!-- Origin at 0 1.6 0 in Desktop -->  
+              <!-- Camera -->  
+              <a-entity position="0 0 0" rotation="0 0 0">
+                <a-camera
+                  user-height="1.6"
+                  active="true">
+                  <!-- Gaze-pointer -->  
+                  <a-entity cursor="fuse: true; fuseTimeout: 1000" 
+                    raycaster="objects: .interactable"
+                    animation__fusing="property: scale; startEvents: fusing; easing: linear; dur: 1000; from: 1 1 1; to: 3 3 3"
+                    animation__leave="property: scale; startEvents: mouseleave; easing: linear; dur: 1; from: 1 1 1; to: 1 1 1"
+                    animation__click="property: scale; startEvents: click; easing: linear; dur: 150; from: 3 3 3; to: 1 1 1"
+                    position="0 0 -1"
+                    geometry="primitive: sphere; radius: 0.005"
+                    material="color: #FF00FF; shader: flat; opacity: 0.5">                
+                  </a-entity>                   
+                </a-camera>
+              </a-entity>             
+
               <!-- Ambient Light --> 
               <a-light 
                 animation="property: light.intensity;  from: 1; to: 0.2; dur: 45000; dir: alternate; easing: linear; loop: true" 
@@ -168,7 +192,8 @@
               <!-- Jack Skellington -->
               <a-entity 
                 id="jack-skellington"
-                shadow="receive: true"
+                class="interactable"
+                shadow="cast: true"
                 position="0.5 -0.25 -2.5" 
                 rotation="0 -40 0" 
                 scale="0.01 0.01 0.01"
@@ -178,23 +203,13 @@
               <!-- Sally Skellington -->
               <a-entity 
                 id="sally-skellington"
-                shadow="receive: true"
+                class="interactable"
+                shadow="cast: true"
                 position="-1.5 -0.25 -2.5" 
                 rotation="0 50 0" 
                 scale="0.2 0.2 0.2"
                 gltf-model="#sallyskellington-gltf">
-              </a-entity>  
-
-              <!-- Camera -->  
-              <!-- Origin at 0 0 0 in VR -->  
-              <!-- Origin at 0 1.6 0 in Desktop -->  
-              <!-- Camera -->  
-              <a-entity position="0 0 0" rotation="0 0 0">
-                <a-camera
-                  user-height="1.6"
-                  active="true">                
-                </a-camera>
-              </a-entity>                
+              </a-entity>     
             </a-scene> 
             <!-- A-Frame end -->
           </article>
@@ -206,7 +221,7 @@
           <p class="mb-0"> Description goes here :3</p>
         </div>
       </div>
-      
+
     </div>
   </section>
 

@@ -84,3 +84,6 @@ Hand-In 2:
 //Spørgsmål før hand-ins:
 - Hjælp med tracking
 - Collision detection på static-objects?
+
+//Self-note:
+- Mixamo & Rigmodels ✔
