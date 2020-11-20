@@ -57,8 +57,8 @@ AFRAME.registerComponent('pokemon-spawner', {
     },
 	init: function () {  
         let schemaData = this.data;
-        let pkmData = this.getPokemonData(schemaData.pokemon_type);
         let pkmType = schemaData.pokemon_type;
+        let pkmData = this.getPokemonData(pkmType);
 
         let scene = document.querySelector('a-scene');     
         let pokemonContainer = document.createElement('a-entity');
@@ -84,25 +84,39 @@ AFRAME.registerComponent('pokemon-spawner', {
         pokemonMesh.setAttribute('gltf-model', '3dmodels/Characters/' + pkmType + "/" + pkmType + "." + schemaData.model_type);
         if(pkmData.animationMixer !== undefined) 
             pokemonMesh.setAttribute('animation-mixer', {clip: pkmData.animationMixer, loop: "repeat"});
+        this.setPokemonSpecificAnimations(pkmType, pokemonMesh);
 
         pokemonContainer.appendChild(pokemonCollider);
         pokemonContainer.appendChild(pokemonMesh);
         scene.appendChild(pokemonContainer);
     },	
     
-    getPokemonData: function (pkm) { 
+    getPokemonData: function (pkmType) { 
         let dict = 
-       [{pokemon: "charmander",  meshScale: '0.15 0.15 0.15', meshRotate: '0 -60 0',    colScale: '0.3 0.75 0.35', colPos: '0 0.425 0', hasSound: "true",  animationMixer: "DwarfIdle"}, 
-        {pokemon: "bulbasaur",   meshScale: '0.10 0.10 0.10', meshRotate: '0 0 0',      colScale: '0.4 0.5 0.8',   colPos: '0 0.3 0', hasSound: "true"}, 
-        {pokemon: "squirtle",    meshScale: '0.2 0.2 0.2',    meshRotate: '-90 180 50', colScale: '0.4 0.85 0.5',  colPos: '-0.16 0.4 0.15', hasSound: "true"},
-        {pokemon: "mew",         meshScale: '0.07 0.07 0.07', meshRotate: '-25 60 0',   colScale: '0 0 0',         colPos: '0 0 0', hasSound: "true"},
-        {pokemon: "ditto",       meshScale: '0.2 0.2 0.2',    meshRotate: '-90 180 50', colScale: '0.4 0.85 0.5',  colPos: '-0.16 0.4 0.15', hasSound: "false"}]
+       [{pokemon: "charmander",  meshScale: '0.15 0.15 0.15', meshRotate: '0 -60 0',    colScale: '0.3 0.75 0.35', colPos: '0 0.425 0',         hasSound: "true",  animationMixer: "DwarfIdle"}, 
+        {pokemon: "bulbasaur",   meshScale: '0.10 0.10 0.10', meshRotate: '0 0 0',      colScale: '0.4 0.5 0.8',   colPos: '0 0.3 0',           hasSound: "true"}, 
+        {pokemon: "squirtle",    meshScale: '0.2 0.2 0.2',    meshRotate: '-90 180 50', colScale: '0.4 0.85 0.5',  colPos: '-0.16 0.4 0.15',    hasSound: "true"},
+        {pokemon: "mew",         meshScale: '0.07 0.07 0.07', meshRotate: '-25 60 0',   colScale: '0.36 0.5 0.4',  colPos: '0 0.4 0',           hasSound: "true"},
+        {pokemon: "ditto",       meshScale: '0.10 0.10 0.10', meshRotate: '0 -90 7',    colScale: '0.4 0.5 0.5',  colPos: '-0.002 0.175 0.025', hasSound: "false"}]
         for (entry of dict)
-        {              
-            if (entry.pokemon === pkm) 
+        {                                
+            if (entry.pokemon === pkmType) 
             {
                 return entry
             }
         }
-    }                  
+    },    
+    
+    setPokemonSpecificAnimations: function(pkmType, pokemonMesh)
+    {
+        if(pkmType === "mew")
+        {
+            pokemonMesh.setAttribute('animation__rotation', { property: 'rotation', from: '-25 60 0',  to: '335 60 0', dur: '2000', delay: '2000', loop: true, easing: 'easeInSine'});
+            pokemonMesh.setAttribute('animation__pos', { property: 'position', from: '0 1.25 0',  to: '0 0 0', dur: '2000', dir: 'alternate', loop: true, easing: 'easeInSine'});
+        }
+        else if(pkmType === "ditto")
+        {
+            pokemonMesh.setAttribute('animation__scale', { property: 'scale', to: '0.15 0.08 0.12', dur: '2000', dir: 'alternate', loop: true, easing: 'easeInElastic'});
+        }
+    }
 });

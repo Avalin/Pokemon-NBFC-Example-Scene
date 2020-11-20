@@ -121,7 +121,7 @@
         
           <article class="col-6">
             <!-- A-Frame start -->            
-            <a-scene embedded antialias="false" physics="gravity: -9.8; debug: true">
+            <a-scene embedded renderer="antialias: true" physics="gravity: -9.8; debug: true">
               <!-- A-Frame Asset Manager -->
               <a-assets>
 
@@ -512,23 +512,13 @@
               <a-entity 
                 pokemon-spawner="pokemon_type: squirtle; init_position: 1 -1.30 -0.25;">  
               </a-entity> 
-              
+
               <a-entity 
-                id="mew"
-                position="0 0 0">
-                <a-entity     
-                  pokemon
-                  class="interactable" 
-                  sound="src:  #mew_sfx;  on: click; autoplay:  false;  volume: 1;"
-                  animation__rotation="property: rotation;  from: -25 60 0; to: 335 60 0; dur: 2000; delay: 2000; easing: easeInSine; loop: true" 
-                  animation__position="property: position;  from: -4 1.25 2; to: -4 0 2; dur: 2000;  dir: alternate; easing: easeInSine; loop: true"
-                  position="-4 1.25 2"
-                  rotation="-25 60 0"
-                  scale="0.070 0.070 0.070"  
-                  shadow="cast: true"
-                  gltf-model="#Mew-glb"
-                  color="#FFFFFF">
-                </a-entity> 
+                pokemon-spawner="pokemon_type: mew; init_position: -4 0.50 2;">  
+              </a-entity> 
+
+              <a-entity 
+                pokemon-spawner="pokemon_type: ditto; init_position: 0 0 0; model_type: gltf;">  
               </a-entity> 
 
               <a-entity 
