@@ -52,8 +52,8 @@ AFRAME.registerComponent('pokemon-spawner', {
     schema: {
         init_position: { type: 'vec3', default: {x: 0, y: 0, z: 0} },
         init_rotation: { type: 'vec3', default: {x: 0, y: 0, z: 0} },
-        pokemon_type: { type: 'string', default: 'bulbasaur' },
-        model_type: { type: 'string', default: 'glb' }    
+        pokemon_type:  { type: 'string', default: 'bulbasaur' },
+        model_type:    { type: 'string', default: 'glb' }    
     },
 	init: function () {  
         let schemaData = this.data;
@@ -63,17 +63,18 @@ AFRAME.registerComponent('pokemon-spawner', {
         let scene = document.querySelector('a-scene');     
         let pokemonContainer = document.createElement('a-entity');
         pokemonContainer.setAttribute('id', pkmType);
+        pokemonContainer.setAttribute('position',  schemaData.init_position);
 
         let pokemonCollider = document.createElement('a-box');
         pokemonCollider.setAttribute('id', pkmType+"_collider");
+        pokemonCollider.setAttribute('sound', {src: 'sounds/sfx/'+ pkmType + '.mp3', on: 'click', autoplay:  'false'});
         pokemonCollider.setAttribute('visible', 'false');
         pokemonCollider.setAttribute('pokemon', '');
         pokemonCollider.setAttribute('static-body', '');
-        pokemonCollider.classList.add('interactable')
         pokemonCollider.setAttribute('scale', pkmData.colScale);
         pokemonCollider.setAttribute('position', pkmData.colPos);
         if(pkmData.hasSound) 
-        pokemonCollider.setAttribute('sound', {src: 'sounds/sfx/'+pkmType+"/"+pkmType+".mp3", on: 'click', autoplay:  'false'});
+        pokemonCollider.classList.add('interactable')
 
         let pokemonMesh= document.createElement('a-entity');   
         pokemonMesh.setAttribute('id', pkmType+"_mesh");
@@ -93,9 +94,9 @@ AFRAME.registerComponent('pokemon-spawner', {
         let dict = 
        [{pokemon: "charmander",  meshScale: '0.15 0.15 0.15', meshRotate: '0 -60 0',    colScale: '0.3 0.75 0.35', colPos: '0 0.425 0', hasSound: "true",  animationMixer: "DwarfIdle"}, 
         {pokemon: "bulbasaur",   meshScale: '0.10 0.10 0.10', meshRotate: '0 0 0',      colScale: '0.4 0.5 0.8', colPos: '0 0.3 0', hasSound: "true"}, 
-        {pokemon: "squirtle",    meshScale: '0.2 0.2 0.2',    meshRotate: '-90 180 50', colScale: '0.3 0.75 0.35', colPos: '0 0.425 0', hasSound: "true"}]
-        for (entry of dict) 
-        {
+        {pokemon: "squirtle",    meshScale: '0.2 0.2 0.2',    meshRotate: '-90 180 50', colScale: '0.4 0.85 0.5', colPos: '-0.16 0.4 0.15', hasSound: "true"}]
+        for (entry of dict)
+        {              
             if (entry.pokemon === pkm) 
             {
                 return entry
