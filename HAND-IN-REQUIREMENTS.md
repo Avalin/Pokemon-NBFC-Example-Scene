@@ -79,3 +79,7 @@ TO DO:
 
 Hand-In 2:
 - Chat bubbles?
+
+//Spørgsmål før hand-ins:
+- Hjælp med tracking
+- Collision detection på static-objects?
