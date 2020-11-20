@@ -52,10 +52,11 @@
   <!-- A-Frame Inspector Plugin: Navigation Mesh -->  
   <script src="https://recast-api.donmccurdy.com/aframe-inspector-plugin-recast.js"></script>
 
-  <!-- A-Frame Look-At Component (Actually working one) --> 
+  <!-- A-Frame Look-At Component (Actually working one...) --> 
   <script src="https://rawgit.com/blairmacintyre/aframe-look-at-billboard-component/master/dist/aframe-look-at-billboard-component.min.js"></script>
 
   <!-- My Custom JS Files -->
+  <script src="js/a-frame-creature-components.js"></script> 
   <script src="js/a-frame-custom-shaders.js"></script> 
   <script src="js/a-frame-custom-objects.js"></script> 
   <script src="js/a-frame-oculus-integration.js"></script> 
@@ -499,6 +500,7 @@
                 id="spyro" 
                 position="0 0 0">
                 <a-entity 
+                  talkable="messenger: spyro; sb: #speech_bubble; target: [camera];"
                   class="interactable"
                   position="-1 -1.20 8"
                   rotation="0 180 0"

@@ -2,6 +2,7 @@
 AFRAME.registerComponent('talkable', {
     schema: {
         messenger: { type: 'string', default: 'Spyro' },
+        sb: { type: 'selector', default: '' },
         target: { type: 'selector', default: '' },
     },
     init: function()
