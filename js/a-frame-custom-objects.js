@@ -16,7 +16,20 @@ AFRAME.registerComponent('custom-object', {
 			customObj.setAttribute('dynamic-body', {mass: '0.08', linearDamping: '0.05', angularDamping: '0.3', shape: 'sphere', sphereRadius: '0.092'});
 			customObj.setAttribute('animation__scale', { property: 'scale', to: '0.015 0.015 0.015', dur: '500', loop: false, easing: 'easeInCubic'});
 		});
+
+		
+		this.el.addEventListener('collide', function () {
+			let otherCollider = e.detail.body.el; // Other entity, which playerEl touched.
+	
+			if(otherCollider.classList.contains("pokemon"))
+			{               
+				let customObj = document.querySelector('#' + customObjID);
+				customObj.setAttribute('dynamic-body', {mass: '0.08', linearDamping: '0.05', angularDamping: '0.3', shape: 'sphere', sphereRadius: '0.0675'});
+				customObj.setAttribute('animation__scale', { property: 'scale', to: '0.01 0.01 0.01', dur: '2000', loop: false, easing: 'linear'}); 
+			}
+		});
 	},
+
 	tick: function () 
 	{		
 		let customObj = this.el;
@@ -29,19 +42,5 @@ AFRAME.registerComponent('custom-object', {
 			//Garbage collecting?
 			customObj.parentNode.removeChild(customObj);
 		}
-	},
-
-	increaseSize: function(customObjID) {	
-		console.log('I was clicked at: ', evt.detail.intersection.point);
-		let customObj = document.querySelector('#' + customObjID);
-		console.log(customObj.getAttribute('id') + " is clicked????");
-		//customObj.setAttribute('dynamic-body', {mass: '0.08', linearDamping: '0.05', angularDamping: '0.3', shape: 'sphere', sphereRadius: '0.1'});
-		//customObj.setAttribute('animation__scale', { property: 'scale', to: '0.015 0.015 0.015', dur: '2000', loop: false, easing: 'linear'});
-	},
-
-	decreaseSize: function(customObjID) {	
-		let customObj = document.querySelector('#' + customObjID);
-		customObj.setAttribute('dynamic-body', {mass: '0.08', linearDamping: '0.05', angularDamping: '0.3', shape: 'sphere', sphereRadius: '0.0675'});
-		customObj.setAttribute('animation__scale', { property: 'scale', to: '0.01 0.01 0.01', dur: '2000', loop: false, easing: 'linear'});
 	}
 });
