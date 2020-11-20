@@ -31,7 +31,7 @@ AFRAME.registerComponent('pokeball-spawner', {
             pokeballContainer.setAttribute('id', pokeballID);
             pokeballContainer.setAttribute('grabbable', '');
             pokeballContainer.setAttribute('custom-object', '');
-            pokeballContainer.setAttribute('dynamic-body', {mass: '0.08', linearDamping: '0.05', angularDamping: '0.3', shape: 'sphere', sphereRadius: '0.0675'});
+            pokeballContainer.setAttribute('dynamic-body', {mass: '0.08', linearDamping: '0.05', angularDamping: '0.3', shape: 'sphere', sphereRadius: '0.06'});
             pokeballContainer.setAttribute('material', {color: '#FFFFFF', side: 'double'});
             pokeballContainer.setAttribute('sound', {src: 'sounds/sfx/Blob.ogg', autoplay: 'true', loop: 'false'});
             pokeballContainer.setAttribute('radius', 5);
@@ -116,7 +116,7 @@ AFRAME.registerComponent('pokemon-spawner', {
         if(pkmType === "mew")
         {
             pokemonMesh.setAttribute('animation__rotation', { property: 'rotation', from: '-25 60 0',  to: '335 60 0', dur: '2000', delay: '2000', loop: true, easing: 'easeInSine'});
-            pokemonMesh.setAttribute('animation__pos', { property: 'position', from: '0 1.25 0',  to: '0 0 0', dur: '2000', dir: 'alternate', loop: true, easing: 'easeInSine'});
+            pokemonMesh.setAttribute('animation__position', { property: 'position', from: '0 1.25 0',  to: '0 0 0', dur: '2000', dir: 'alternate', loop: true, easing: 'easeInSine'});
         }
         else if(pkmType === "ditto")
         {

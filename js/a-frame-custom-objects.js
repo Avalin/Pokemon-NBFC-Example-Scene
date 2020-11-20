@@ -7,7 +7,15 @@
  //A general component for all custom objects in a scene
 AFRAME.registerComponent('custom-object', {
 	init: function (){	
-		this.el.addEventListener('grab-start', this.increaseSize)
+		let customObjID = this.el.getAttribute('id');
+		this.el = document.querySelector('#' + customObjID);
+
+		this.el.addEventListener('click', function (evt) {
+			let customObj = document.querySelector('#' + customObjID);
+			customObj.removeAttribute('dynamic-body')
+			customObj.setAttribute('dynamic-body', {mass: '0.08', linearDamping: '0.05', angularDamping: '0.3', shape: 'sphere', sphereRadius: '0.092'});
+			customObj.setAttribute('animation__scale', { property: 'scale', to: '0.015 0.015 0.015', dur: '500', loop: false, easing: 'easeInCubic'});
+		});
 	},
 	tick: function () 
 	{		
@@ -23,7 +31,17 @@ AFRAME.registerComponent('custom-object', {
 		}
 	},
 
-	increaseSize: function() {	
-		let customObj = this.el;
+	increaseSize: function(customObjID) {	
+		console.log('I was clicked at: ', evt.detail.intersection.point);
+		let customObj = document.querySelector('#' + customObjID);
+		console.log(customObj.getAttribute('id') + " is clicked????");
+		//customObj.setAttribute('dynamic-body', {mass: '0.08', linearDamping: '0.05', angularDamping: '0.3', shape: 'sphere', sphereRadius: '0.1'});
+		//customObj.setAttribute('animation__scale', { property: 'scale', to: '0.015 0.015 0.015', dur: '2000', loop: false, easing: 'linear'});
+	},
+
+	decreaseSize: function(customObjID) {	
+		let customObj = document.querySelector('#' + customObjID);
+		customObj.setAttribute('dynamic-body', {mass: '0.08', linearDamping: '0.05', angularDamping: '0.3', shape: 'sphere', sphereRadius: '0.0675'});
+		customObj.setAttribute('animation__scale', { property: 'scale', to: '0.01 0.01 0.01', dur: '2000', loop: false, easing: 'linear'});
 	}
 });
