@@ -2,10 +2,11 @@ AFRAME.registerComponent('pokemon', {
 	  init: function () {		
       let pokemon = this.el;
 
-		  this.el.addEventListener('click', function () {
-        let pokemonContainer = document.getElementById(pokemon.parentNode.id);
+      this.el.addEventListener('click', function () 
+      {
+        let pokemonMesh = document.getElementById(pokemon.parentNode.id + "_mesh");      
+        pokemonMesh.setAttribute('animation', {property: 'position', to: '0 1.2 0', dur: '500', easing: 'easeInExpo', loop: '2', dir: 'alternate', autoplay: 'true'});  
       });
-      
       this.el.addEventListener('collide', this.catchPokemon)
     },
 
