@@ -55,19 +55,42 @@ AFRAME.registerComponent('pokemon-spawner', {
         pokemon_type: { type: 'string', default: 'bulbasaur' },
         model_type: { type: 'string', default: 'glb' }    
     },
-	init: function () {      
+	init: function () {    
         let schemaData = this.data;
+        let pkmData = this.getPokemonData(schemaData.pokemon_type);
+        console.log(pkmData);
+
         let scene = document.querySelector('a-scene');     
         let pokemonContainer = document.createElement('a-entity');
         pokemonContainer.setAttribute('id', schemaData.pokemon_type + "-generated");
 
         let pokemonCollider = document.createElement('a-box');
         pokemonCollider.setAttribute('visible', 'false');
+
+
         let pokemonMesh= document.createElement('a-entity');   
+        pokemonMesh.setAttribute('scale', pkmData.meshScale);
+        pokemonMesh.setAttribute('rotation', pkmData.meshRotate);
         pokemonMesh.setAttribute('gltf-model', '3dmodels/Characters/' + schemaData.pokemon_type + "/" + schemaData.pokemon_type + "." + schemaData.model_type);
+        if(pkmData.animationMixer !== undefined) pokemonMesh.setAttribute('animation-mixer', {clip: pkmData.animationMixer, loop: "repeat"});
 
         pokemonContainer.appendChild(pokemonCollider);
         pokemonContainer.appendChild(pokemonMesh);
         scene.appendChild(pokemonContainer); 
-    },
+    },	
+    
+    getPokemonData: function (pkm) { 
+        let dict = 
+        [{pokemon: "charmander", meshScale: '0.15 0.15 0.15', meshRotate: '0 -60 0', animationMixer: "DwarfIdle"}, 
+        {pokemon: "bulbasaur", meshScale: '1 1 1', meshRotate: '0 0 0'}, 
+        {pokemon: "squirtle", meshScale: '1 1 1', meshRotate: '0 0 0'}]
+
+        for (entry of dict) 
+        {
+            if (entry.pokemon === pkm) 
+            {
+                return entry
+            }
+        }
+    }                  
 });
