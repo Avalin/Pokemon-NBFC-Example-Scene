@@ -93,9 +93,10 @@ AFRAME.registerComponent('pokemon-spawner', {
     getPokemonData: function (pkm) { 
         let dict = 
        [{pokemon: "charmander",  meshScale: '0.15 0.15 0.15', meshRotate: '0 -60 0',    colScale: '0.3 0.75 0.35', colPos: '0 0.425 0', hasSound: "true",  animationMixer: "DwarfIdle"}, 
-        {pokemon: "bulbasaur",   meshScale: '0.10 0.10 0.10', meshRotate: '0 0 0',      colScale: '0.4 0.5 0.8', colPos: '0 0.3 0', hasSound: "true"}, 
-        {pokemon: "squirtle",    meshScale: '0.2 0.2 0.2',    meshRotate: '-90 180 50', colScale: '0.4 0.85 0.5', colPos: '-0.16 0.4 0.15', hasSound: "true"},
-        {pokemon: "ditto",       meshScale: '0.2 0.2 0.2',    meshRotate: '-90 180 50', colScale: '0.4 0.85 0.5', colPos: '-0.16 0.4 0.15', hasSound: "false"}]
+        {pokemon: "bulbasaur",   meshScale: '0.10 0.10 0.10', meshRotate: '0 0 0',      colScale: '0.4 0.5 0.8',   colPos: '0 0.3 0', hasSound: "true"}, 
+        {pokemon: "squirtle",    meshScale: '0.2 0.2 0.2',    meshRotate: '-90 180 50', colScale: '0.4 0.85 0.5',  colPos: '-0.16 0.4 0.15', hasSound: "true"},
+        {pokemon: "mew",         meshScale: '0.07 0.07 0.07', meshRotate: '-25 60 0',   colScale: '0 0 0',         colPos: '0 0 0', hasSound: "true"},
+        {pokemon: "ditto",       meshScale: '0.2 0.2 0.2',    meshRotate: '-90 180 50', colScale: '0.4 0.85 0.5',  colPos: '-0.16 0.4 0.15', hasSound: "false"}]
         for (entry of dict)
         {              
             if (entry.pokemon === pkm) 
