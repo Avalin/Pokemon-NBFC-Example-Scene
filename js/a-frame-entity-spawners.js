@@ -51,7 +51,8 @@ AFRAME.registerComponent('pokeball-spawner', {
     }
 });
 
-/* The idea behind this component is to reduce the lines of HTML for each pokemon initialized at start*/
+/* The idea behind this component is to reduce the lines of HTML for each pokemon initialized at start
+ * And for the future if I want to release pokémon from pokeballs etc. */
 AFRAME.registerComponent('pokemon-spawner', {
     schema: {
         init_position: { type: 'vec3', default: {x: 0, y: 0, z: 0} },
