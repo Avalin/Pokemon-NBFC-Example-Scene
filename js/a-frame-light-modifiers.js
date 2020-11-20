@@ -10,23 +10,11 @@
     * ChangeColor
     */ 
 
-AFRAME.registerComponent('light-color-change', {
+AFRAME.registerComponent('light-modifier', {
     init: function()
     {
         this.el.addEventListener('click', function(){
             //To do
-        })
-    }
-}); 
-
-AFRAME.registerComponent('light-state-change', {
-    init: function()
-    {
-        //If light.intensity = 0, set 1
-        //If light.intensity = 1, set 0
-
-        this.el.addEventListener('click', function(){
-
         })
     }
 }); 
