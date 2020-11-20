@@ -47,8 +47,6 @@ AFRAME.registerComponent('pokeball-spawner', {
     }
 });
 
-
-
 /* The idea behind this component is to reduce the lines of HTML for each pokemon initialized at start*/
 AFRAME.registerComponent('pokemon-spawner', {
     schema: {
@@ -57,19 +55,18 @@ AFRAME.registerComponent('pokemon-spawner', {
         pokemon_type: { type: 'string', default: 'bulbasaur' },
         model_type: { type: 'string', default: 'glb' }    
     },
-	init: function () {  
-        this.el.addEventListener('body-loaded', function (event) {
-            let scene = document.querySelector('a-scene');     
-            let pokemonContainer = document.createElement('a-entity');
-            pokemonContainer.setAttribute('id', pokemon_type + "-generated");
+	init: function () {              
+        console.log("PINEAPPLE");
+        let scene = document.querySelector('a-scene');     
+        let pokemonContainer = document.createElement('a-entity');
+        pokemonContainer.setAttribute('id', pokemon_type + "-generated");
 
-            let pokemonCollider = document.createElement('a-box');
-            let pokemonMesh= document.createElement('a-entity');   
-            pokemonMesh.setAttribute('gltf-model', '3dmodels/Objects/' + pokemon_type + "/" + pokemon_type + "." + model_type);
-    
-            pokemonContainer.appendChild(pokemonCollider);
-            pokemonContainer.appendChild(pokemonMesh);
-            scene.appendChild(pokemonContainer); 
-        });
+        let pokemonCollider = document.createElement('a-box');
+        let pokemonMesh= document.createElement('a-entity');   
+        pokemonMesh.setAttribute('gltf-model', '3dmodels/Objects/' + pokemon_type + "/" + pokemon_type + "." + model_type);
+
+        pokemonContainer.appendChild(pokemonCollider);
+        pokemonContainer.appendChild(pokemonMesh);
+        scene.appendChild(pokemonContainer); 
     },
 });
