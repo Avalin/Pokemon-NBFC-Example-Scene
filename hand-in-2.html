@@ -52,6 +52,9 @@
   <!-- A-Frame Inspector Plugin: Navigation Mesh -->  
   <script src="https://recast-api.donmccurdy.com/aframe-inspector-plugin-recast.js"></script>
 
+  <!-- A-Frame Look-At Component (Actually working one) --> 
+  <script src="https://rawgit.com/blairmacintyre/aframe-look-at-billboard-component/master/dist/aframe-look-at-billboard-component.min.js"></script>
+
   <!-- My Custom JS Files -->
   <script src="js/a-frame-custom-shaders.js"></script> 
   <script src="js/a-frame-custom-objects.js"></script> 
@@ -233,6 +236,14 @@
                   position="0 0 0">
                 </a-entity>                
               </a-sphere> 
+
+              <a-cylinder 
+                id="lampshade" 
+                color="#222222" side="single" 
+                open-ended="true" 
+                scale="0.5 0.5 0.5" 
+                material="side: double">
+              </a-cylinder>
 
               <!-- Sky -->  
               <a-sky 

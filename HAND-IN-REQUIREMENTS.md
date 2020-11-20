@@ -78,5 +78,5 @@ Hand-In 1:
 TO DO:
 
 Hand-In 2:
-- Look-at components on characters & Text bubbles??
+- Chat bubbles?
 - Also that one light ya know... maybe add cylinder... 
