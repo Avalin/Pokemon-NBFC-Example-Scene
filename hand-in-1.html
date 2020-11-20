@@ -8,7 +8,7 @@
   <meta name="description" content="">
   <meta name="author" content="">
 
-  <title>WebVR Project Showcases - Hand-In-1</title>
+  <title>WebVR Project Showcases - Hand-In-2</title>
 
   <!-- Bootstrap core CSS -->
   <link href="vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
@@ -22,47 +22,16 @@
 
   <!-- Favicon -->
   <link rel="shortcut icon" href="img/favicon.ico" type="image/x-icon"/>
-
+ 
   <!-- A-Frame -->
-  <script src="https://aframe.io/releases/1.0.4/aframe.min.js"></script>
-  
-  <!-- A-Frame Components -->
-  <!-- A-Frame Particle System -->
-  <script src="https://unpkg.com/aframe-particle-system-component@1.0.9/dist/aframe-particle-system-component.min.js"></script>
-  <script src="https://unpkg.com/aframe-environment-component/dist/aframe-environment-component.min.js"></script>
- 
-  <!-- A-Frame Event System -->  
-  <script src="https://unpkg.com/aframe-event-set-component@4.2.1/dist/aframe-event-set-component.min.js"></script> 
+	<script src="https://aframe.io/releases/1.0.4/aframe.min.js"></script>
 
-  <!-- A-Frame Extras Add-Ons -->  
-  <script src="https://cdn.jsdelivr.net/gh/donmccurdy/aframe-extras@v6.1.1/dist/aframe-extras.min.js"></script>
-  
-  <!-- A-Frame Physics -->  
-  <script src="https://cdn.jsdelivr.net/gh/n5ro/aframe-physics-system@v4.0.1/dist/aframe-physics-system.min.js"></script>
- 
-  <!-- A-Frame Physics Extra Add-On -->  
-  <script src="https://unpkg.com/aframe-physics-extras@0.1.2/dist/aframe-physics-extras.min.js"></script>
-
-  <!-- A-Frame Super Hands -->  
-  <script src="https://unpkg.com/super-hands@3.0.0/dist/super-hands.min.js"></script> 
-
-  <!-- A-Frame Teleport Controls -->  
-  <script src="https://unpkg.com/aframe-teleport-controls/dist/aframe-teleport-controls.min.js"></script> 
-
-  <!-- A-Frame Inspector Plugin: Navigation Mesh -->  
-  <script src="https://recast-api.donmccurdy.com/aframe-inspector-plugin-recast.js"></script>
-
-  <!-- My Custom JS Files -->
-  <script src="js/a-frame-custom-shaders.js"></script> 
-  <script src="js/a-frame-custom-objects.js"></script> 
-  <script src="js/a-frame-oculus-integration.js"></script> 
-  <script src="js/a-frame-entity-spawners.js"></script> 
-  <script src="js/a-frame-pokemon-interactions.js"></script> 
-  <script src="js/a-frame-light-modifiers.js"></script> 
-  
 </head>
 
 <body>
+  <script src="js/a-frame-custom-shaders.js"></script> 
+  <script src="js/hand-in-2.js"></script> 
+
   <h1 class="site-heading text-center text-white d-none d-lg-block">
     <span class="site-heading-upper text-primary mb-3">Welcome to...</span>
     <span class="site-heading-lower">WebVR Project Showcases</span>
@@ -99,8 +68,8 @@
         <div class="product-item-title d-flex">
           <div class="bg-faded p-5 d-flex ml-auto rounded">
             <h2 class="section-heading mb-0">
-              <span class="section-heading-upper">Hand-In One</span>
-              <span class="section-heading-lower">VR in the browser!</span>
+              <span class="section-heading-upper">Hand-In Two</span>
+              <span class="section-heading-lower">Teleport & gaze!</span>
             </h2>
           </div>
         </div>
@@ -121,102 +90,22 @@
         
           <article class="col-6">
             <!-- A-Frame start -->            
-            <a-scene embedded antialias="false" physics="gravity: -9.8; debug: true">
+            <a-scene embedded antialias="false">
               <!-- A-Frame Asset Manager -->
               <a-assets>
 
                 <!-- 3D Models -->
-               <!-- 3D Models: Environment -->
-                <a-asset-item id="CGrass-o" src="3dmodels/Environment/c-grass-patch/10438_Circular_Grass_Patch_v1_iterations-2.obj"></a-asset-item>
-                <a-asset-item id="CGrass-m" src="3dmodels/Environment/c-grass-patch/10438_Circular_Grass_Patch_v1_iterations-2.mtl"></a-asset-item>
-
-                <a-asset-item id="SouthernIsland-o" src="3dmodels/Environment/sonic-island/Southern_Island.obj"></a-asset-item>
-                <a-asset-item id="SouthernIsland-m" src="3dmodels/Environment/sonic-island/Southern_Island.mtl"></a-asset-item>
-              
-                <a-asset-item id="navmesh-gltf" src="3dmodels/Navmeshes/scene-1.gltf"></a-asset-item>
-                <a-asset-item id="navmesh-f-gltf" src="3dmodels/Navmeshes/scene-1-flat.gltf"></a-asset-item>
-                
-               <!-- 3D Models: Objects -->
-                <a-asset-item id="Basket-o" src="3dmodels/Objects/Basket/BasketSquare.obj"></a-asset-item>
-                <a-asset-item id="Basket-m" src="3dmodels/Objects/Basket/BasketSquare.mtl"></a-asset-item>
-
-                <a-asset-item id="Pokeball-glb" src="3dmodels/Objects/Pokeball/pokeball.glb"></a-asset-item>
-         
-                <a-asset-item id="WoodenTable-gltf" src="3dmodels/Objects/WoodenTable/table.gltf"></a-asset-item>
-                  
-                <!-- 3D Models: Dynamic Characters -->
-                <!-- I just want to note here the pain it was to meddle with mtl files to ensure proper gloss/specular, and converting these from obj to glb to make them animation ready.  -->
-                <!-- I'm no 3D artist. Thank you for coming to my TED talk.  -->
-                <a-asset-item id="Spyro-glb" src="3dmodels/Characters/Spyro/Spyro.glb"></a-asset-item>
-                <a-asset-item id="Mew-glb" src="3dmodels/Characters/Mew/Mew.glb"></a-asset-item>
-                <a-asset-item id="Ditto-gltf" src="3dmodels/Characters/Ditto/ditto.gltf"></a-asset-item>
-
+                <a-asset-item id="forest-gltf" src="3dmodels/NBFC/NBFC_Forest/nbfc_forest.gltf"></a-asset-item>
+                <a-asset-item id="jackskellington-gltf" src="3dmodels/NBFC/JackSkellington/jackskellington.gltf"></a-asset-item>
+                <a-asset-item id="sallyskellington-gltf" src="3dmodels/NBFC/SallySkellington/sally_skellington.glb"></a-asset-item>
+ 
                 <!-- Textures -->
-                <img id="pokegnette" src="textures/vignette/pokegnette.png">
-                <img id="oWater" src="textures/liquid/OceanWater.jpg">
-                <img id="oWater_NRM" src="textures/liquid/OceanWater_NRM.jpg">
-                <img id="oWater_CST" src="textures/liquid/caustics.png">
-                <img id="sky" src="textures/sky/evening_sky.jpg">
-                <img id="wood_panel" src="textures/bounds/wood_panel.png">
-                <img id="wood_panel_NRM" src="textures/bounds/wood_panel_NRM.png">
-                <img id="teak" src="textures/bounds/teak.png">
-                <img id="teal_NRM" src="textures/bounds/teak_NRM.png">
+                <img id="sky" src="textures/sky/nbfc_sky.png">
 
-                <!-- Sounds / Audio -->
-                <audio id="rain_ambience"  src="sounds/ambience/rain_loop.wav"></audio>
-                  
-                <audio preload="auto" id="pokeball_opening_sfx"   src="sounds/sfx/PokeballOpening.mp3"></audio>
-                <audio preload="auto" id="mew_sfx"        src="sounds/sfx/Mew.mp3"        ></audio>
-              </a-assets>
-
-              <!-- Camera, Controllers & VR Setup -->  
-
-              <!-- Camera -->  
-              <a-entity id="camera-rig" movement-controls="constrainToNavMesh: true" position="0 0 4" rotation="0 150 0">
-                <a-entity camera id="head" position="0 0 0" wasd-controls look-controls user-height="1.6">                      
-                  <!-- Gaze-pointer -->  
-                  <a-entity cursor="fuse: true; fuseTimeout: 1000" 
-                    raycaster="objects: .interactable"
-                    animation__fusing="property: scale; startEvents: fusing; easing: linear; dur: 1000; from: 1 1 1; to: 3 3 3"
-                    animation__leave="property: scale; startEvents: mouseleave; easing: linear; dur: 1; from: 1 1 1; to: 1 1 1"
-                    animation__click="property: scale; startEvents: click; easing: linear; dur: 150; from: 3 3 3; to: 1 1 1"
-                    position="0 0 -1"
-                    geometry="primitive: sphere; radius: 0.005"
-                    material="color: #FF00FF; shader: flat; opacity: 0.5">                
-                  </a-entity>      
-                </a-entity>
-
-                <a-entity input-listen teleport-controls="cameraRig: #camera-rig; teleportOrigin: #head; collisionEntities: #navmesh; startEvents: teleportstart; endEvents: teleportend"  
-                static-body="shape: sphere; sphereRadius: 0.02;"
-                sphere-collider="objects: .interactable" handModelStyle: lowPoly; super-hands hand-controls="hand: left"></a-entity>
                 
-                <a-entity input-listen teleport-controls="cameraRig: #camera-rig; teleportOrigin: #head; collisionEntities: #navmesh; startEvents: teleportstart; endEvents: teleportend" 
-                static-body="shape: sphere; sphereRadius: 0.02;"
-                sphere-collider="objects: .interactable" handModelStyle: lowPoly; super-hands hand-controls="hand: right"></a-entity>  
-              
-              </a-entity>    
-
-              <a-entity 
-                id="navmesh" 
-                position="0 0 0"
-                visible="false"
-                gltf-model="#navmesh-f-gltf">  
-              </a-entity>  
-
-              <!-- Environment -->            
-              <!-- Weather: Rainy -->
-              <a-entity position="0 2.25 -15" particle-system="preset: rain; color: #0000FF, #9999FF, #9999FF"
-                        sound="src:  #rain_ambience;  autoplay:  true;  loop: true; volume: 0.05; positional:  false"></a-entity>
-
-              <!-- Hemisphere Light --> 
-              <a-entity           
-                animation="property: light.color;  from: #FF9900; to: #0000FF; dur: 45000; dir: alternate; easing: linear; loop: true"  
-                light="type: hemisphere; color: #ff0000; decay: 0.25; distance: 1; intensity: 0.5" position="0 10 0">
-              </a-entity>
-
-              <!-- Spot Light --> 
-              <a-entity light="type: spot; color: #c39292; castShadow: true; intensity: 2.2; penumbra: 1; angle: 45" position="-1.06044 1.62229 8.66293" rotation="-90 0 0">
-              </a-entity>
+                <!-- Sounds / Audio -->
+                <audio id="this-is-halloween-lofi-music"  src="sounds/music/nbfc/this-is-halloween-lofi.mp3"></audio>
+              </a-assets>
 
               <!-- Ambient Light --> 
               <a-light 
@@ -227,16 +116,13 @@
                        
               <!-- Point Light Sphere --> 
               <a-sphere 
-              class="interactable"
-              entity-spawner
               position="-1 1.75 -5.5"
               rotation="0 0 0"
               scale="0.25 0.25 0.25"  
               shadow="cast: true"
               color="#FFFFFF">
                 <!-- Point Light --> 
-                <a-entity    
-                  id="sphere-light"
+                <a-entity 
                   animation="property: light.intensity;  from: 0; to: 1; dur: 45000; dir: alternate; easing: linear; loop: true"  
                   light="type:  point;  color:  #ff9500;  castShadow:  true"
                   position="0 0 0">
@@ -252,314 +138,85 @@
                 <!-- Directional Light --> 
                 <a-entity light="type: directional;
                                  distance: 10000;
+                                 color:  #FFAA55;
                                  castShadow: true" 
-                  animation="property: light.color;  from: #FF4444; to: #4444FF; dur: 45000; dir: alternate; easing: linear; loop: true"                  
-                  animation__intensity="property: light.intensity;  from: 1; to: 0.5; dur: 45000; dir: alternate; easing: linear; loop: true" 
-                  position="390 300 0">
-                </a-entity>
+                  position="300 110 90">  
+
+                <a-entity light="type: spot;
+                  distance: 10000;
+                  color:  #FFFFFF;
+                  castShadow: true" 
+                  position="300 110 90">    
+                </a-entity>              
+
+                
               </a-sky>
 
-              <!-- Grass Island -->
+              <!-- NBFC Forest -->
               <a-entity 
-                id="grass-island"
+                sound="src:  #this-is-halloween-lofi-music;  autoplay:  true;  loop: true; volume: 0.05; positional:  false"
+                id="nbfc-forest"
                 shadow="receive: true"
-                position="0 -2 0"
-                rotation="-90 0 0"
-                scale="0.075 0.075 0.075"
-                obj-model="obj: #CGrass-o; mtl: #CGrass-m">
-                <a-box 
-                  static-body
-                  position="0 0 -4"
-                  scale="20 20 2"
-                  rotation="0 0 0" 
-                  color="#FFFFFF">
-                </a-box>
+                position="0 0 0"
+                rotation="0 0 0"
+                scale="1 1 1"
+                gltf-model="#forest-gltf">
               </a-entity>  
 
-              <!-- Water -->
-              <a-circle 
-                position="0 -1.5 0"
-                scale="10 10 1"  
-                radius="5"
-                rotation="-90 0 0" 
-                material="shader: water-caustics"
-                src="#oWater"
-                repeat="25 25"
-                normal-map="#oWater_NRM"
-                normal-texture-repeat="25 25"
-                color="#FFFFFF">
-              </a-circle>
-
-              <!-- Island In Background -->
-              <a-entity    
-                position="-7 -1.5 25"
-                rotation="0 180 0"
-                scale="2 2 2"
-                obj-model="obj: #SouthernIsland-o; mtl: #SouthernIsland-m"
-                color="#FFFFFF">
-              </a-entity>  
-
-              <!-- Objects -->
-              <a-entity
-                position="-4.75 -1.25 5.5"
-                scale="0.5 0.5 0.5">
-                <a-entity 
-                  position="0 0 0"
-                  rotation="0 0 0"
-                  scale="0.075 0.05 0.05"
-                  gltf-model="#WoodenTable-gltf"
-                  color="#FFFFFF">
-                </a-entity>  
-                <a-box  
-                  static-body
-                  visible="false"
-                  position="-0.525 0.66 0.15" 
-                  scale="1.175 0.75 1.75"
-                  color="#FFFFFF">
-                </a-box> 
-              </a-entity>  
-
-              <!-- Basket -->
-              <!-- Due to the hardcoded colliders, resizing is not super efficient -->
+              <!-- Jack Skellington -->
               <a-entity 
-                id="basket" 
-                scale="0.5 0.5 0.5"
-                position="-5 -0.5 5.65">
-                <a-entity 
-                pokeball-spawner
-                class="interactable"
-                  position="0 0 0"
-                  rotation="0 0 0"
-                  scale="0.75 0.5 1"
-                  obj-model="obj: #Basket-o; mtl: #Basket-m"
-                  color="#FFFFFF">
-                </a-entity>  
-                <a-box 
-                  id="pokeball_spawn_point"
-                  visible="false"
-                  position="0 0.55 0"
-                  rotation="0 0 0"
-                  scale="0.7 0.075 0.75"
-                  color="#FFFFFF">
-                </a-box> 
-                <a-box 
-                  visible="false"
-                  static-body
-                  position="0 0.05 0"
-                  rotation="0 0 0"
-                  scale="0.7 0.075 0.75"
-                  color="#FFFFFF">
-                </a-box> 
-                <a-box 
-                visible="false"
-                  static-body
-                  position="-0.70 0.275 0"
-                  scale="0.05 0.275 0.65"
-                  color="#FFFFFF">
-                </a-box> 
-                <a-box 
-                  visible="false"
-                  static-body
-                  position="0.70 0.275 0"
-                  scale="0.05 0.275 0.65"
-                  color="#FFFFFF">
-                </a-box> 
-                <a-box 
-                  visible="false"
-                  static-body
-                  position="0.015 0.275 -0.60" 
-                  scale="0.75 0.275 0.05"
-                  color="#FFFFFF">
-                </a-box> 
-                <a-box 
-                  visible="false"
-                  static-body
-                  position="0.015 0.275 0.60" 
-                  scale="0.75 0.275 0.05"
-                  color="#FFFFFF">
-                </a-box> 
-              </a-entity> 
-
-              <!-- Buildings -->
-              <!-- In a utopic world, I had learnt how to use components sooner, so my HTML wouldn't be so long and filled with objects. That's what I get for working before learning it all -->
-              <!-- House -->
-              <a-entity id="house">
-                <!-- Floor -->
-                <a-box 
-                  static-body     
-                  position="-1 -1.25 -8"
-                  rotation="0 0 0"
-                  scale="6 0.2 5.95"
-                  src="#teak"
-                  repeat="2 2"
-                  normal-map="#teak_NRM"
-                  normal-texture-repeat="2 2"
-                  color="#FFFFFF">
-                </a-box>  
-
-                <!-- Back Wall -->
-                <a-box 
-                  static-body     
-                  position="-1 0.75 -10.90"
-                  rotation="0 180 0"
-                  scale="6 4 0.2"
-                  src="#wood_panel"
-                  repeat="2 2"
-                  normal-map="#wood_panel_NRM"
-                  normal-texture-repeat="2 2"
-                  color="#FFFFFF">
-                </a-box>  
-
-                <!-- Front Wall -->
-                <a-entity id="front-wall">
-                  <a-box 
-                    static-body
-                    position="1 0.75 -5.10"
-                    rotation="0 0 0"
-                    scale="2 4 0.2"
-                    src="#wood_panel"
-                    repeat="2 2"
-                    normal-map="#wood_panel_NRM"
-                    normal-texture-repeat="2 2"
-                    color="#FFFFFF">
-                  </a-box> 
-                  <a-box 
-                    static-body
-                    position="-1 2.10 -5.10"
-                    rotation="0 0 0"
-                    scale="2 1 0.2"
-                    src="#wood_panel"
-                    normal-map="#wood_panel_NRM"
-                    color="#FFFFFF">
-                  </a-box>      
-                  <a-box 
-                    static-body
-                    position="-3 0.75 -5.10"
-                    rotation="0 0 0"
-                    scale="2 4 0.2"
-                    src="#wood_panel"
-                    repeat="2 2"
-                    normal-map="#wood_panel_NRM"
-                    normal-texture-repeat="2 2"
-                    color="#FFFFFF">
-                </a-entity>
-
-                <!-- Right Wall -->
-                <a-box 
-                  static-body
-                  position="2.10 0.75 -8"
-                  rotation="0 0 0"
-                  scale="0.2 4 6"
-                  src="#wood_panel"
-                  repeat="2 2"
-                  normal-map="#wood_panel_NRM"
-                  normal-texture-repeat="2 2"
-                  color="#FFFFFF">
-                </a-box>  
-
-                <!-- Left Wall -->
-                <a-box  
-                  static-body
-                  position="-4.10 0.75 -8"
-                  rotation="0 0 0"
-                  scale="0.2 4 6"
-                  src="#wood_panel"
-                  repeat="2 2"
-                  normal-map="#wood_panel_NRM"
-                  normal-texture-repeat="2 2"
-                  color="#FFFFFF">
-                </a-box>  
-
-                <!-- Roof -->
-                <a-box 
-                  static-body
-                  position="-1 2.65 -8"
-                  rotation="0 0 0"
-                  scale="6 0.2 6"
-                  src="#wood_panel"
-                  repeat="2 2"
-                  normal-map="#wood_panel_NRM"
-                  normal-texture-repeat="2 2"
-                  color="#FFFFFF">
-                </a-box>  
-              
-              </a-entity>
-
-              <!-- Characters -->
-              <!-- Spyro -->
-              <a-entity 
-                id="spyro" 
-                position="0 0 0">
-                <a-entity 
-                  class="interactable"
-                  position="-1 -1.20 8"
-                  rotation="0 180 0"
-                  scale="0.1 0.1 0.1"
-                  shadow="cast: true"
-                  gltf-model="#Spyro-glb"
-                  color="#FFFFFF">
-                </a-entity>  
+                id="jack-skellington"
+                shadow="receive: true"
+                position="0.5 -0.25 -2.5" 
+                rotation="0 -40 0" 
+                scale="0.01 0.01 0.01"
+                gltf-model="#jackskellington-gltf">
               </a-entity>  
-              
-              <a-entity pokemon-spawner="pokemon_type: bulbasaur; init_position: -1 -1.30 -1;">  
-              </a-entity> 
 
-              <a-entity pokemon-spawner="pokemon_type: charmander; init_position: -2.5 -1.20 -0.25;">  
-              </a-entity> 
-
-              <a-entity pokemon-spawner="pokemon_type: squirtle; init_position: 1 -1.30 -0.25;">  
-              </a-entity> 
-
-              
+              <!-- Sally Skellington -->
               <a-entity 
-                id="mew" 
-                position="0 0 0">
-                <a-entity    
-                custom-object
-                class="interactable" 
-                sound="src:  #mew_sfx;  on: click; autoplay:  false;  volume: 1;"
-                animation="property: rotation;  from: -25 60 0; to: 335 60 0; dur: 2000; delay: 2000; easing: easeInSine; loop: true" 
-                animation__position="property: position;  from: -4 1.25 2; to: -4 0 2; dur: 2000;  dir: alternate; easing: easeInSine; loop: true"
-                position="-4 1.25 2"
-                rotation="-25 60 0"
-                scale="0.070 0.070 0.070"  
-                shadow="cast: true"
-                gltf-model="#Mew-glb"
-                color="#FFFFFF">
-                </a-entity> 
-              </a-entity> 
+                id="sally-skellington"
+                shadow="receive: true"
+                position="-1.5 -0.25 -2.5" 
+                rotation="0 50 0" 
+                scale="0.2 0.2 0.2"
+                gltf-model="#sallyskellington-gltf">
+              </a-entity>  
 
-              <a-entity id="ditto" 
-                position="0 0 0">
-                <a-entity 
-                class="interactable"
-                event-set__jump="_event: click; 
-                              _target: #ditto;
-                              animation.property: position;
-                              animation.to: 0 1.2 0;
-                              animation.dur: 500;
-                              animation.easing: easeInExpo;
-                              animation.loop: 2;
-                              animation.dir: alternate" 
-                position="2.25 -1.05 1" 
-                rotation="0 -90 7" 
-                scale="0.10 0.10 0.10" 
-                shadow="cast: true"
-                animation="property: scale; to: 0.15 0.08 0.12; dur: 2000; dir: alternate; easing: easeInElastic; loop: true" 
-                gltf-model="#Ditto-gltf" 
-                color="#FFFFFF">
-                </a-entity>            
-              </a-entity> 
-
+              <!-- Camera -->  
+              <!-- Origin at 0 0 0 in VR -->  
+              <!-- Origin at 0 1.6 0 in Desktop -->  
+              <!-- Camera -->  
+              <a-entity position="0 0 0" rotation="0 0 0">
+                <a-camera
+                  user-height="1.6"
+                  active="true">                
+                </a-camera>
+              </a-entity>                
             </a-scene> 
             <!-- A-Frame end -->
           </article>
         </section>
       </div>
-      <div class="product-item-description d-flex mr-auto">
-        <div class="bg-faded p-5 rounded">
-          <p class="mb-0"> Description goes here :3</p>
+    </div>
+  </section>
+
+  <section class="page-section">
+    <div class="container">
+      <div class="product-item">
+        <div class="product-item-title d-flex">
+          <div class="bg-faded p-5 d-flex mr-auto rounded">
+            <h2 class="section-heading mb-0">
+              <span class="section-heading-upper">Integrated video</span>
+              <span class="section-heading-lower">HMD & controllers in use</span>
+            </h2>
+          </div>
         </div>
+        <video class="product-item-img mx-auto d-flex rounded img-fluid mb-3 mb-lg-0" controls>
+          <source src="video/pocahontas.mp4" type="video/mp4">
+          <source src="video/pocahontas.ogg" type="video/ogg">
+        Your browser does not support the video tag.
+        </video> 
       </div>
     </div>
   </section>
