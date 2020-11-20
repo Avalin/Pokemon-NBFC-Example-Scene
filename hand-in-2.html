@@ -512,14 +512,12 @@
               <a-entity 
                 pokemon-spawner="pokemon_type: squirtle; init_position: 1 -1.30 -0.25;">  
               </a-entity> 
-
               
               <a-entity 
-                id="mew" 
-                pokemon
+                id="mew"
                 position="0 0 0">
-                <a-entity    
-                custom-object
+                <a-entity     
+                pokemon
                 class="interactable" 
                 sound="src:  #mew_sfx;  on: click; autoplay:  false;  volume: 1;"
                 animation="property: rotation;  from: -25 60 0; to: 335 60 0; dur: 2000; delay: 2000; easing: easeInSine; loop: true" 
@@ -535,25 +533,25 @@
 
               <a-entity 
                 id="ditto" 
-                pokemon
                 position="0 0 0">
                 <a-entity 
-                class="interactable"
-                event-set__jump="_event: click; 
-                              _target: #ditto;
-                              animation.property: position;
-                              animation.to: 0 1.2 0;
-                              animation.dur: 500;
-                              animation.easing: easeInExpo;
-                              animation.loop: 2;
-                              animation.dir: alternate" 
-                position="2.25 -1.05 1" 
-                rotation="0 -90 7" 
-                scale="0.10 0.10 0.10" 
-                shadow="cast: true"
-                animation="property: scale; to: 0.15 0.08 0.12; dur: 2000; dir: alternate; easing: easeInElastic; loop: true" 
-                gltf-model="#Ditto-gltf" 
-                color="#FFFFFF">
+                  pokemon
+                  class="interactable"
+                  event-set__jump="_event: click; 
+                                _target: #ditto;
+                                animation.property: position;
+                                animation.to: 0 1.2 0;
+                                animation.dur: 500;
+                                animation.easing: easeInExpo;
+                                animation.loop: 2;
+                                animation.dir: alternate" 
+                  position="2.25 -1.05 1" 
+                  rotation="0 -90 7" 
+                  scale="0.10 0.10 0.10" 
+                  shadow="cast: true"
+                  animation="property: scale; to: 0.15 0.08 0.12; dur: 2000; dir: alternate; easing: easeInElastic; loop: true" 
+                  gltf-model="#Ditto-gltf" 
+                  color="#FFFFFF">
                 </a-entity>            
               </a-entity> 
 
