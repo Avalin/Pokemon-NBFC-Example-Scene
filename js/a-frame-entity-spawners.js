@@ -49,7 +49,7 @@ AFRAME.registerComponent('pokeball-spawner', {
 
 
 
-/* Meant to spawn wild pokemon */
+/* The idea behind this component is to reduce the lines of HTML for each pokemon initialized at start*/
 AFRAME.registerComponent('pokemon-spawner', {
     schema: {
         init_position: { type: 'vec3', default: {x: 0, y: 0, z: 0} },
@@ -58,17 +58,18 @@ AFRAME.registerComponent('pokemon-spawner', {
         model_type: { type: 'string', default: 'glb' }    
     },
 	init: function () {  
-        let scene = document.querySelector('a-scene');     
-        let pokemonContainer = document.createElement('a-entity');
-        pokemonContainer.setAttribute('id', pokemon_type + "-generated");
+        this.el.addEventListener('body-loaded', function (event) {
+            let scene = document.querySelector('a-scene');     
+            let pokemonContainer = document.createElement('a-entity');
+            pokemonContainer.setAttribute('id', pokemon_type + "-generated");
 
-        let pokemonCollider = document.createElement('a-box');
-
-        let pokemonMesh= document.createElement('a-entity');   
-        pokemonMesh.setAttribute('gltf-model', '3dmodels/Objects/' + pokemon_type + "/" + pokemon_type + "." + model_type);
-
-        pokemonContainer.appendChild(pokemonCollider);
-        pokemonContainer.appendChild(pokemonMesh);
-        scene.appendChild(pokemonContainer);
+            let pokemonCollider = document.createElement('a-box');
+            let pokemonMesh= document.createElement('a-entity');   
+            pokemonMesh.setAttribute('gltf-model', '3dmodels/Objects/' + pokemon_type + "/" + pokemon_type + "." + model_type);
+    
+            pokemonContainer.appendChild(pokemonCollider);
+            pokemonContainer.appendChild(pokemonMesh);
+            scene.appendChild(pokemonContainer); 
+        });
     },
 });
