@@ -11,6 +11,9 @@
     */ 
 
 AFRAME.registerComponent('light-modifier', {
+    schema: {
+        change_color: { type: 'boolean', default: 'false' }
+    },
     init: function()
     {
 		let lightObj = this.el;
