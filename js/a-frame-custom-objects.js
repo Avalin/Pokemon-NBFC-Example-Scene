@@ -10,7 +10,7 @@ AFRAME.registerComponent('custom-object', {
 		let customObjID = this.el.getAttribute('id');
 		this.el = document.querySelector('#' + customObjID);
 
-		this.el.addEventListener('click', function (evt) {
+		this.el.addEventListener('click', function () {
 			let customObj = document.querySelector('#' + customObjID);
 			customObj.removeAttribute('dynamic-body')
 			customObj.setAttribute('dynamic-body', {mass: '0.08', linearDamping: '0.05', angularDamping: '0.3', shape: 'sphere', sphereRadius: '0.092'});
