@@ -1,7 +1,7 @@
 /*
  * This component will be responsible for objects that the user can move around in the scene.
  * I.e by removing objects the player may have thrown out of the scene etc.
-
+*  This is dedicated solely for hand-in 2.
  */
 
 AFRAME.registerComponent('custom-object', {

@@ -1,3 +1,7 @@
+/* 
+* This is dedicated solely for hand-in 2.
+*/
+
 AFRAME.registerComponent('pokeball-spawner', {
     schema: {},
 	init: function () {
