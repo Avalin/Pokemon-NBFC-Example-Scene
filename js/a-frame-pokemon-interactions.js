@@ -11,6 +11,7 @@ AFRAME.registerComponent('pokemon', {
             pokemonMesh.setAttribute('animation__falldown', {property: 'position', to: '0 0 0', dur: '500', loop: 'indefinite', easing: 'easeOutExpo', autoplay: 'true'}); 
         }); 
       });
+      
       pokemon.addEventListener('collide', this.catchPokemon)
     },
 
