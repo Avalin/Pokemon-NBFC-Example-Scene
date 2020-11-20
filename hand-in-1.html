@@ -101,9 +101,9 @@
 
                 <!-- 3D Models -->
                 <a-asset-item id="forest-gltf" src="3dmodels/NBFC/NBFC_Forest/nbfc_forest.gltf"></a-asset-item>
-                <a-asset-item id="jackskellington-gltf" src="3dmodels/NBFC/JackSkellington/jackskellington.gltf"></a-asset-item>
-                <a-asset-item id="sallyskellington-gltf" src="3dmodels/NBFC/SallySkellington/sally_skellington.glb"></a-asset-item>
- 
+                <a-asset-item id="jackskellington-glb" src="3dmodels/NBFC/JackSkellington/jack_skellington.glb"></a-asset-item>
+                <a-asset-item id="sallyskellington-glb" src="3dmodels/NBFC/SallySkellington/sally_skellington.glb"></a-asset-item>
+
                 <!-- Textures -->
                 <img id="sky" src="textures/sky/nbfc_sky.png">
 
@@ -196,8 +196,8 @@
                 shadow="cast: true"
                 position="0.5 -0.25 -2.5" 
                 rotation="0 -40 0" 
-                scale="0.01 0.01 0.01"
-                gltf-model="#jackskellington-gltf">
+                scale="1 1 1"
+                gltf-model="#jackskellington-glb">
               </a-entity>  
 
               <!-- Sally Skellington -->
@@ -208,7 +208,7 @@
                 position="-1.5 -0.25 -2.5" 
                 rotation="0 50 0" 
                 scale="0.2 0.2 0.2"
-                gltf-model="#sallyskellington-gltf">
+                gltf-model="#sallyskellington-glb">
               </a-entity>     
             </a-scene> 
             <!-- A-Frame end -->
