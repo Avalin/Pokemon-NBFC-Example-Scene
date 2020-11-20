@@ -76,7 +76,7 @@ AFRAME.registerComponent('pokemon-spawner', {
         if(pkmData.hasSound)
              pokemonCollider.setAttribute('sound', {src: 'sounds/sfx/'+ pkmType + '.mp3', on: 'click', autoplay:  'false'});
 
-        let pokemonMesh= document.createElement('a-entity');   
+        let pokemonMesh = document.createElement('a-entity');   
         pokemonMesh.setAttribute('id', pkmType+"_mesh");
         pokemonMesh.setAttribute('scale', pkmData.meshScale);
         pokemonMesh.setAttribute('rotation', pkmData.meshRotate);
