@@ -55,36 +55,45 @@ AFRAME.registerComponent('pokemon-spawner', {
         pokemon_type: { type: 'string', default: 'bulbasaur' },
         model_type: { type: 'string', default: 'glb' }    
     },
-	init: function () {    
+	init: function () {  
         let schemaData = this.data;
         let pkmData = this.getPokemonData(schemaData.pokemon_type);
-        console.log(pkmData);
+        let pkmType = schemaData.pokemon_type;
 
         let scene = document.querySelector('a-scene');     
         let pokemonContainer = document.createElement('a-entity');
-        pokemonContainer.setAttribute('id', schemaData.pokemon_type + "-generated");
+        pokemonContainer.setAttribute('id', pkmType);
 
         let pokemonCollider = document.createElement('a-box');
+        pokemonCollider.setAttribute('id', pkmType+"_collider");
         pokemonCollider.setAttribute('visible', 'false');
-
+        pokemonCollider.setAttribute('pokemon', '');
+        pokemonCollider.setAttribute('static-body', '');
+        pokemonCollider.classList.add('interactable')
+        pokemonCollider.setAttribute('scale', pkmData.colScale);
+        pokemonCollider.setAttribute('position', pkmData.colPos);
+        if(pkmData.hasSound) 
+        pokemonCollider.setAttribute('sound', {src: 'sounds/sfx/'+pkmType+"/"+pkmType+".mp3", on: 'click', autoplay:  'false'});
 
         let pokemonMesh= document.createElement('a-entity');   
+        pokemonMesh.setAttribute('id', pkmType+"_mesh");
         pokemonMesh.setAttribute('scale', pkmData.meshScale);
         pokemonMesh.setAttribute('rotation', pkmData.meshRotate);
-        pokemonMesh.setAttribute('gltf-model', '3dmodels/Characters/' + schemaData.pokemon_type + "/" + schemaData.pokemon_type + "." + schemaData.model_type);
-        if(pkmData.animationMixer !== undefined) pokemonMesh.setAttribute('animation-mixer', {clip: pkmData.animationMixer, loop: "repeat"});
+        pokemonMesh.setAttribute('shadow', { cast: 'true' });
+        pokemonMesh.setAttribute('gltf-model', '3dmodels/Characters/' + pkmType + "/" + pkmType + "." + schemaData.model_type);
+        if(pkmData.animationMixer !== undefined) 
+            pokemonMesh.setAttribute('animation-mixer', {clip: pkmData.animationMixer, loop: "repeat"});
 
         pokemonContainer.appendChild(pokemonCollider);
         pokemonContainer.appendChild(pokemonMesh);
-        scene.appendChild(pokemonContainer); 
+        scene.appendChild(pokemonContainer);
     },	
     
     getPokemonData: function (pkm) { 
         let dict = 
-        [{pokemon: "charmander", meshScale: '0.15 0.15 0.15', meshRotate: '0 -60 0', animationMixer: "DwarfIdle"}, 
-        {pokemon: "bulbasaur", meshScale: '1 1 1', meshRotate: '0 0 0'}, 
-        {pokemon: "squirtle", meshScale: '1 1 1', meshRotate: '0 0 0'}]
-
+       [{pokemon: "charmander",  meshScale: '0.15 0.15 0.15', meshRotate: '0 -60 0',    colScale: '0.3 0.75 0.35', colPos: '0 0.425 0', hasSound: "true",  animationMixer: "DwarfIdle"}, 
+        {pokemon: "bulbasaur",   meshScale: '0.10 0.10 0.10', meshRotate: '0 0 0',      colScale: '0.4 0.5 0.8', colPos: '0 0.3 0', hasSound: "true"}, 
+        {pokemon: "squirtle",    meshScale: '0.2 0.2 0.2',    meshRotate: '-90 180 50', colScale: '0.3 0.75 0.35', colPos: '0 0.425 0', hasSound: "true"}]
         for (entry of dict) 
         {
             if (entry.pokemon === pkm) 
