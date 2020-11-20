@@ -17,11 +17,14 @@ AFRAME.registerComponent('talkable', {
             if(target !== '')
             {
                 console.log(sb);
-                console.log(creatureID);
                 creature.setAttribute('look-at', {src: target});
-
+                
+                sb.setAttribute('visible', true);
+                sb.setAttribute('look-at', {src: '[camera]'});
                 setTimeout(function(){   
+                    creature.removeAttribute('look-at');
                     creature.setAttribute('look-at', {src: default_look_direction});
+                    sb.setAttribute('visible', false);
                 }, 3000);
             }
         })
