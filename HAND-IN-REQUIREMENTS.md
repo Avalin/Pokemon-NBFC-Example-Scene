@@ -73,6 +73,7 @@ TO DO:
 Hand-In 1:
 - Implement animations for characters
 - Gaze events (On Jack & Sally, maybe christmas door, lights)
+- Chat bubbles
 - Light component
 
 TO DO:

@@ -4,12 +4,6 @@
 * May be used in hand-in 2 as well if I feel like it.
 */
 
-    /*
-    * TurnOff
-    * TurnOn
-    * ChangeColor
-    */ 
-
 AFRAME.registerComponent('light-modifier', {
     schema: {
         target_light: { type: 'selector', default: '' }, //To do
