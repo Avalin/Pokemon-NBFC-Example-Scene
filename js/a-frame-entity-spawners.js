@@ -30,7 +30,7 @@ AFRAME.registerComponent('pokeball-spawner', {
             let pokeballContainer = document.createElement('a-sphere');
             pokeballContainer.setAttribute('id', pokeballID);
             pokeballContainer.setAttribute('grabbable', '');
-            pokeballContainer.setAttribute('custom-object', '');
+            pokeballContainer.setAttribute('pokeball', '');
             pokeballContainer.setAttribute('dynamic-body', {mass: '0.08', linearDamping: '0.05', angularDamping: '0.3', shape: 'sphere', sphereRadius: '0.06'});
             pokeballContainer.setAttribute('material', {color: '#FFFFFF', side: 'double'});
             pokeballContainer.setAttribute('sound', {src: 'sounds/sfx/Blob.ogg', autoplay: 'true', loop: 'false'});

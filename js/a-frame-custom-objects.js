@@ -1,11 +1,11 @@
 /*
- * This component will be responsible for objects that the user can move around in the scene.
+ * This js file will hold components responsible for objects that the user can move around in the scene.
  * I.e by removing objects the player may have thrown out of the scene etc.
-*  This is dedicated solely for hand-in 2.
+ * This is dedicated solely for hand-in 2.
  */
 
  //A general component for all custom objects in a scene
-AFRAME.registerComponent('custom-object', {
+AFRAME.registerComponent('pokeball', {
 	init: function (){	
 		let customObjID = this.el.getAttribute('id');
 		this.el = document.querySelector('#' + customObjID);
