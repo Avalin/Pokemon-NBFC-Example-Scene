@@ -54,7 +54,7 @@ In this hand-in you must show that you can:
 3. Use physics system                                                       [✔] //Generated pokéballs use physics.      
 4. Code a working handler in Javascript                                     [✔] //Multiple scripts does this. Example: a-frame-entity-spawners
 5. Use a reference to the 3D model in javascript.                           [✔] //Multiple scripts does this. Example: a-frame-pokemon-interaction
-6. Change behavior in the 3D model using Javascript                         [✔]  //Multiple scripts does this. Example: a-frame-pokemon-interaction
+6. Change behavior in the 3D model using Javascript                         [✔] //Multiple scripts does this. Example: a-frame-pokemon-interaction
 7. Add Gaze based interaction                                               [✔] //Interaction with pokémons and spawning pokéballs can be done with gaze
 8. Add teleportation                                                        [✔] //Works with minor bugs (Sometimes spawning in ground, initially spawns in the air)
 9. Add tracked controls                                                     [✔] //Works with WASD and thumbstick on Oculus Quest
@@ -64,3 +64,19 @@ Your documentation here is the HTML website with javascript files and also one (
 
 You must integrate the video in the webpage and hand-in the complete solution. 
 Hand-in is later in wiseflow. It is therefore possible to continue work until later.
+
+-------------------------------------------------------------------------------
+
+
+TO DO:
+
+Hand-In 1:
+- Implement animations for characters
+- Gaze events (On Jack & Sally, maybe christmas door, lights)
+- Light component
+
+TO DO:
+
+Hand-In 2:
+- Look-at components on characters & Text bubbles??
+- Also that one light ya know... maybe add cylinder... 

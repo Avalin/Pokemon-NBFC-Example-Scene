@@ -8,13 +8,15 @@ AFRAME.registerComponent('pokemon', {
 
       pokemon.addEventListener('click', function () 
       {
-        let pokemonMesh = document.getElementById(pokemon.parentNode.id + "_mesh");      
-        if(pokemon.parentNode.id !== "mew") pokemonMesh.setAttribute('animation__jumpup', {property: 'position', to: '0 1.2 0', dur: '500', loop: 'indefinite', easing: 'easeInExpo', autoplay: 'true'}); 
-        pokemonMesh.addEventListener('animationcomplete', function(e) {
-          if(e.detail.name === "animation__jumpup")
-            pokemonMesh.setAttribute('animation__falldown', {property: 'position', to: '0 0 0', dur: '500', loop: 'indefinite', easing: 'easeOutExpo', autoplay: 'true'}); 
-        }); 
+          let pokemonMesh = document.getElementById(pokemon.parentNode.id + "_mesh");      
+          if(pokemon.parentNode.id !== "mew") pokemonMesh.setAttribute('animation__jumpup', {property: 'position', to: '0 1.2 0', dur: '500', loop: 'indefinite', easing: 'easeInExpo', autoplay: 'true'}); 
+          
+          pokemonMesh.addEventListener('animationcomplete', function(e) {
+              if(e.detail.name === "animation__jumpup")
+                pokemonMesh.setAttribute('animation__falldown', {property: 'position', to: '0 0 0', dur: '500', loop: 'indefinite', easing: 'easeOutExpo', autoplay: 'true'}); 
+          }); 
       });
+
       pokemon.addEventListener('collide', this.catchPokemon)
     },
 
