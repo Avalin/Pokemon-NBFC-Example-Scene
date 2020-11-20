@@ -13,6 +13,7 @@
 AFRAME.registerComponent('light-modifier', {
     init: function()
     {
+		let lightObj = this.el;
         this.el.addEventListener('click', function(){
             //To do
             console.log("Let there be light?");
