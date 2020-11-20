@@ -124,7 +124,7 @@
         
           <article class="col-6">
             <!-- A-Frame start -->            
-            <a-scene embedded renderer="antialias: true" physics="gravity: -9.8; debug: true">
+            <a-scene embedded renderer="antialias: true" physics="gravity: -9.8; debug: false">
               <!-- A-Frame Asset Manager -->
               <a-assets>
 
@@ -221,18 +221,17 @@
                        
               <!-- Point Light Sphere --> 
               <a-sphere 
+              light-modifier="target_light: #lightbulb"
               class="interactable"
-              light-modifier
               position="-1 1.75 -5.5"
               rotation="0 0 0"
               scale="0.25 0.25 0.25"  
               shadow="cast: true"
               color="#FFFFFF">
-                <!-- Point Light --> 
+                <!-- Point Light animation="property: light.intensity;  from: 0; to: 1; dur: 45000; dir: alternate; easing: linear; loop: true" --> 
                 <a-entity    
-                  id="sphere-light"
-                  animation="property: light.intensity;  from: 0; to: 1; dur: 45000; dir: alternate; easing: linear; loop: true"  
-                  light="type:  point;  color:  #ff9500;  castShadow:  true"
+                  id="lightbulb"
+                  light="type:  point;  color:  #ff9500;  castShadow:  true; intensity: 1"
                   position="0 0 0">
                 </a-entity>                
               </a-sphere> 
@@ -241,10 +240,11 @@
                 id="lampshade" 
                 color="#222222" side="single" 
                 open-ended="true" 
-                scale="0.5 0.5 0.5" 
+                scale="0.5 0.5 0.5"  
+                position="-1 1.85 -5.5"
                 material="side: double">
               </a-cylinder>
-
+              
               <!-- Sky -->  
               <a-sky 
                 animation="property: material.color;  from: #FFFFFF; to: #333333; dur: 45000; dir: alternate; easing: linear; loop: true" 

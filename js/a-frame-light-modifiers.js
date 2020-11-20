@@ -12,14 +12,23 @@
 
 AFRAME.registerComponent('light-modifier', {
     schema: {
+        target_light: { type: 'selector', default: '' }, //To do
         change_color: { type: 'boolean', default: 'false' } //To do
     },
     init: function()
     {
-		let lightObj = this.el;
+		let lightObj =  this.data.target_light;
         this.el.addEventListener('click', function(){
             //To do
-            console.log("Let there be light?");
+            let lightEl = lightObj.getAttribute('light');
+            if(lightEl.intensity > 0)
+            {
+                lightObj.setAttribute('light', {color: '#ACC', intensity: 0});
+            }
+            else
+            { 
+                lightObj.setAttribute('light', {color: '#ACC', intensity: 1});
+            }
         })
     }
 }); 
