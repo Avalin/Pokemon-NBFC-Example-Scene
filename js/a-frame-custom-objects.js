@@ -10,6 +10,10 @@ AFRAME.registerComponent('custom-object', {
 		let customObjID = this.el.getAttribute('id');
 		this.el = document.querySelector('#' + customObjID);
 
+		/*
+		* Note: I really tried to separate these into two functions: decrease and increase size, but it provided many scoping issues
+		*/
+
 		this.el.addEventListener('click', function () {
 			let customObj = document.querySelector('#' + customObjID);
 			customObj.removeAttribute('dynamic-body')
