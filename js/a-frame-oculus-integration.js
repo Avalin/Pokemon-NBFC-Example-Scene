@@ -78,7 +78,7 @@ AFRAME.registerComponent('input-listen', {
         //Move selected object to follow the tip of raycaster.
         this.el.selectedObj.object3D.position.set(p.x, p.y, p.z);
   
-        //Thumbstick moved. Doesnt register for some reason :( maybe because of overlapping preloaded scripts
+        //Thumbstick moved. Doesnt register for some reason :/ maybe because of overlapping preloaded scripts, or I misunderstood how the control works
         this.el.addEventListener('thumbstickchanged', function (e) {
                 // TODO: Code to rotate #head
 		        let camera = document.querySelector('#camera-rig');

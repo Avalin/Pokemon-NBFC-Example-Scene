@@ -55,15 +55,16 @@ AFRAME.registerComponent('pokemon-spawner', {
         pokemon_type: { type: 'string', default: 'bulbasaur' },
         model_type: { type: 'string', default: 'glb' }    
     },
-	init: function () {              
-        console.log("PINEAPPLE");
+	init: function () {      
+        let schemaData = this.data;
         let scene = document.querySelector('a-scene');     
         let pokemonContainer = document.createElement('a-entity');
-        pokemonContainer.setAttribute('id', pokemon_type + "-generated");
+        pokemonContainer.setAttribute('id', schemaData.pokemon_type + "-generated");
 
         let pokemonCollider = document.createElement('a-box');
+        pokemonCollider.setAttribute('visible', 'false');
         let pokemonMesh= document.createElement('a-entity');   
-        pokemonMesh.setAttribute('gltf-model', '3dmodels/Objects/' + pokemon_type + "/" + pokemon_type + "." + model_type);
+        pokemonMesh.setAttribute('gltf-model', '3dmodels/Characters/' + schemaData.pokemon_type + "/" + schemaData.pokemon_type + "." + schemaData.model_type);
 
         pokemonContainer.appendChild(pokemonCollider);
         pokemonContainer.appendChild(pokemonMesh);
