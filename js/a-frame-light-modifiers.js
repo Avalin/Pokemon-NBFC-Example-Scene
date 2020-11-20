@@ -15,6 +15,7 @@ AFRAME.registerComponent('light-modifier', {
     {
         this.el.addEventListener('click', function(){
             //To do
+            console.log("Let there be light?");
         })
     }
 }); 
