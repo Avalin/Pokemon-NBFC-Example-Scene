@@ -1,14 +1,18 @@
 
 AFRAME.registerComponent('talkable', {
     schema: {
-        message: { type: 'string', default: 'Hello world' },
+        messenger: { type: 'string', default: 'Spyro' },
+        target: { type: 'selector', default: '' },
     },
     init: function()
     {
-		let creature =  this.el;
-		let msg =  this.data.message;
+        let creature =  this.el;
+        
         this.el.addEventListener('click', function(){
+            if(target !== '')
+            {
 
+            }
         })
     }
 }); 
