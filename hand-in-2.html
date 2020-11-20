@@ -140,16 +140,10 @@
                 <a-asset-item id="Basket-o" src="3dmodels/Objects/Basket/BasketSquare.obj"></a-asset-item>
                 <a-asset-item id="Basket-m" src="3dmodels/Objects/Basket/BasketSquare.mtl"></a-asset-item>
 
-                <a-asset-item id="Pokeball-glb" src="3dmodels/Objects/Pokeball/pokeball.glb"></a-asset-item>
-         
                 <a-asset-item id="WoodenTable-gltf" src="3dmodels/Objects/WoodenTable/table.gltf"></a-asset-item>
                   
                 <!-- 3D Models: Dynamic Characters -->
-                <!-- I just want to note here the pain it was to meddle with mtl files to ensure proper gloss/specular, and converting these from obj to glb to make them animation ready.  -->
-                <!-- I'm no 3D artist. Thank you for coming to my TED talk.  -->
                 <a-asset-item id="Spyro-glb" src="3dmodels/Characters/Spyro/Spyro.glb"></a-asset-item>
-                <a-asset-item id="Mew-glb" src="3dmodels/Characters/Mew/Mew.glb"></a-asset-item>
-                <a-asset-item id="Ditto-gltf" src="3dmodels/Characters/Ditto/ditto.gltf"></a-asset-item>
 
                 <!-- Textures -->
                 <img id="pokegnette" src="textures/vignette/pokegnette.png">
@@ -164,9 +158,6 @@
 
                 <!-- Sounds / Audio -->
                 <audio id="rain_ambience"  src="sounds/ambience/rain_loop.wav"></audio>
-                  
-                <audio preload="auto" id="pokeball_opening_sfx"   src="sounds/sfx/PokeballOpening.mp3"></audio>
-                <audio preload="auto" id="mew_sfx"        src="sounds/sfx/Mew.mp3"        ></audio>
               </a-assets>
 
               <!-- Camera, Controllers & VR Setup -->  
@@ -300,6 +291,8 @@
               </a-entity>  
 
               <!-- Objects -->
+              
+              <!-- Wooden Table -->
               <a-entity
                 position="-4.75 -1.25 5.5"
                 scale="0.5 0.5 0.5">
