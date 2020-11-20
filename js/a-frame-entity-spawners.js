@@ -67,14 +67,14 @@ AFRAME.registerComponent('pokemon-spawner', {
 
         let pokemonCollider = document.createElement('a-box');
         pokemonCollider.setAttribute('id', pkmType+"_collider");
-        pokemonCollider.setAttribute('sound', {src: 'sounds/sfx/'+ pkmType + '.mp3', on: 'click', autoplay:  'false'});
         pokemonCollider.setAttribute('visible', 'false');
         pokemonCollider.setAttribute('pokemon', '');
         pokemonCollider.setAttribute('static-body', '');
         pokemonCollider.setAttribute('scale', pkmData.colScale);
         pokemonCollider.setAttribute('position', pkmData.colPos);
-        if(pkmData.hasSound) 
         pokemonCollider.classList.add('interactable')
+        if(pkmData.hasSound)
+             pokemonCollider.setAttribute('sound', {src: 'sounds/sfx/'+ pkmType + '.mp3', on: 'click', autoplay:  'false'});
 
         let pokemonMesh= document.createElement('a-entity');   
         pokemonMesh.setAttribute('id', pkmType+"_mesh");

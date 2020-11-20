@@ -3,9 +3,7 @@ AFRAME.registerComponent('pokemon', {
       let pokemon = this.el;
 
 		  this.el.addEventListener('click', function () {
-        console.log(pokemon.parentNode.id + " was clicked!");
-        let pokemonMesh = document.getElementById(pokemon.parentNode.id + "_mesh");
-        console.log(pokemonMesh.id + " exists!");
+        let pokemonContainer = document.getElementById(pokemon.parentNode.id);
       });
       
       this.el.addEventListener('collide', this.catchPokemon)
@@ -25,5 +23,5 @@ AFRAME.registerComponent('pokemon', {
         otherCollider.setAttribute('sound', {src: 'sounds/sfx/PokeballOpening.mp3', autoplay: 'true', loop: 'false'});          
         pokemonMesh.setAttribute('animation', {property: 'scale', to: '0 0 0', dur: '2500', easing: 'linear'});  
       }
-    }
+    },
 });
