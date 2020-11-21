@@ -1,7 +1,6 @@
 /*
 * This is dedicated solely for hand-in 2.
 */ 
-
 AFRAME.registerComponent('pokemon', {   
 	  init: function () {		
       let pokemon = this.el;

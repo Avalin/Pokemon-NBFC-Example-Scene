@@ -6,8 +6,7 @@
 
 AFRAME.registerComponent('light-modifier', {
     schema: {
-        target_light: { type: 'selector', default: '' }, //To do
-        change_color: { type: 'boolean', default: false } //To do
+        target_light: { type: 'selector', default: '' }
     },
     init: function()
     {
