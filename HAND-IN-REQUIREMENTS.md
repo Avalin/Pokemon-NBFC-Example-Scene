@@ -76,11 +76,6 @@ Hand-In 1:
 - Chat bubbles
 - Light component
 
-TO DO:
-
-Hand-In 2:
-- Chat bubbles?
-
 SPØRGSMÅL TIL BUGS:
 - Hand in 1:
 - Kameraet bevæger sig båd-agtigt
