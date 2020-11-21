@@ -83,7 +83,4 @@ SPØRGSMÅL TIL BUGS:
 - Hand in 2: 
 - Camera højde vs. teleporteringshøjde
 - Collision detection på static-objects så man ikke bevæger sig ind i dem
-
-
-//Self-note:
-- Mixamo & Rigmodels ✔
+- Oculus Quest integration med alle buttons virker ikke? 
