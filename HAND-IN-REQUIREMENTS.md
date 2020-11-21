@@ -71,8 +71,6 @@ Hand-in is later in wiseflow. It is therefore possible to continue work until la
 TO DO:
 
 Hand-In 1:
-- Implement animations for characters
-
 - Gaze events (On Jack & Sally, doors)
 - Implement light component
 - Implement talkable component
