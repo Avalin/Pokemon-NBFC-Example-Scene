@@ -57,3 +57,12 @@ AFRAME.registerComponent('easter-door', {
         })
     }
 }); 
+
+AFRAME.registerComponent('halloween-door', {
+    init: function()
+    {
+        this.el.addEventListener('click', function(){
+
+        })
+    }
+}); 
