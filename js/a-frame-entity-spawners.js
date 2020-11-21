@@ -86,7 +86,7 @@ AFRAME.registerComponent('pokemon-spawner', {
         pokemonMesh.setAttribute('scale', pkmData.meshScale);
         pokemonMesh.setAttribute('rotation', pkmData.meshRotate);
         pokemonMesh.setAttribute('shadow', { cast: 'true' });
-        pokemonMesh.setAttribute('gltf-model', '3dmodels/Characters/' + pkmType + "/" + pkmType + "." + schemaData.model_type);
+        pokemonMesh.setAttribute('gltf-model', '3dmodels/Nintendo/Characters/' + pkmType + "/" + pkmType + "." + schemaData.model_type);
         if(pkmData.animationMixer !== undefined) 
             pokemonMesh.setAttribute('animation-mixer', {clip: pkmData.animationMixer, loop: "repeat"});
         this.setPokemonSpecificAnimations(pkmType, pokemonMesh);
