@@ -24,13 +24,13 @@
   <link rel="shortcut icon" href="img/favicon.ico" type="image/x-icon"/>
  
   <!-- A-Frame -->
-	<script src="https://aframe.io/releases/1.0.4/aframe.min.js"></script>
-
+  <script src="https://aframe.io/releases/1.0.4/aframe.min.js"></script>
+  
+  <!-- My Custom JS Files -->
+  <script src="js/a-frame-video-components.js"></script> 
 </head>
 
 <body>
-  <script src="js/a-frame-light-modifiers.js"></script> 
-
   <h1 class="site-heading text-center text-white d-none d-lg-block">
     <span class="site-heading-upper text-primary mb-3">Welcome to...</span>
     <span class="site-heading-lower">WebVR Project Showcases</span>
@@ -68,37 +68,65 @@
     <div class="container">
       <div class="product-item">
         <div class="product-item-title d-flex">
-          <div class="bg-faded p-5 d-flex mr-auto rounded">
-            <h2 class="section-heading mb-0">
-              <span class="section-heading-upper">Integrated video</span>
-              <span class="section-heading-lower">HMD & controllers in use</span>
-            </h2>
-          </div>
         </div>
-        <a-scene embedded> 
-          <!-- A_Frame start -->
-          <!-- Asset Management System -->
-          <a-assets>
-            <img id="play" src="L26-ASSETs/play.png">
-            <img id="pause" src="L26-ASSETs/pause.png">
-            <video id="myShowcaseVideo" src="videos\Pocahontas.mp4" loop="true"></video>
-          </a-assets>
+        <section class="row">
+          <nav class="col-3">
+            <br></br>
+            <br></br>
+            <br></br>
+            <br></br>
+            <br></br>
+            <br></br>
+            <br></br>
+            <br></br>
+            <br></br>
+            <br></br>
+            <br></br>
+          </nav>
         
-          <!-- Camera -->
-          <a-camera>
-            <a-cursor></a-cursor>
-          </a-camera>
-        
-          <!-- Video 16:9 -->
-          <!-- UPDATE YOUR VIDEO'S ID -->
-          <a-video src="#YOUR-VIDEO-ID" width="8" height="4.5" position="0 3 -9">
-            <!-- Play/Pause -->
-          <a-image id="videoControls" src="#play" position="0 -3 0" scale="0.5 0.5 1"
-              play-pause>
-          </a-image>
-        </a-video>
-        <!-- A_Frame end -->
-      </a-scene>
+          <article class="col-6">
+            <!-- A-Frame start -->            
+            <a-scene embedded> 
+              <!-- Asset Management System -->
+              <a-assets>                <!-- Textures -->
+                <img id="sky" src="img/bg.jpg">
+                <img id="play" src="img/play.png">
+                <img id="pause" src="img/pause.png">
+                <video id="video" src="videos/Pocahontas.mp4" loop="true"></video>
+              </a-assets>
+              <a-sky 
+                src="#sky"
+                rotation="0 0 0" 
+                color="#FFFFFF">           
+              </a-sky>
+
+              <!-- Camera -->
+              <a-camera>
+                  <!-- Gaze-pointer -->  
+                  <a-entity cursor="fuse: true; fuseTimeout: 1000" 
+                    raycaster="objects: .interactable"
+                    animation__fusing="property: scale; startEvents: fusing; easing: linear; dur: 1000; from: 1 1 1; to: 3 3 3"
+                    animation__leave="property: scale; startEvents: mouseleave; easing: linear; dur: 1; from: 1 1 1; to: 1 1 1"
+                    animation__click="property: scale; startEvents: click; easing: linear; dur: 150; from: 3 3 3; to: 1 1 1"
+                    position="0 0 -1"
+                    geometry="primitive: sphere; radius: 0.005"
+                    material="color: #FF00FF; shader: flat; opacity: 0.5">                
+                  </a-entity>     
+              </a-camera>
+            
+              <!-- Video - 16:9 -->
+              <a-video src="#video" width="8" height="4.5" position="0 3 -9">
+
+              <!-- Play/Pause -->
+              <a-image id="videoControls" class="interactable" src="#play" position="0 -3 0" scale="0.5 0.5 1"
+                  play-pause>
+              </a-image>
+
+            </a-video>
+          </a-scene>
+            <!-- A-Frame end -->
+          </article>
+        </section>
       </div>
     </div>
   </section>
