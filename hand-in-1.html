@@ -117,10 +117,10 @@
                 <a-asset-item id="forest-gltf" src="3dmodels/NBFC/Environment/NBFC_Forest/nbfc_forest.gltf"></a-asset-item>
                 <a-asset-item id="jackskellington-glb" src="3dmodels/NBFC/Characters/JackSkellington/jack_skellington.glb"></a-asset-item>
                 <a-asset-item id="sallyskellington-glb" src="3dmodels/NBFC/Characters/SallySkellington/sally_skellington.glb"></a-asset-item>
+                <a-asset-item id="sallyskellington-glb" src="3dmodels/NBFC/Characters/Zero/zero.glb"></a-asset-item>
 
                 <!-- Textures -->
                 <img id="sky" src="textures/sky/nbfc_sky.png">
-
                 
                 <!-- Sounds / Audio -->
                 <audio id="this-is-halloween-lofi-music"  src="sounds/music/nbfc/this-is-halloween-lofi.mp3"></audio>
@@ -194,6 +194,7 @@
                   position="300 110 90">                  
               </a-sky>
 
+              <!-- ENVIRONMENT -->
               <!-- Weather: Snowy -->
               <a-entity id="particles" visible="false" position="0 2.25 -15" particle-system="preset: snow; color: #FFFFFF, #FFFFFF, #FFFFFF"></a-entity>
 
@@ -208,6 +209,7 @@
                 gltf-model="#forest-gltf">
               </a-entity>  
 
+              <!-- DOORS -->
               <a-box id="christmas_door" 
                 christmas-door
                 class="interactable" 
@@ -224,6 +226,7 @@
               scale="1 3 1">
               </a-box>
 
+              <!-- CHARACTERS -->
               <!-- Jack Skellington -->
               <a-entity 
                 id="jack"
