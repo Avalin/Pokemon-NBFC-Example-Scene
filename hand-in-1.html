@@ -26,8 +26,12 @@
   <!-- A-Frame -->
   <script src="https://aframe.io/releases/1.0.4/aframe.min.js"></script>
 
-    <!-- A-Frame Super Hands -->  
-    <script src="https://unpkg.com/super-hands@3.0.0/dist/super-hands.min.js"></script> 
+  <!-- A-Frame Particle System -->
+  <script src="https://unpkg.com/aframe-particle-system-component@1.0.9/dist/aframe-particle-system-component.min.js"></script>
+  <script src="https://unpkg.com/aframe-environment-component/dist/aframe-environment-component.min.js"></script>
+
+  <!-- A-Frame Super Hands -->  
+  <script src="https://unpkg.com/super-hands@3.0.0/dist/super-hands.min.js"></script> 
   
   <!-- My Custom JS Files -->
   <script src="js/a-frame-custom-shaders.js"></script> 
@@ -183,6 +187,9 @@
 
                 
               </a-sky>
+
+              <!-- Weather: Snowy -->
+              <a-entity position="0 2.25 -15" particle-system="preset: snow; color: #FFFFFF, #FFFFFF, #FFFFFF"></a-entity>
 
               <!-- NBFC Forest -->
               <a-entity 
