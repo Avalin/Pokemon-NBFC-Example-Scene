@@ -81,9 +81,14 @@ TO DO:
 Hand-In 2:
 - Chat bubbles?
 
-//Spørgsmål før hand-ins:
-- Hjælp med tracking
-- Collision detection på static-objects?
+SPØRGSMÅL TIL BUGS:
+- Hand in 1:
+- Kameraet bevæger sig båd-agtigt
+
+- Hand in 2: 
+- Camera højde vs. teleporteringshøjde
+- Collision detection på static-objects så man ikke bevæger sig ind i dem
+
 
 //Self-note:
 - Mixamo & Rigmodels ✔

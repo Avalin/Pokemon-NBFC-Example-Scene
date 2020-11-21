@@ -102,7 +102,7 @@
         
           <article class="col-6">
             <!-- A-Frame start -->            
-            <a-scene embedded antialias="false">
+            <a-scene embedded renderer="antialias: true">
               <!-- A-Frame Asset Manager -->
               <a-assets>
 
@@ -139,8 +139,8 @@
                   </a-entity>                   
                 </a-camera>
 
-                <a-entity static-body="shape: sphere; sphereRadius: 0.02;" super-hands hand-controls="hand: left; handModelStyle: highPoly;"></a-entity>
-                <a-entity static-body="shape: sphere; sphereRadius: 0.02;" super-hands hand-controls="hand: right; handModelStyle: highPoly;"></a-entity>  
+                <a-entity static-body="shape: sphere; sphereRadius: 0.02;" super-hands hand-controls="hand: left; handModelStyle: lowPoly;"></a-entity>
+                <a-entity static-body="shape: sphere; sphereRadius: 0.02;" super-hands hand-controls="hand: right; handModelStyle: lowPoly;"></a-entity>  
               </a-entity>             
 
               <!-- Ambient Light --> 
@@ -216,7 +216,7 @@
                 id="sally-skellington"
                 class="interactable"
                 shadow="cast: true"
-                position="-1.5 -0.25 -2.5" 
+                position="-1.5 -0.35 -2.5" 
                 rotation="0 50 0" 
                 scale="0.2 0.2 0.2"
                 gltf-model="#sallyskellington-glb">
