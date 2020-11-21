@@ -12,8 +12,8 @@ AFRAME.registerComponent('christmas-door', {
             
             particles.setAttribute('visible', 'true');
             jack.removeAttribute('gltf-model');
-            jack.setAttribute('gltf-model', '3dmodels/NBFC/JackSkellingtonSanta/jackskellingtonsanta.gltf');
-            jack.setAttribute('scale', '0.01 0.01 0.01');
+            jack.setAttribute('gltf-model', '3dmodels/NBFC/JackSkellingtonSanta/santa_jack_skellington.glb');
+            jack.setAttribute('scale', '10 10 10');
         })
     }
 }); 
