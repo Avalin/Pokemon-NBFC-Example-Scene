@@ -186,12 +186,12 @@
                 </a-entity>
 
                 <a-entity input-listen teleport-controls="cameraRig: #camera-rig; teleportOrigin: #head; collisionEntities: #navmesh; startEvents: teleportstart; endEvents: teleportend"  
-                static-body="shape: sphere; sphereRadius: 0.02;"
-                sphere-collider="objects: .interactable" handModelStyle: lowPoly; super-hands hand-controls="hand: left"></a-entity>
+                static-body="shape: sphere; sphereRadius: 0.02;" sphere-collider="objects: .interactable" 
+                super-hands hand-controls="hand: left; handModelStyle: lowPoly;"></a-entity>
                 
                 <a-entity input-listen teleport-controls="cameraRig: #camera-rig; teleportOrigin: #head; collisionEntities: #navmesh; startEvents: teleportstart; endEvents: teleportend" 
-                static-body="shape: sphere; sphereRadius: 0.02;"
-                sphere-collider="objects: .interactable" handModelStyle: lowPoly; super-hands hand-controls="hand: right"></a-entity>  
+                static-body="shape: sphere; sphereRadius: 0.02;" sphere-collider="objects: .interactable"  
+                super-hands hand-controls="hand: right; handModelStyle: lowPoly;"></a-entity>  
               
               </a-entity>    
 

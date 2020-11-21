@@ -25,6 +25,9 @@
  
   <!-- A-Frame -->
   <script src="https://aframe.io/releases/1.0.4/aframe.min.js"></script>
+
+    <!-- A-Frame Super Hands -->  
+    <script src="https://unpkg.com/super-hands@3.0.0/dist/super-hands.min.js"></script> 
   
   <!-- My Custom JS Files -->
   <script src="js/a-frame-custom-shaders.js"></script> 
@@ -131,6 +134,9 @@
                     material="color: #FF00FF; shader: flat; opacity: 0.5">                
                   </a-entity>                   
                 </a-camera>
+
+                <a-entity static-body="shape: sphere; sphereRadius: 0.02;" handModelStyle: highPoly; super-hands hand-controls="hand: left"></a-entity>
+                <a-entity static-body="shape: sphere; sphereRadius: 0.02;" handModelStyle: highPoly; super-hands hand-controls="hand: right"></a-entity>  
               </a-entity>             
 
               <!-- Ambient Light --> 
