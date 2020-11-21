@@ -9,6 +9,8 @@ AFRAME.registerComponent('christmas-door', {
             let particles = document.querySelector('#particles');
             let jack = document.querySelector('#jack');
             let soundController = document.querySelector('#nbfc-forest');
+            
+            particles.setAttribute('visible', 'true');
 
             if(soundController.getAttribute('sound').src !== "sounds/music/NBFC/whats-this.mp3")
             {
@@ -21,7 +23,6 @@ AFRAME.registerComponent('christmas-door', {
                     jack.setAttribute('gltf-model', '3dmodels/NBFC/characters/JackSkellington/jack_skellington.glb');
                 })
                 
-                particles.setAttribute('visible', 'true');
                 jack.removeAttribute('gltf-model');
                 jack.setAttribute('gltf-model', '3dmodels/NBFC/characters/JackSkellington/santa_jack_skellington.glb');
                 jack.removeAttribute('animation-mixer');

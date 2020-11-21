@@ -117,13 +117,14 @@
                 <a-asset-item id="forest-gltf" src="3dmodels/NBFC/Environment/NBFC_Forest/nbfc_forest.gltf"></a-asset-item>
                 <a-asset-item id="jackskellington-glb" src="3dmodels/NBFC/Characters/JackSkellington/jack_skellington.glb"></a-asset-item>
                 <a-asset-item id="sallyskellington-glb" src="3dmodels/NBFC/Characters/SallySkellington/sally_skellington.glb"></a-asset-item>
-                <a-asset-item id="sallyskellington-glb" src="3dmodels/NBFC/Characters/Zero/zero.glb"></a-asset-item>
+                <a-asset-item id="zero-glb" src="3dmodels/NBFC/Characters/Zero/zero.glb"></a-asset-item>
 
                 <!-- Textures -->
                 <img id="sky" src="textures/sky/nbfc_sky.png">
                 
                 <!-- Sounds / Audio -->
                 <audio id="this-is-halloween-lofi-music"  src="sounds/music/nbfc/this-is-halloween-lofi.mp3"></audio>
+                <audio id="bark-sfx"  src="sounds/sfx/Bark.mp3"></audio>
               </a-assets>
 
               <!-- Camera -->  
@@ -249,7 +250,19 @@
                 scale="20 20 20"
                 animation-mixer="clip: Idle"
                 gltf-model="#sallyskellington-glb">
-              </a-entity>     
+              </a-entity>   
+              
+              <!-- Zero -->
+              <a-entity 
+                id="zero" 
+                look-at="src: #look-at-point"
+                sound="src: #bark-sfx; autoplay: false; on: click"
+                class="interactable" 
+                position="-1.65 0.5 2.5" 
+                rotation="0 140 0" 
+                scale="0.01 0.01 0.01" 
+                gltf-model="#zero-glb">
+              </a-entity>
             </a-scene> 
             <!-- A-Frame end -->
           </article>
