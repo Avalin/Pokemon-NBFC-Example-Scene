@@ -145,6 +145,7 @@
 
               <!-- Ambient Light --> 
               <a-light 
+                id="ambient_light"
                 animation="property: light.intensity;  from: 1; to: 0.2; dur: 45000; dir: alternate; easing: linear; loop: true" 
                 type="ambient"
                 color="#FFFFFF">
@@ -152,6 +153,7 @@
                        
               <!-- Point Light --> 
               <a-entity 
+                id="point_light"
                 animation="property: light.intensity;  from: 0; to: 1; dur: 45000; dir: alternate; easing: linear; loop: true"  
                 light="type:  point;  color:  #FF00FF;  castShadow:  true"
                 position="0 0 0">
@@ -159,8 +161,15 @@
 
               <!-- Spot Light --> 
               <a-entity 
+                id="spot_light"
                 light="type: spot; color: #953eff; castShadow: true; angle: 120; decay: 0.5; penumbra: 0.2" 
                 position="0.45478 2.45199 -1.59203">
+              </a-entity>
+
+              <!-- Hemisphere Light --> 
+              <a-entity id="hemisphere_light" 
+                light="type: hemisphere; color: #7b50cb; groundColor: #8162d0; decay: 0.2; intensity: 0.2" 
+                visible="true">
               </a-entity>
 
               <!-- Sky -->  
@@ -174,16 +183,7 @@
                                  distance: 10000;
                                  color:  #FFAA55;
                                  castShadow: true" 
-                  position="300 110 90">  
-
-                <a-entity light="type: spot;
-                  distance: 10000;
-                  color:  #FFFFFF;
-                  castShadow: true" 
-                  position="300 110 90">    
-                </a-entity>              
-
-                
+                  position="300 110 90">                  
               </a-sky>
 
               <!-- Weather: Snowy -->
