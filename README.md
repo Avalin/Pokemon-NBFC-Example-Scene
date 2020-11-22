@@ -9,7 +9,7 @@ Utilizing the [Business Casual](https://startbootstrap.com/theme/business-casual
 </p>
 
 ## Limitations
-Projects were only tested on PC and Oculus Quest, and may not work well for other devices.
+Projects were only tested on PC and Oculus Quest, and may not work well for other devices. <br/>
 Tested on Firefox and Chrome, works best with the latter.
 
 ## Download and Installation
@@ -19,13 +19,12 @@ To get these A-frame projects:
 
 That's it.
 
-
 ## Usage
 Using [OpenSSL](https://github.com/openssl/openssl) and [http-server](https://github.com/http-party/http-server), I use this command:
 
 * http-server -S -C cert.pem -o
 
-To run the project on my local network and have it accessible on other devices, i.e. Oculus Quest.
+To run the project on my local network and have it accessible on other devices, i.e. Oculus Quest. <br/>
 Personal note: ngrok can be used to share with others as a temporary solution.
 
 ## Bugs and Issues
