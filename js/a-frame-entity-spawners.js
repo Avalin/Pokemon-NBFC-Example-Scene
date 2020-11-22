@@ -12,7 +12,7 @@ AFRAME.registerComponent('pokeball-spawner', {
         
         let pokeballsInSceneAmount = document.getElementsByClassName('pokeball').length + 1;
         let pokeballID = "pokeball-"+pokeballsInSceneAmount;
-        let pokeballLimit = 6;
+        let pokeballLimit = 15;
 
         if(pokeballsInSceneAmount <= pokeballLimit)
         {
@@ -31,7 +31,7 @@ AFRAME.registerComponent('pokeball-spawner', {
             pokeballContainer.setAttribute('id', pokeballID);
             pokeballContainer.setAttribute('grabbable', '');
             pokeballContainer.setAttribute('pokeball', '');
-            pokeballContainer.setAttribute('dynamic-body', {mass: '0.15', linearDamping: '0.01', angularDamping: '0.3', shape: 'sphere', sphereRadius: '0.06'});
+            pokeballContainer.setAttribute('dynamic-body', {mass: '0.04', linearDamping: '0.01', angularDamping: '0.3', shape: 'sphere', sphereRadius: '0.06'});
             pokeballContainer.setAttribute('material', {color: '#FFFFFF', side: 'double'});
             pokeballContainer.setAttribute('sound', {src: 'sounds/sfx/Blob.ogg', autoplay: 'true', loop: 'false'});
             pokeballContainer.setAttribute('radius', 5);

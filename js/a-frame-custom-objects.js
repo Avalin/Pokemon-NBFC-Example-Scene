@@ -17,7 +17,7 @@ AFRAME.registerComponent('pokeball', {
 		this.el.addEventListener('click', function () {
 			let customObj = document.querySelector('#' + customObjID);
 			customObj.removeAttribute('dynamic-body')
-			customObj.setAttribute('dynamic-body', {mass: '0.08', linearDamping: '0.05', angularDamping: '0.3', shape: 'sphere', sphereRadius: '0.092'});
+			customObj.setAttribute('dynamic-body', {mass: '0.04', shape: 'sphere', sphereRadius: '0.080'});
 			customObj.setAttribute('animation__scale', { property: 'scale', to: '0.015 0.015 0.015', dur: '500', loop: false, easing: 'easeInCubic'});
 		});
 
@@ -28,7 +28,7 @@ AFRAME.registerComponent('pokeball', {
 			if(otherCollider.classList.contains("pokemon"))
 			{               
 				let customObj = document.querySelector('#' + customObjID);
-				customObj.setAttribute('dynamic-body', {mass: '0.08', linearDamping: '0.05', angularDamping: '0.3', shape: 'sphere', sphereRadius: '0.0675'});
+				customObj.setAttribute('dynamic-body', {mass: '0.04', shape: 'sphere', sphereRadius: '0.080'});
 				customObj.setAttribute('animation__scale', { property: 'scale', to: '0.01 0.01 0.01', dur: '2000', loop: false, easing: 'linear'}); 
 			}
 		});
