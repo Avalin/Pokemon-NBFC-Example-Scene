@@ -1,4 +1,4 @@
-# WebVR Projects
+# WebVR Projects - A-frame Pokémon & Nightmare Before Christmas examples
 
 Utilizing the [Business Casual](https://startbootstrap.com/theme/business-casual/) theme by [Bootstrap](https://getbootstrap.com/), I have created the webpage containing these hand-ins to showcase my abilities with primarily A-Frame (version 1.04) and some web developing.
 
