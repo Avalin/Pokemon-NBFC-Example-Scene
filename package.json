@@ -1,11 +1,11 @@
 {
-    "title": "WebVR Projects",
-    "name": "webvr-projects",
-    "version": "1.0",
+    "title": "Business Casual",
+    "name": "startbootstrap-business-casual",
+    "version": "5.0.11",
     "scripts": {
         "start": "node_modules/.bin/gulp watch"
     },
-    "description": "",
+    "description": "A casual HTML website theme for businesses built with Bootstrap",
     "keywords": [
         "css",
         "sass",
@@ -14,15 +14,19 @@
         "theme",
         "template"
     ],
-    "homepage": "",
+    "homepage": "https://startbootstrap.com/theme/business-casual",
+    "bugs": {
+        "url": "https://github.com/StartBootstrap/startbootstrap-business-casual/issues",
+        "email": "feedback@startbootstrap.com"
+    },
     "license": "MIT",
-    "author": "Astrid Avalin Sørensen",
+    "author": "Start Bootstrap",
     "contributors": [
-        "Astrid Avalin Sørensen"
+        "David Miller (https://davidmiller.io/)"
     ],
     "repository": {
         "type": "git",
-        "url": "https://github.com/Avalin/Hand_Ins.git"
+        "url": "https://github.com/StartBootstrap/startbootstrap-business-casual.git"
     },
     "dependencies": {
         "aframe-particle-system-component": "^1.1.3",
