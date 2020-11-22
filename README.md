@@ -32,7 +32,7 @@ Projects were only tested on PC and Oculus Quest, and may not work as intended w
 
 ### Hand-In 1:
 - Camera has a "boaty" movement
-- 3D model shader problems on all animated characters
+- 3D model shader problems on all animated characters (I'm no 3D artist, and had to give up attempting to fix this)
 
 ### Hand-In 2: 
 - Camera height at spawn vs camera height when teleporting issue
