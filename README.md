@@ -1,12 +1,12 @@
-# [Start Bootstrap - Business Casual](https://startbootstrap.com/theme/business-casual/)
+# WebVR Projects
 
-[Business Casual](https://startbootstrap.com/theme/business-casual/) is a multipurpose website theme for [Bootstrap](https://getbootstrap.com/) created by [Start Bootstrap](https://startbootstrap.com/). This theme features a landing page, about page, blog page, and a contact page along with various custom styles and components.
+Utilizing the [Business Casual](https://startbootstrap.com/theme/business-casual/) theme by [Bootstrap](https://getbootstrap.com/), I have created these hand-ins to showcase my abilities with primarily A-Frame and some web developing.
 
 ## Preview
 
-[![Business Casual Preview](https://assets.startbootstrap.com/img/screenshots/themes/business-casual.png)](https://startbootstrap.github.io/startbootstrap-business-casual/)
+![Hand-Ins Showcase Preview](Hand-In-1.gif)
+![Hand-Ins Showcase Preview](Hand-In-2.gif)
 
-**[View Live Preview](https://startbootstrap.github.io/startbootstrap-business-casual/)**
 
 ## Status
 
