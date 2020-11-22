@@ -2,10 +2,11 @@
 
 Utilizing the [Business Casual](https://startbootstrap.com/theme/business-casual/) theme by [Bootstrap](https://getbootstrap.com/), I have created the webpage containing these hand-ins to showcase my abilities with primarily A-Frame (version 1.04) and some web developing.
 
-## Preview
 <p align="center">
   <img width="640" height="400" src="webpage.PNG">
 </p>
+
+## Preview
 <p align="center">
   <img width="400" height="400" src="Hand-In-1.gif">
   <img width="400" height="400" src="Hand-In-2.gif">
