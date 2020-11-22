@@ -22,6 +22,7 @@ AFRAME.registerComponent('christmas-door', {
                     jack.setAttribute('gltf-model', '3dmodels/NBFC/characters/JackSkellington/jack_skellington.glb');
                     jack.setAttribute('scale', '1 1 1');
                     soundController.setAttribute('sound', {src: "sounds/music/NBFC/this-is-halloween-lofi.mp3", volume: "0.05", loop: "true", autoplay: "true"}); 
+                    jack.setAttribute('animation-mixer', 'clip: Idle');
                 })
                 
                 jack.removeAttribute('gltf-model');
