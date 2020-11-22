@@ -66,16 +66,3 @@ You must integrate the video in the webpage [✔] and hand-in the complete solut
 Hand-in is later in wiseflow. It is therefore possible to continue work until later.
 
 -------------------------------------------------------------------------------
-
-Known bugs:
-- Hand in 1:
-- Camera has a "boaty" movement
-
-- Hand in 2: 
-- Camera height at spawn vs camera height when teleporting issue
-- Not all Oculus Quest button component registers/works? i.e. I could not make a component for when using the thumbstick
-
-- Sounds not always working on Firefox (A-Frame issue)
-
-
--------------------------------------------------------------------------------
