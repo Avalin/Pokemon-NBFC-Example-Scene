@@ -67,19 +67,11 @@ Hand-in is later in wiseflow. It is therefore possible to continue work until la
 
 -------------------------------------------------------------------------------
 
-
-TO DO:
-
-Hand-In 1:
-- Gaze events (On Jack & Sally, doors)
-- Implement light component
-- Implement talkable component
-
-SPØRGSMÅL TIL BUGS:
+Known bugs:
 - Hand in 1:
-- Kameraet bevæger sig båd-agtigt
+- Camera has a "boaty" movement
 
 - Hand in 2: 
-- Camera højde vs. teleporteringshøjde
-- Collision detection på static-objects så man ikke bevæger sig ind i dem
-- Oculus Quest integration med alle buttons virker ikke? 
+- Camera height at spawn vs camera height when teleporting issue
+- Could not make collision detection work on non-teleport movement
+- Not all Oculus Quest button component registers/works?
