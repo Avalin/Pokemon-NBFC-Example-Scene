@@ -28,7 +28,7 @@ To run the project on my local network and have it accessible on other devices, 
 Personal note: ngrok can be used to share with others as a temporary solution.
 
 ## Bugs and Issues
-Projects were only tested on PC and Oculus Quest, and may not work with other devices.
+Projects were only tested on PC and Oculus Quest, and may not work as intended with other devices.
 
 ### Hand-In 1:
 - Camera has a "boaty" movement
