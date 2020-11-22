@@ -4,6 +4,9 @@ Utilizing the [Business Casual](https://startbootstrap.com/theme/business-casual
 
 ## Preview
 <p align="center">
+  <img width="640" height="400" src="webpage.PNG">
+</p>
+<p align="center">
   <img width="400" height="400" src="Hand-In-1.gif">
   <img width="400" height="400" src="Hand-In-2.gif">
 </p>
