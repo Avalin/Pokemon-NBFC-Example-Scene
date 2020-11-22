@@ -8,19 +8,28 @@ Utilizing the [Business Casual](https://startbootstrap.com/theme/business-casual
   <img width="400" height="400" src="Hand-In-2.gif">
 </p>
 
-## Download and Installation
+## Limitations
+Projects were only tested on PC and Oculus Quest, and may not work well for other devices.
+Tested on Firefox and Chrome, works best with the latter.
 
+## Download and Installation
 To get these A-frame projects:
 
 * Clone the repo: `git clone https://github.com/Avalin/Hand_Ins.git`
 
 That's it.
 
-## Usage
 
-After downloading, simply edit the HTML and CSS files included with the template in your favorite text editor to make changes. These are the only files you need to worry about, you can ignore everything else! To preview the changes you make to the code, you can open the `index.html` file in your web browser.
+## Usage
+Using OpenSSL and http-server, I use this command:
+
+* http-server -S -C cert.pem -o
+
+To run the project on my local network.
+Personal note: ngrok can be used to share with others as a temporary solution.
 
 ## Bugs and Issues
+Projects were only tested on PC and Oculus Quest, and may not work with other devices.
 
 ### Hand-In 1:
 - Camera has a "boaty" movement
