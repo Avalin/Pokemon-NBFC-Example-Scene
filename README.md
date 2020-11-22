@@ -1,6 +1,6 @@
-# WebVR Projects
+# WebVR: Nightmare Before Christmas & Pokémon
 
-Utilizing the [Business Casual](https://startbootstrap.com/theme/business-casual/) theme by [Bootstrap](https://getbootstrap.com/), I have created these hand-ins to showcase my abilities with primarily A-Frame and some web developing.
+Utilizing the [Business Casual](https://startbootstrap.com/theme/business-casual/) theme by [Bootstrap](https://getbootstrap.com/), I have created the webpage containing these hand-ins to showcase my abilities with primarily A-Frame (version 1.04) and some web developing.
 
 ## Preview
 <p align="center">
@@ -28,11 +28,11 @@ To run the project on my local network and have it accessible on other devices, 
 Personal note: ngrok can be used to share with others as a temporary solution.
 
 ## Bugs and Issues
-Projects were only tested on PC and Oculus Quest, and may not work with other devices.
+Projects were only tested on PC and Oculus Quest, and may not work as intended with other devices.
 
 ### Hand-In 1:
 - Camera has a "boaty" movement
-- 3D model shader problems on all animated characters
+- 3D model shader problems on all animated characters (I'm no 3D artist, and had to give up attempting to fix this)
 
 ### Hand-In 2: 
 - Camera height at spawn vs camera height when teleporting issue
