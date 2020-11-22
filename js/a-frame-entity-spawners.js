@@ -12,7 +12,7 @@ AFRAME.registerComponent('pokeball-spawner', {
         
         let pokeballsInSceneAmount = document.getElementsByClassName('pokeball').length + 1;
         let pokeballID = "pokeball-"+pokeballsInSceneAmount;
-        let pokeballLimit = 15;
+        let pokeballLimit = 10;
 
         if(pokeballsInSceneAmount <= pokeballLimit)
         {
