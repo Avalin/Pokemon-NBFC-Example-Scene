@@ -1,7 +1,6 @@
 /*
-* Consider this component as for hand-in 1, last assignment: 
-* "Setup handlers for animation and show basic coded animations on your models, lights etc.""
-* May be used in hand-in 2 as well if I feel like it.
+* This component is solely used in Hand-In 2.
+* The effect can be seen on the light inside the house.
 */
 
 AFRAME.registerComponent('light-modifier', {
