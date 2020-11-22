@@ -21,11 +21,11 @@ That's it.
 
 
 ## Usage
-Using [OpenSSL](openssl.org) and [http-server](https://github.com/http-party/http-server), I use this command:
+Using [OpenSSL](https://github.com/openssl/openssl) and [http-server](https://github.com/http-party/http-server), I use this command:
 
 * http-server -S -C cert.pem -o
 
-To run the project on my local network.
+To run the project on my local network and have it accessible on other devices, i.e. Oculus Quest.
 Personal note: ngrok can be used to share with others as a temporary solution.
 
 ## Bugs and Issues
