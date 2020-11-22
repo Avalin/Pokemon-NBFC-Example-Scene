@@ -18,9 +18,10 @@ AFRAME.registerComponent('christmas-door', {
                 soundController.addEventListener("sound-ended", function() {
                     // play the second one     
                     soundController.removeAttribute('sound');
-                    soundController.setAttribute('sound', {src: "sounds/music/NBFC/this-is-halloween-lofi.mp3", volume: "0.05", loop: "true"}); 
                     jack.removeAttribute('gltf-model');
                     jack.setAttribute('gltf-model', '3dmodels/NBFC/characters/JackSkellington/jack_skellington.glb');
+                    jack.setAttribute('scale', '1 1 1');
+                    soundController.setAttribute('sound', {src: "sounds/music/NBFC/this-is-halloween-lofi.mp3", volume: "0.05", loop: "true", autoplay: "true"}); 
                 })
                 
                 jack.removeAttribute('gltf-model');
