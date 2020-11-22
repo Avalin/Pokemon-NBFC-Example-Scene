@@ -21,7 +21,7 @@ That's it.
 
 
 ## Usage
-Using OpenSSL and http-server, I use this command:
+Using [OpenSSL](openssl.org) and [http-server](https://github.com/http-party/http-server), I use this command:
 
 * http-server -S -C cert.pem -o
 
