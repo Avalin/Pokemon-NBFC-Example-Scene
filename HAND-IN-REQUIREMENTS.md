@@ -74,4 +74,4 @@ Known bugs:
 - Hand in 2: 
 - Camera height at spawn vs camera height when teleporting issue
 - Could not make collision detection work on non-teleport movement
-- Not all Oculus Quest button component registers/works? i.e. the thumbstick not registering
+- Not all Oculus Quest button component registers/works? i.e. I could not make a thumbstick component
