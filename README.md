@@ -3,9 +3,10 @@
 Utilizing the [Business Casual](https://startbootstrap.com/theme/business-casual/) theme by [Bootstrap](https://getbootstrap.com/), I have created these hand-ins to showcase my abilities with primarily A-Frame and some web developing.
 
 ## Preview
-
-![Hand-Ins Showcase Preview](Hand-In-1.gif)
-![Hand-Ins Showcase Preview](Hand-In-2.gif)
+<p align="center">
+  <img width="400" height="400" src="Hand-In-1.gif">
+  <img width="400" height="400" src="Hand-In-2.gif">
+</p>
 
 
 ## Status
