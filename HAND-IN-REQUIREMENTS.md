@@ -74,3 +74,8 @@ Known bugs:
 - Hand in 2: 
 - Camera height at spawn vs camera height when teleporting issue
 - Not all Oculus Quest button component registers/works? i.e. I could not make a component for when using the thumbstick
+
+- Sounds not always working on Firefox (A-Frame issue)
+
+
+-------------------------------------------------------------------------------
