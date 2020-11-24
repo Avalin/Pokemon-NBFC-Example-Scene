@@ -65,7 +65,7 @@ p {
 }
 
 .bg-faded {
-  background-color: rgba(255, 255, 255, 0.70);
+  background-color: rgba(255, 255, 255, 0.725);
 }
 
 #mainNav {
@@ -146,7 +146,7 @@ p {
   position: relative;
   padding: 3rem;
   margin: 0.5rem;
-  background-color: rgba(255, 255, 255, 0.70);
+  background-color: rgba(255, 255, 255, 0.725);
 }
 
 .cta .cta-inner:before {
@@ -157,7 +157,7 @@ p {
   bottom: -0.5rem;
   left: -0.5rem;
   right: -0.5rem;
-  border: 0.25rem solid rgba(255, 255, 255, 0.70);
+  border: 0.25rem solid rgba(255, 255, 255, 0.725);
   z-index: -1;
 }
 
