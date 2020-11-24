@@ -1,8 +1,3 @@
-/* Used both for Hand-In 1 and Hand-In 2
- *
- */
-
-
 AFRAME.registerComponent('talkable', {
     schema: {
         sb: { type: 'selector', default: '' },
