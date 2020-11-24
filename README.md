@@ -19,7 +19,7 @@ Tested on Firefox and Chrome, works best with the latter.
 ## Download and Installation
 To get these A-frame projects:
 
-* Clone the repo: `git clone https://github.com/Avalin/Hand_Ins.git`
+* Clone the repo: `git clone https://github.com/Avalin/aframe-pokemon-nbfc-examples.git`
 
 That's it.
 
