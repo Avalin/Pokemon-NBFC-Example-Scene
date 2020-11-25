@@ -19,7 +19,7 @@ Tested on Firefox and Chrome, works best with the latter.
 ## Download and Installation
 To get these A-frame projects:
 
-* Clone the repo: `git clone https://github.com/Avalin/aframe-pokemon-nbfc-examples.git`
+* Clone the repo: `git clone https://github.com/Avalin/aframe_pokemon_nbfc_examples.git`
 
 That's it.
 
