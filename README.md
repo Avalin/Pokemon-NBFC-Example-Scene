@@ -24,15 +24,15 @@ To get these A-frame projects:
 That's it.
 
 ## Usage
-Using [OpenSSL](https://github.com/openssl/openssl) and [http-server](https://github.com/http-party/http-server), I use this command:
+Using [OpenSSL](https://github.com/openssl/openssl) and [http-server](https://github.com/http-party/http-server):
 
-install http-server:
+install http-server globally:
 * npm install -g http-server
 
 run this command:
 * http-server -S -C cert.pem -o
 
-To run the project on my local network and have it accessible on other devices, i.e. Oculus Quest. <br/>
+I can run the project on my local network and have it accessible on other devices, i.e. Oculus Quest. <br/>
 Personal note: ngrok can be used to share with others as a temporary solution.
 
 ## Known bugs & Issues
