@@ -26,6 +26,9 @@ That's it.
 ## Usage
 Using [OpenSSL](https://github.com/openssl/openssl) and [http-server](https://github.com/http-party/http-server), I use this command:
 
+install http-server:
+* npm install -g http-server
+
 * http-server -S -C cert.pem -o
 
 To run the project on my local network and have it accessible on other devices, i.e. Oculus Quest. <br/>
