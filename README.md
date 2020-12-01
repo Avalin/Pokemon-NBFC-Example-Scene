@@ -29,6 +29,7 @@ Using [OpenSSL](https://github.com/openssl/openssl) and [http-server](https://gi
 install http-server:
 * npm install -g http-server
 
+run this command:
 * http-server -S -C cert.pem -o
 
 To run the project on my local network and have it accessible on other devices, i.e. Oculus Quest. <br/>
