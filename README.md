@@ -6,6 +6,13 @@ Utilizing the [Business Casual](https://startbootstrap.com/theme/business-casual
   <img width="640" height="400" src="webpage.PNG">
 </p>
 
+## What can you do?
+Hand-In 1: 
+Interact with creatures from The Nightmare Before Christmas using your gaze.
+
+Hand-In 2: 
+Interact with every creature from Nintendo using your gaze. Catch pokémon by grabbing poké-balls on the table, and throw it at the pokémon. Turn on/off lights in the environment.
+
 ## Preview
 <p align="center">
   <img width="400" height="400" src="Hand-In-1.gif">
